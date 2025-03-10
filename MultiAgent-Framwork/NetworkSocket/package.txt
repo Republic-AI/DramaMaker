@@ -1,0 +1,24 @@
+pip install --upgrade pyinstaller
+
+
+
+pyinstaller --name TCPClientGUI --onefile --windowed --hidden-import=pkgutil --collect-all google.protobuf client4.py
+
+
+a = Analysis(
+    ['client4.py'],
+    pathex=[],
+    binaries=[],
+    datas=[('config.properties', '.'), ('header_pb2.py', '.'), ('Message_pb2.py', '.'), ('server_node_pb2.py', '.')],
+    hiddenimports=['pkgutil'],
+    hookspath=[],
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+)
+
+
+
+pyinstaller TCPClientGUI.spec

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.infinity.protocol;
+
+message server_node
+{
+    string node_id = 1;         // 节点id
+    int32 ip_lan = 2;           // 内网地址
+    int32 ip_public = 3;        // 外网地址
+    int32 port_lan = 4;         // 内网端口
+    int32 port_public = 5;      // 外网端口
+    string domain = 6;          // 域信息
+    int32 udp_port = 7;         // UDP端口
+    int32 channel = 8;					// 连接类型：0:主动连接,1:被动连接
+    string type = 9;						//节点类型；G:网关,P:platform,C:chatgpt
+}
+
+

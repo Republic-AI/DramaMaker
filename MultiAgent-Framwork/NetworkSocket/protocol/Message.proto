@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.infinity.protocol;
+
+/**
+ * 描述: 服务器之间的消息格式
+ */
+message Message
+{
+    // 消息内容,任何类型
+    bytes content = 1;
+}
+

@@ -1,0 +1,627 @@
+{
+    "requestId": 0,
+    "type": 3,
+    "command": 10101,
+    "code": 0,
+    "data": {
+        "world": {
+            "time": 1723200029343
+        },
+        "mapObj": [
+            {
+                "oid": "bakerTable",
+                "objName": "bakerTable",
+                "type": "table",
+                "X": 2856,
+                "Y": 3688,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "breedingBed",
+                "objName": "breedingBed",
+                "type": "bed",
+                "X": 4824,
+                "Y": 1904,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "bakerBed",
+                "objName": "bakerBed",
+                "type": "bed",
+                "X": 3240,
+                "Y": 3664,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "salerCook",
+                "objName": "salerCook",
+                "type": "cook",
+                "X": 624,
+                "Y": 3648,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "bakerMake",
+                "objName": "bakerMake",
+                "type": "bakerMake",
+                "X": 3032,
+                "Y": 3880,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "salerBed",
+                "objName": "salerBed",
+                "type": "bed",
+                "X": 864,
+                "Y": 3304,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "bakerTV",
+                "objName": "bakerTV",
+                "type": "TV",
+                "X": 3016,
+                "Y": 3480,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "butcherCow",
+                "objName": "butcherCow",
+                "type": "butcher",
+                "X": 3496,
+                "Y": 2080,
+                "status": "UNSLAUGHTERED",
+                "availableActions": [
+                    "UNSLAUGHTERED",
+                    "slaughter"
+                ]
+            },
+            {
+                "oid": "farmland1",
+                "objName": "farmland1",
+                "type": "farmland",
+                "X": 408,
+                "Y": 792,
+                "status": "SEEDLING",
+                "availableActions": [
+                    "FRUIT",
+                    "SEEDLING",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "breedingCow",
+                "objName": "breedingCow",
+                "type": "breeding",
+                "X": 3504,
+                "Y": 2320,
+                "status": "FREE",
+                "availableActions": [
+                    "Hunger",
+                    "FREE",
+                    "Full"
+                ]
+            },
+            {
+                "oid": "breedingTable",
+                "objName": "breedingTable",
+                "type": "table",
+                "X": 4616,
+                "Y": 1968,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "farmland2",
+                "objName": "farmland2",
+                "type": "farmland",
+                "X": 744,
+                "Y": 792,
+                "status": "FREE",
+                "availableActions": [
+                    "FRUIT",
+                    "SEEDLING",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "farmland3",
+                "objName": "farmland3",
+                "type": "farmland",
+                "X": 416,
+                "Y": 1112,
+                "status": "FREE",
+                "availableActions": [
+                    "FRUIT",
+                    "SEEDLING",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "farmland4",
+                "objName": "farmland4",
+                "type": "farmland",
+                "X": 744,
+                "Y": 1120,
+                "status": "FREE",
+                "availableActions": [
+                    "FRUIT",
+                    "SEEDLING",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "breedingSheep",
+                "objName": "breedingSheep",
+                "type": "breeding",
+                "X": 3632,
+                "Y": 1736,
+                "status": "FREE",
+                "availableActions": [
+                    "Hunger",
+                    "FREE",
+                    "Full"
+                ]
+            },
+            {
+                "oid": "salerTable",
+                "objName": "salerTable",
+                "type": "table",
+                "X": 1216,
+                "Y": 3432,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "butcherSheep",
+                "objName": "butcherSheep",
+                "type": "butcher",
+                "X": 3480,
+                "Y": 1736,
+                "status": "UNSLAUGHTERED",
+                "availableActions": [
+                    "UNSLAUGHTERED",
+                    "slaughter"
+                ]
+            },
+            {
+                "oid": "farmerTable",
+                "objName": "farmerTable",
+                "type": "table",
+                "X": 1288,
+                "Y": 1160,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "bakerSaler1",
+                "objName": "bakerSaler1",
+                "type": "bakerSaler",
+                "X": 2520,
+                "Y": 4408,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "bakerCook",
+                "objName": "bakerCook",
+                "type": "cook",
+                "X": 2896,
+                "Y": 3296,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "breedingCook",
+                "objName": "breedingCook",
+                "type": "cook",
+                "X": 4328,
+                "Y": 1864,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "bakerSaler2",
+                "objName": "bakerSaler2",
+                "type": "bakerSaler",
+                "X": 2936,
+                "Y": 4408,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "watering",
+                "objName": "watering",
+                "type": "watering",
+                "X": 936,
+                "Y": 464,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "farmerCook",
+                "objName": "farmerCook",
+                "type": "cook",
+                "X": 1256,
+                "Y": 776,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            },
+            {
+                "oid": "salerPos",
+                "objName": "salerPos",
+                "type": "salerPos",
+                "X": 1584,
+                "Y": 3992,
+                "status": "DEFAULT",
+                "availableActions": []
+            },
+            {
+                "oid": "farmerBed",
+                "objName": "farmerBed",
+                "type": "bed",
+                "X": 1744,
+                "Y": 816,
+                "status": "FREE",
+                "availableActions": [
+                    "USE",
+                    "FREE"
+                ]
+            }
+        ],
+        "npcs": [
+            {
+                "npcId": 10002,
+                "status": "\u00e7\u00a9\u00ba\u00e9\u0097\u00b2",
+                "info": {
+                    "name": "Alice Farmer",
+                    "firstName": "Alice",
+                    "lastName": "Farmer",
+                    "type": "Farmer",
+                    "age": 35,
+                    "height": 165,
+                    "weight": 60,
+                    "body_style": "fit and sturdy",
+                    "innate": "diligent, patient, resourceful",
+                    "learned": "Alice is a hardworking farmer who grows a variety of crops and takes pride in her self-sustained lifestyle.",
+                    "lifestyle": "Alice goes to bed around 10pm, wakes up around 5am, eats dinner around 7pm. She enjoys the tranquility of the countryside and tends to her garden in her free time.",
+                    "living_area": "Farmhouse on Greenhill Farm",
+                    "property": "Farmhouse, various farming tools, a tractor"
+                },
+                "selling": [],
+                "items": [],
+                "action": {},
+                "mapData": [
+                    {
+                        "objName": "farmerBed",
+                        "oid": "farmerBed",
+                        "type": "bed",
+                        "X": 1744,
+                        "Y": 816
+                    },
+                    {
+                        "objName": "watering",
+                        "oid": "watering",
+                        "type": "watering",
+                        "X": 936,
+                        "Y": 464
+                    },
+                    {
+                        "objName": "farmerCook",
+                        "oid": "farmerCook",
+                        "type": "cook",
+                        "X": 1256,
+                        "Y": 776
+                    },
+                    {
+                        "objName": "farmerTable",
+                        "oid": "farmerTable",
+                        "type": "table",
+                        "X": 1288,
+                        "Y": 1160
+                    },
+                    {
+                        "objName": "farmland1",
+                        "oid": "farmland1",
+                        "type": "farmland",
+                        "X": 408,
+                        "Y": 792
+                    },
+                    {
+                        "objName": "farmland2",
+                        "oid": "farmland2",
+                        "type": "farmland",
+                        "X": 744,
+                        "Y": 792
+                    },
+                    {
+                        "objName": "farmland3",
+                        "oid": "farmland3",
+                        "type": "farmland",
+                        "X": 416,
+                        "Y": 1112
+                    },
+                    {
+                        "objName": "farmland4",
+                        "oid": "farmland4",
+                        "type": "farmland",
+                        "X": 744,
+                        "Y": 1120
+                    }
+                ],
+                "surroundings": {
+                    "people": [],
+                    "items": []
+                },
+                "talk": {
+                    "isTalking": false
+                }
+            },
+            {
+                "npcId": 10003,
+                "status": "\u00e7\u00a9\u00ba\u00e9\u0097\u00b2",
+                "info": {
+                    "name": "Fiona Grocer",
+                    "firstName": "Fiona",
+                    "lastName": "Grocer",
+                    "type": "Grocer",
+                    "age": 50,
+                    "height": 165,
+                    "weight": 65,
+                    "body_style": "average build",
+                    "innate": "organized, friendly, hardworking",
+                    "learned": "Fiona runs the local grocery store, providing a variety of goods to the community.",
+                    "lifestyle": "Fiona goes to bed around 9pm, wakes up around 6:30am, eats dinner around 7pm. She enjoys chatting with customers and keeping her store well-stocked.",
+                    "living_area": "Apartment above Grocer's Market",
+                    "property": "Grocery store, various goods"
+                },
+                "selling": [],
+                "items": [],
+                "action": {},
+                "mapData": [
+                    {
+                        "objName": "salerBed",
+                        "oid": "salerBed",
+                        "type": "bed",
+                        "X": 864,
+                        "Y": 3304
+                    },
+                    {
+                        "objName": "salerCook",
+                        "oid": "salerCook",
+                        "type": "cook",
+                        "X": 624,
+                        "Y": 3648
+                    },
+                    {
+                        "objName": "salerPos",
+                        "oid": "salerPos",
+                        "type": "salerPos",
+                        "X": 1584,
+                        "Y": 3992
+                    },
+                    {
+                        "objName": "salerTable",
+                        "oid": "salerTable",
+                        "type": "table",
+                        "X": 1216,
+                        "Y": 3432
+                    }
+                ],
+                "surroundings": {
+                    "people": [],
+                    "items": [
+                        {
+                            "oid": "salerPos",
+                            "objName": "salerPos",
+                            "type": "salerPos"
+                        }
+                    ]
+                },
+                "talk": {
+                    "isTalking": false
+                }
+            },
+            {
+                "npcId": 10004,
+                "status": "\u00e7\u00a9\u00ba\u00e9\u0097\u00b2",
+                "info": {
+                    "name": "Bob Herdman",
+                    "firstName": "Bob",
+                    "lastName": "Herdman",
+                    "type": "Herdman",
+                    "age": 40,
+                    "height": 180,
+                    "weight": 75,
+                    "body_style": "strong and rugged",
+                    "innate": "dependable, strong, patient",
+                    "learned": "Bob is a dedicated herdsman, managing his livestock with great care and ensuring their well-being.",
+                    "lifestyle": "Bob goes to bed around 9pm, wakes up around 5:30am, eats dinner around 6pm. He enjoys spending time with his animals and the peacefulness of rural life.",
+                    "living_area": "Cottage on Sunny Meadows Ranch",
+                    "property": "Cottage, various livestock, barn, farming tools"
+                },
+                "selling": [],
+                "items": [],
+                "action": {},
+                "mapData": [
+                    {
+                        "objName": "breedingBed",
+                        "oid": "breedingBed",
+                        "type": "bed",
+                        "X": 4824,
+                        "Y": 1904
+                    },
+                    {
+                        "objName": "breedingCook",
+                        "oid": "breedingCook",
+                        "type": "cook",
+                        "X": 4328,
+                        "Y": 1864
+                    },
+                    {
+                        "objName": "butcherCow",
+                        "oid": "butcherCow",
+                        "type": "butcher",
+                        "X": 3496,
+                        "Y": 2080
+                    },
+                    {
+                        "objName": "butcherSheep",
+                        "oid": "butcherSheep",
+                        "type": "butcher",
+                        "X": 3480,
+                        "Y": 1736
+                    },
+                    {
+                        "objName": "breedingTable",
+                        "oid": "breedingTable",
+                        "type": "table",
+                        "X": 4616,
+                        "Y": 1968
+                    },
+                    {
+                        "objName": "breedingCow",
+                        "oid": "breedingCow",
+                        "type": "breeding",
+                        "X": 3504,
+                        "Y": 2320
+                    },
+                    {
+                        "objName": "breedingSheep",
+                        "oid": "breedingSheep",
+                        "type": "breeding",
+                        "X": 3632,
+                        "Y": 1736
+                    }
+                ],
+                "surroundings": {
+                    "people": [],
+                    "items": []
+                },
+                "talk": {
+                    "isTalking": false
+                }
+            },
+            {
+                "npcId": 10005,
+                "status": "\u00e7\u00a9\u00ba\u00e9\u0097\u00b2",
+                "info": {
+                    "name": "Charlie Baker",
+                    "firstName": "Charlie",
+                    "lastName": "Baker",
+                    "type": "Baker",
+                    "age": 30,
+                    "height": 170,
+                    "weight": 65,
+                    "body_style": "average build",
+                    "innate": "creative, precise, friendly",
+                    "learned": "Charlie is a talented baker known for his delicious bread and pastries, running a small bakery in town.",
+                    "lifestyle": "Charlie goes to bed around 9pm, wakes up around 4am, eats dinner around 5pm. He enjoys experimenting with new recipes and chatting with his customers.",
+                    "living_area": "Apartment above Baker's Delight Bakery",
+                    "property": "Bakery, baking tools, oven"
+                },
+                "selling": [],
+                "items": [],
+                "action": {},
+                "mapData": [
+                    {
+                        "objName": "bakerBed",
+                        "oid": "bakerBed",
+                        "type": "bed",
+                        "X": 3240,
+                        "Y": 3664
+                    },
+                    {
+                        "objName": "bakerTV",
+                        "oid": "bakerTV",
+                        "type": "TV",
+                        "X": 3016,
+                        "Y": 3480
+                    },
+                    {
+                        "objName": "bakerMake",
+                        "oid": "bakerMake",
+                        "type": "bakerMake",
+                        "X": 3032,
+                        "Y": 3880
+                    },
+                    {
+                        "objName": "bakerSaler1",
+                        "oid": "bakerSaler1",
+                        "type": "bakerSaler",
+                        "X": 2520,
+                        "Y": 4408
+                    },
+                    {
+                        "objName": "bakerSaler2",
+                        "oid": "bakerSaler2",
+                        "type": "bakerSaler",
+                        "X": 2936,
+                        "Y": 4408
+                    },
+                    {
+                        "objName": "bakerCook",
+                        "oid": "bakerCook",
+                        "type": "cook",
+                        "X": 2896,
+                        "Y": 3296
+                    },
+                    {
+                        "objName": "bakerTable",
+                        "oid": "bakerTable",
+                        "type": "table",
+                        "X": 2856,
+                        "Y": 3688
+                    }
+                ],
+                "surroundings": {
+                    "people": [],
+                    "items": []
+                },
+                "talk": {
+                    "isTalking": false
+                }
+            }
+        ]
+    }
+}

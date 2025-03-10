@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.infinity.protocol;
+
+message Header
+{
+    string rtype = 1;       // 请求的类型
+    int32 command = 2;      // 命令号
+    string source = 3;      // 原地址
+    string destination = 4; // 目标地址
+    bytes padding = 5;      // 扩展数据，可选
+    int32 code = 6;         // 错误码
+	  int32 dstScope=7;//范围（dst为节点类型时有效） 0随机1个， 1所有
+	  int32 cmd=8;			//子命令
+}

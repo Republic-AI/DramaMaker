@@ -1,0 +1,486 @@
+//登录  
+{
+  "requestId": 11110,
+  "playerId": 0,
+  "type": 1,
+  "command": 10000,
+  "code": 0,
+  "data": {
+    "loginType": 1,
+    "name": "303349094@qq.com",
+    "nickName": "303349094@qq.com",
+    "avatar": "avator",
+    "sex": 1,
+    "timeZone": 2,
+    "clientOs": "ClientOs"
+  }
+}
+
+
+//离线
+{
+  "requestId": 111110,
+  "playerId": 4639598358049071108,
+  "type": 1,
+  "command": 99999,
+  "code": 0,
+  "message": "",
+  "data": {
+    "type": 1
+  }
+}
+
+
+//聊天
+{
+  "requestId": 111110,
+  "type": 1,
+  "command": 10016,
+  "data":{
+    "context": "写一段七言绝句诗，题目是：火锅！",
+    "catId": 100001
+  }
+}
+
+//GM
+{
+  "requestId": 11110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "addap 3000"
+  }
+}
+
+//GM add item
+{
+  "requestId": 1111110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "additem 10101000 5000"
+  }
+}
+//GM add cat
+{
+  "requestId": 1111110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "addcat"
+  }
+}
+
+//GM add cat cv
+{
+  "requestId": 1111110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "addcv 100007 50"
+  }
+}
+
+//GM gm 1
+{
+  "requestId": 1111110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "gm misoypupu@gmail.com 1"
+  }
+}
+
+//GM 在线人数
+{
+  "requestId": 1111110,
+  "type": 1,
+  "command": 10023,
+  "data": {
+    "cmd": "online"
+  }
+}
+
+
+//起床行为 python -> java
+{
+  "actionId": 111,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmerBed"
+  }
+}
+
+//起床数据同步 H5->java
+{
+  "requestId": 1719819694942,
+  "type": 1,
+  "command": 10007,
+  "data": {
+    "actionId": 111,
+    "npcId": 10002,
+    "isFinish":1,
+    "x":1586,
+    "y":1516,
+    "objId":"farmerBed",
+    "state":1,
+    "params": {
+      "oid": "farmerBed"
+    }
+  }
+}
+
+//移动行为：python -> java
+{
+  "actionId": 112,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmland1"
+  }
+}
+
+//移动行为数据同步 H5->java
+{
+  "requestId": 1719819694942,
+  "type": 1,
+  "command": 10008,
+  "data": {
+    "bid": 3,
+    "npcId": 10002,
+    "isFinish": 1,
+    "x": 1586,
+    "y": 1516,
+    "params": {
+
+    }
+  }
+}
+
+//耕种行为
+{
+  "actionId": 100,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmland1",
+    "itemId": 10101001
+  }
+}
+
+
+{
+  "requestId": 1719819694942,
+  "type": 1,
+  "command": 10008,
+  "data": {
+    "bid": 5,
+    "npcId": 10002,
+    "isFinish":1,
+    "x":1586,
+    "y":1516,
+    "objId":"farmland1",
+    "state":1,
+    "params": {
+      "oid": "farmland1",
+      "itemId":10101001,
+      "count":3
+    }
+  }
+}
+
+//物品成熟定时服务
+{
+  "smd":10010,
+  "requestId": 11110,
+  "type": 0,
+  "command": 80003,
+  "data": {
+    "oid": "farmland1"
+  }
+}
+
+//采收行为
+{
+  "actionId": 101,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmland1"
+  }
+}
+
+//python 查询npc信息
+{
+  "command": 10102,
+  "data": {
+
+  }
+}
+
+//睡觉
+{
+  "actionId": 106,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmerBed",
+    "getUpTime": "2024-08-29 15:40:00"
+  }
+}
+
+//做饭行为
+{
+  "actionId": 104,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmerCook",
+    "items": [
+      {
+        "itemId": 10101001,
+        "count": 1
+      }
+    ]
+  }
+}
+
+//吃饭行为
+{
+  "actionId": 105,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmerTable"
+  }
+}
+
+//移动行为
+{
+  "actionId": 112,
+  "npcId": 10002,
+  "data": {
+    "oid": "farmland1"
+  }
+}
+
+//投喂
+{
+  "npcId": 10004,
+  "actionId": 107,
+  "data": {
+    "oid": "breedingCow",
+    "items": [
+      {
+        "itemId": "10101002",
+        "count": 1
+      }
+    ]
+  }
+}
+
+//屠宰
+{
+  "actionId": 108,
+  "npcId": 10004,
+  "data": {
+    "oid": "butcherCow"
+  }
+}
+
+
+//制作
+{
+  "actionId": 109,
+  "npcId": 10005,
+  "data": {
+    "oid": "bakerMake",
+    "items":[
+      {
+        "itemId": 10101001,
+        "count": 1
+      }
+    ]
+  }
+}
+
+//购买
+{
+  "actionId": 103,
+  "npcId": 10002,
+  "data": {
+    "oid": "salerPos",
+    "itemId": 10101001,
+    "count": 1,
+    "price": 10,
+    "sellerNpcId": 10003
+  }
+}
+
+//卖东西
+{
+  "actionId": 102,
+  "npcId": 10002,
+  "data": {
+    "oid": "salerPos",
+    "itemId": 10101001,
+    "count": 1,
+    "price": 10,
+    "buyerNpcId": 10003
+  }
+}
+
+//对话
+{
+  "npcId": 10003,
+  "actionId": 110,
+  "data": {
+    "content": "I would like to sell you 1 unit of wheat. What price would you offer?",
+    "npcId": 10002
+  }
+}
+
+//玩家聊天推送 java -> python
+{
+  "actionId": 117,
+  "npcId": 10002,
+  "data": {
+    "playerId": "123132131",
+    "content": "123132131",
+    "msgId": "123132131",
+  }
+}
+
+//回复玩家聊天行为 python -> java
+{
+  "requestId": 31795670556,
+  "type": 3,
+  "command": 10103,
+  "code": 0,
+  "data": {
+    "npcId": 10006,
+    "chatData": {
+      "msgId": 6,
+      "sender": 5221343466314801000,
+      "type": 0,
+      "content": "写一段七言绝句诗，题目是：火锅！",
+      "time": 1730899225961,
+      "barrage": 0
+    }
+  }
+}
+
+
+
+//npc 行文， java -> python
+{
+  "requestId": 117694906771,
+  "type": 3,
+  "command": 10101,
+  "code": 0,
+  "data": {
+      "world": {
+          "time": 1730950051055
+      },
+      "mapObj": [
+          {
+              "oid": "zhongbencongType",
+              "objName": "zhongbencongType",
+              "type": "",
+              "X": 463,
+              "Y": 722,
+              "status": "DEFAULT",
+              "availableActions": []
+          },
+          {
+              "oid": "zhongbencongRead",
+              "objName": "zhongbencongRead",
+              "type": "",
+              "X": 240,
+              "Y": 688,
+              "status": "DEFAULT",
+              "availableActions": []
+          },
+          {
+              "oid": "zhongbencongFix",
+              "objName": "zhongbencongFix",
+              "type": "",
+              "X": 370,
+              "Y": 304,
+              "status": "DEFAULT",
+              "availableActions": []
+          },
+          {
+              "oid": "zhongbencongThink",
+              "objName": "zhongbencongThink",
+              "type": "",
+              "X": 336,
+              "Y": 721,
+              "status": "DEFAULT",
+              "availableActions": []
+          }
+      ],
+      "npcs": [
+          {
+              "npcId": 10006,
+              "status": "idle",
+              // "info": {
+              //     "name": "wSatoshi",
+              //     "firstName": "wSatoshi",
+              //     "lastName": "wSatoshi",
+              //     "type": "Engineer",
+              //     "age": 20,
+              //     "height": 180,
+              //     "weight": 60,
+              //     "body_style": "fit and sturdy",
+              //     "innate": "Visionary, Analytical, Persistent",
+              //     "learned": "wSatoshi is a hardworking researcher and engineer who reading, thinking, and using computer all day long.",
+              //     "lifestyle": "wSatoshi spends his days reading, typing, thinking, and repairing the 小精灵, and he enjoy going out to meet other characters.",
+              //     "living_area": "house",
+              //     "property": "house"
+              // },
+              "selling": [],
+              "items": [],
+              "action": {
+                  "actionName": "move",
+                  "actionId": 112
+              },
+              "curAction": {
+                  "actionName": "move",
+                  "actionId": 112,
+                  "param": {
+                      "oid": "zhongbencongFix",
+                      "gridX": 0,
+                      "gridY": 0
+                  }
+              },
+              "mapData": [],
+              "surroundings": {
+                  "people": [],
+                  "items": [
+                      {
+                          "oid": "zhongbencongFix",
+                          "objName": "zhongbencongFix",
+                          "type": ""
+                      }
+                  ]
+              },
+              "availableBuy": {
+                  "oid": "pepe",
+                  "canBuy": false,
+              }  ,
+              "talk": {
+                  "isTalking": true,
+                  "talkingTo": [
+                      10006
+                  ],
+                  "contents": [
+                      {
+                          "sender": 10006,
+                          "target": 10006,
+                          "time": 1730785543343,
+                          "content": "In this digital epoch, I'm delving into texts chronicling the vast evolution of technology. The journey from Bitcoin's inception lingers vividly. As I read, I muse on how a decentralized idea sparked a financial revolution. Yet, with blockchain's potential, new pathways beckon. The next frontier may lie not just in cryptocurrency, but in integrating blockchain with AI, deepening transparency and automating trust. The horizon holds limitless innovations, and perhaps the creation of ubiquitous digital identities using blockchain. Change is the only constant, each line a step towards a new dawn. What might we craft with precision and freedom next?"
+                      }
+                  ]
+              }
+          }
+      ]
+  }
+}
+
+
+
