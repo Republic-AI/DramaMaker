@@ -49,7 +49,7 @@ def database_exists(connection):
 
 def create_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Use the AITown database
+    cursor.execute("USE Dramai")  # Use the AITown database
     create_table_query = """
     CREATE TABLE IF NOT EXISTS behavior_java_buffer (
         requestId BIGINT NOT NULL,
@@ -67,7 +67,7 @@ def create_table(connection):
 
 def delete_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
+    cursor.execute("USE Dramai")  # Ensure you're using the correct database
     delete_table_query = f"DROP TABLE IF EXISTS behavior_java_buffer"
     cursor.execute(delete_table_query)
     connection.commit()
@@ -92,7 +92,7 @@ def table_exists(connection):
 
 def insert_into_table(connection, requestId, time, npcId, content, isProcessed=False, isBeingProcessed=False):
     cursor = connection.cursor()
-    cursor.execute("USE AITown") 
+    cursor.execute("USE Dramai") 
     insert_query = """
     INSERT INTO behavior_java_buffer (requestId, time, npcId, content, isProcessed, isBeingProcessed)
     VALUES (%s, %s, %s, %s, %s, %s)
@@ -104,7 +104,7 @@ def insert_into_table(connection, requestId, time, npcId, content, isProcessed=F
 
 def delete_entry_in_buffer(connection, time, npcId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
+    cursor.execute("USE Dramai")  # Ensure you're using the correct database
     delete_query = "DELETE FROM behavior_java_buffer WHERE time = %s AND npcId = %s"
     cursor.execute(delete_query, (time, npcId))
     connection.commit()  # Commit the changes
@@ -112,7 +112,7 @@ def delete_entry_in_buffer(connection, time, npcId):
 
 def delete_all_content_in_buffer(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
+    cursor.execute("USE Dramai")  # Ensure you're using the correct database
     delete_query = "DELETE FROM behavior_java_buffer"
     cursor.execute(delete_query)
     connection.commit()  # Commit the changes
@@ -121,7 +121,7 @@ def delete_all_content_in_buffer(connection):
 def get_earliest_unprocessed_entry(connection):
     with lock:  # Acquire the lock
         cursor = connection.cursor()
-        cursor.execute("USE AITown")  # Use the AITown database
+        cursor.execute("USE Dramai")  # Use the AITown database
 
         # Query to get the earliest unprocessed entry with isBeingProcessed = FALSE
         query = """
@@ -157,7 +157,7 @@ def get_earliest_unprocessed_entry(connection):
 
 def get_unprocessed_entries_of_npc(connection, npcId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     
     # Query for all unprocessed entries for the given npcId
     query_all = """
@@ -192,7 +192,7 @@ def get_unprocessed_entries_of_npc(connection, npcId):
 
 def get_all_unprocessed_entries(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     query = """
     SELECT * FROM behavior_java_buffer 
     WHERE isProcessed = FALSE
@@ -211,7 +211,7 @@ def get_all_unprocessed_entries(connection):
 
 def mark_entry_as_processed_bynpctime(connection, time, npcId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     update_query = """
     UPDATE behavior_java_buffer
     SET isProcessed = TRUE
@@ -223,7 +223,7 @@ def mark_entry_as_processed_bynpctime(connection, time, npcId):
 
 def mark_entry_as_processed(connection, requestId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     update_query = """
     UPDATE behavior_java_buffer
     SET isProcessed = TRUE
@@ -235,7 +235,7 @@ def mark_entry_as_processed(connection, requestId):
 
 def mark_all_entries_as_processed(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     update_query = """
     UPDATE behavior_java_buffer
     SET isProcessed = TRUE
@@ -246,7 +246,7 @@ def mark_all_entries_as_processed(connection):
 
 def mark_entry_as_fullyprocessed(connection, requestId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     update_query = """
     UPDATE behavior_java_buffer
     SET isFullyProcessed = TRUE

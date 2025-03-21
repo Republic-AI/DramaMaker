@@ -16,7 +16,7 @@ def check_connection(connection):
 
 def create_instruction_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Use the AITown database
+    cursor.execute("USE Dramai")  # Use the AITown database
     create_table_query = """
     CREATE TABLE IF NOT EXISTS behavior_instruction_buffer (
         time DATETIME NOT NULL,
@@ -32,7 +32,7 @@ def create_instruction_table(connection):
 
 def insert_into_instruction_table(connection, time, npcId, instruction, requestId, isProcessed=False):
     cursor = connection.cursor()
-    cursor.execute("USE AITown") 
+    cursor.execute("USE Dramai") 
     insert_query = """
     INSERT INTO behavior_instruction_buffer (time, npcId, instruction, isProcessed, requestId)
     VALUES (%s, %s, %s, %s, %s)
@@ -47,7 +47,7 @@ def insert_into_instruction_table(connection, time, npcId, instruction, requestI
 
 def delete_instruction_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
+    cursor.execute("USE Dramai")  # Ensure you're using the correct database
     delete_table_query = "DROP TABLE IF EXISTS behavior_instruction_buffer"
     cursor.execute(delete_table_query)
     connection.commit()
@@ -55,7 +55,7 @@ def delete_instruction_table(connection):
 
 def delete_all_instructions(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
+    cursor.execute("USE Dramai")  # Ensure you're using the correct database
     delete_query = "DELETE FROM behavior_instruction_buffer"
     cursor.execute(delete_query)
     connection.commit()
@@ -63,7 +63,7 @@ def delete_all_instructions(connection):
 
 def get_earliest_unprocessed_instruction(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     query = """
     SELECT * FROM behavior_instruction_buffer 
     WHERE isProcessed = FALSE
@@ -81,7 +81,7 @@ def get_earliest_unprocessed_instruction(connection):
 
 def mark_instruction_as_processed(connection, time, npcId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     update_query = """
     UPDATE behavior_instruction_buffer
     SET isProcessed = TRUE
@@ -93,7 +93,7 @@ def mark_instruction_as_processed(connection, time, npcId):
 
 def get_all_unprocessed_instructions(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     query = """
     SELECT * FROM behavior_instruction_buffer 
     WHERE isProcessed = FALSE

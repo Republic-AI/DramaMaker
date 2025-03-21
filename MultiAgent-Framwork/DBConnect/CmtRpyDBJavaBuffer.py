@@ -66,7 +66,7 @@ def create_database(connection):
 def create_table(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         create_table_query = """
         CREATE TABLE IF NOT EXISTS comment_reply_java_buffer (
             requestId BIGINT UNSIGNED NOT NULL,  -- Use UNSIGNED for larger positive values
@@ -88,7 +88,7 @@ def create_table(connection):
 def insert_into_table(connection, requestId, time, npcId, msgId, senderId, content, sname, isProcessed=False):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown") 
+        cursor.execute("USE Dramai") 
         insert_query = """
         INSERT INTO comment_reply_java_buffer (requestId, time, npcId, msgId, senderId, content, isProcessed, sname)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
@@ -103,7 +103,7 @@ def insert_into_table(connection, requestId, time, npcId, msgId, senderId, conte
 def get_earliest_unprocessed_entry(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         query = """
         SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname FROM comment_reply_java_buffer 
         WHERE isProcessed = FALSE
@@ -125,7 +125,7 @@ def get_earliest_unprocessed_entry(connection):
 def mark_entry_as_processed(connection, requestId):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         update_query = """
         UPDATE comment_reply_java_buffer
         SET isProcessed = TRUE
@@ -140,7 +140,7 @@ def mark_entry_as_processed(connection, requestId):
 def delete_entry_in_buffer(connection, requestId):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         delete_query = "DELETE FROM comment_reply_java_buffer WHERE requestId = %s"
         cursor.execute(delete_query, (requestId,))
         connection.commit()
@@ -151,7 +151,7 @@ def delete_entry_in_buffer(connection, requestId):
 def get_unprocessed_entries_of_npc(connection, npcId):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         query = """
         SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname FROM comment_reply_java_buffer
         WHERE isProcessed = FALSE AND npcId = %s
@@ -171,7 +171,7 @@ def get_unprocessed_entries_of_npc(connection, npcId):
 def get_all_unprocessed_entries(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         query = """
         SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname FROM comment_reply_java_buffer 
         WHERE isProcessed = FALSE
@@ -191,7 +191,7 @@ def get_all_unprocessed_entries(connection):
 def delete_all_content_in_buffer(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown")
+        cursor.execute("USE Dramai")
         delete_query = "DELETE FROM comment_reply_java_buffer"
         cursor.execute(delete_query)
         connection.commit()

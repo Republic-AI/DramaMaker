@@ -47,7 +47,7 @@ def database_exists(connection):
 
 def create_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Use the AITown database
+    cursor.execute("USE Dramai")  # Use the AITown database
     create_table_query = """
     CREATE TABLE IF NOT EXISTS behavior_reflection_tracer (
         npcID VARCHAR(255) NOT NULL,
@@ -62,7 +62,7 @@ def create_table(connection):
 
 def delete_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     delete_table_query = "DROP TABLE IF EXISTS behavior_reflection_tracer"
     cursor.execute(delete_table_query)
     connection.commit()
@@ -87,7 +87,7 @@ def table_exists(connection):
 
 def insert_into_table(connection, npcID, total_importance, start_time, end_time):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     insert_query = """
     INSERT INTO behavior_reflection_tracer (npcID, total_importance, start_Time, end_Time)
     VALUES (%s, %s, %s, %s)
@@ -99,7 +99,7 @@ def insert_into_table(connection, npcID, total_importance, start_time, end_time)
 
 def retrieve_entry(connection, npcID):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     select_query = "SELECT total_importance, start_Time, end_Time FROM behavior_reflection_tracer WHERE npcID = %s"
     cursor.execute(select_query, (npcID,))
     result = cursor.fetchone()
@@ -113,7 +113,7 @@ def retrieve_entry(connection, npcID):
 
 def delete_entry_in_table(connection, npcID):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     delete_query = "DELETE FROM behavior_reflection_tracer WHERE npcID = %s"
     cursor.execute(delete_query, (npcID,))
     connection.commit()
@@ -121,7 +121,7 @@ def delete_entry_in_table(connection, npcID):
 
 def delete_all_entries(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")
+    cursor.execute("USE Dramai")
     delete_query = "DELETE FROM behavior_reflection_tracer"
     cursor.execute(delete_query)
     connection.commit()
