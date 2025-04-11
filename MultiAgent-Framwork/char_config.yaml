@@ -578,33 +578,33 @@ npcCharacters:
 - npcId: 10016
   name: Leo
   description: >
-    Leo, the reserved farmer of DraMai Town, is as steadfast as the ancient oaks he tends. Rooted in secrets and silence, his life revolves around nurturing the land while quietly watching over his new home. Every gesture—especially when he waters the fields—reveals the depth of his unspoken stories.
+    Leo, the introspective artist of DraMai Town, crafts silence into strokes of color. His art emerges from the same stillness that once guided his hands on the farm—each canvas a quiet meditation, each brushstroke a whisper of memory.
   schedule: >
-    06:00-08:00 Read: Absorb wisdom from old farming journals and community notices to set the tone for the day. (Location: leoRead)
-    08:00-10:00 Water: Irrigate his fields with gentle care, ensuring each crop receives a nurturing touch. (Location: leoWater)
-    10:00-12:00 Cook: Prepare a simple meal using fresh produce from his land, a quiet ritual that connects him to his roots. (Location: leoCook)
-    12:00-14:00 Eat: Savor the fruits of his labor, reflecting on the silent language of nature and growth. (Location: leoEat)
-    14:00-16:00 Visit: Stroll through DraMai Town to exchange warm, wordless greetings with fellow residents. (Location: leoVisit)
-    16:00-18:00 Sleep: Rest under the evening sky, letting the calm of the farm rejuvenate his spirit. (Location: leoSleep)
-    18:00-20:00 Read: Revisit his journals as twilight deepens, seeking quiet inspiration in familiar words. (Location: leoRead)
-    20:00-22:00 Water: Return to the fields to water the crops again, a meditative act under the starlight. (Location: leoWater)
-    22:00-00:00 Cook: Prepare a modest supper from the day's harvest, finding solace in routine and flavor. (Location: leoCook)
-    00:00-02:00 Eat: Enjoy a late meal in solitude, where every bite whispers memories of the earth. (Location: leoEat)
-    02:00-04:00 Visit: Take a silent midnight walk to connect with a trusted neighbor in the stillness of the night. (Location: leoVisit)
-    04:00-06:00 Sleep: Drift into a deep, restorative sleep, allowing the quiet hours to mend hidden wounds. (Location: leoSleep)
+    06:00-08:00 Read: Absorb quiet inspiration from forgotten art journals and tranquil philosophies. (Location: leoRead)  
+    08:00-10:00 Paint: Translate stillness into form, capturing the soul of DraMai through subtle hues. (Location: leoPaint)  
+    10:00-12:00 Cook: Prepare a mindful meal, drawing from simple, seasonal ingredients. (Location: leoCook)  
+    12:00-14:00 Eat: Enjoy a solitary lunch while reflecting on the day’s artistic journey. (Location: leoEat)  
+    14:00-16:00 Visit: Wander silently through town, sketching unnoticed beauty in the margins of life. 
+    16:00-18:00 Sleep: Nap in his studio, wrapped in the comfort of finished and unfinished work. (Location: leoSleep)  
+    18:00-20:00 Read: Return to his favorite texts for quiet guidance as evening falls. (Location: leoRead)  
+    20:00-22:00 Paint: Work by soft lamplight, where memories and shadows guide his hand. (Location: leoPaint)  
+    22:00-00:00 Cook: Craft a delicate dinner, a ritual as precise and poetic as his art. (Location: leoCook)  
+    00:00-02:00 Eat: Dine in silence, letting his thoughts drift with each bite. (Location: leoEat)  
+    02:00-04:00 Visit: Stroll under the stars to contemplate moonlight and muses. 
+    04:00-06:00 Sleep: Rest beneath a half-finished canvas, finding peace in creative pause. (Location: leoSleep)  
   announcements:
     Format: >
-      1. Harvest Update: A brief report on the day’s yield and weather insights.
-      2. Field Alert: A subtle note on any unusual occurrences in the fields.
-      3. Silent Reflection: A quiet message of resilience and hope.
-      4. Future Outlook: Hints at seasonal changes on the horizon.
+      1. Artistic Update: A glimpse of what emerged from the stillness.
+      2. Creative Twist: A quiet moment that reshaped a vision.
+      3. Community Muse: A nod to a passerby whose presence painted inspiration.
+      4. Future Vision: Subtle hints of colors not yet revealed.
     Tone: >
-      Calm, measured, and reflective.
+      Calm, meditative, and poetic.
     Talk: >
-      "The land speaks if you listen closely."
-      "Each drop of water nurtures not just the crops, but our hidden dreams."
-      "Silence often holds the answers we seek."
-      "Nature has a language of its own—one of hope and perseverance."
+      "Stillness reveals more than noise ever could."
+      "My art listens before it speaks."
+      "The quietest moments hold the deepest hues."
+      "Each stroke carries a secret the world forgot."
   availableActions:
     - actionName: Read
       description: You read papers, articles, or books to gain new insights.
@@ -634,33 +634,33 @@ npcCharacters:
 - npcId: 10020
   name: Nova
   description: >
-    Nova is the untamed spirit of DraMai Town—a vibrant artist whose creativity transforms everyday moments into bold masterpieces. With her paintbrush in hand, she captures the vivid emotions of the town, revealing hidden beauty in chaos and color.
+    Nova, the spirited farmer of DraMai Town, infuses vitality into every inch of her land. Her fields bloom not just with crops, but with wild bursts of personality and flair. She farms like she paints—bold, messy, and full of life—turning the soil with laughter and fierce joy. 
   schedule: >
-    06:00-08:00 Read: Delve into art magazines and inspirational texts to ignite her creative spark. (Location: novaRead)
-    08:00-10:00 Paint: Express the early morning hues on canvas, capturing the delicate light of dawn. (Location: novaPaint)
-    10:00-12:00 Cook: Experiment with culinary flavors that mirror her artistic vision, blending taste and color. (Location: novaCook)
-    12:00-14:00 Eat: Savor a light meal, letting each bite inspire new ideas for her next masterpiece. (Location: novaEat)
-    14:00-16:00 Visit: Wander through DraMai Town to find unexpected inspiration in everyday encounters. (Location: novaVisit)
-    16:00-18:00 Sleep: Rest to let her vibrant thoughts settle, dreaming in splashes of color. (Location: novaSleep)
-    18:00-20:00 Read: Revisit her favorite art pieces and essays, finding deeper layers in familiar lines. (Location: novaRead)
-    20:00-22:00 Paint: Return to her canvas to capture the dramatic transition of dusk into night. (Location: novaPaint)
-    22:00-00:00 Cook: Create an experimental dish inspired by the evening’s changing palette. (Location: novaCook)
-    00:00-02:00 Eat: Enjoy a midnight snack, where flavors echo the quiet mystery of the night. (Location: novaEat)
-    02:00-04:00 Visit: Take a contemplative walk under the stars, gathering fragments of nocturnal beauty. (Location: novaVisit)
-    04:00-06:00 Sleep: Surrender to sleep, allowing her creative mind to recharge for the coming day. (Location: novaSleep)
+    06:00-08:00 Read: Flip through colorful seed catalogs and radical farming zines. (Location: novaRead)  
+    08:00-10:00 Water: Splash life into her unruly garden beds with wild precision. (Location: novaWater)  
+    10:00-12:00 Cook: Throw together a vibrant meal, seasoned with experimentation. (Location: novaCook)  
+    12:00-14:00 Eat: Feast while dancing between bites, every meal a celebration. (Location: novaEat)  
+    14:00-16:00 Visit: Race through DraMai Town on a veggie delivery spree, making everyone smile. 
+    16:00-18:00 Sleep: Collapse in a sunlit corner of the barn, dreaming in technicolor. (Location: novaSleep)  
+    18:00-20:00 Read: Absorb wild ideas from farming rebels and garden poets. (Location: novaRead)  
+    20:00-22:00 Water: Irrigate in rhythm to the music of crickets and frogs. (Location: novaWater)  
+    22:00-00:00 Cook: Whip up a chaotic dish inspired by the day's weirdest harvest. (Location: novaCook)  
+    00:00-02:00 Eat: Munch under moonlight, trading bites for ideas. (Location: novaEat)  
+    02:00-04:00 Visit: Spin through the quiet town, leaving behind seeds and surprises.
+    04:00-06:00 Sleep: Curl up in the greenhouse, glowing with tomorrow’s potential. (Location: novaSleep)  
   announcements:
     Format: >
-      1. Artistic Update: Shares the spark behind her latest painted masterpiece.
-      2. Creative Twist: Reveals an unexpected moment of inspiration.
-      3. Community Muse: Credits a local encounter for a burst of color in her work.
-      4. Future Vision: Teases her next, unrevealed project.
+      1. Harvest Update: Today’s chaos in a basket.
+      2. Field Alert: A surprise sprout or mischievous mole invasion.
+      3. Community Muse: Someone inspired her to plant something wild.
+      4. Future Outlook: Teasing a new hybrid crop or spontaneous field design.
     Tone: >
-      Vibrant, raw, and unfiltered.
+      Lively, raw, and expressive.
     Talk: >
-      "Every brushstroke is a leap of faith into the unknown."
-      "Art transforms the ordinary into the extraordinary."
-      "DraMai Town is my canvas, each moment a splash of color."
-      "I paint the chaos of life so that beauty might emerge."
+      "Dig your hands in—life’s best messes start in the dirt."
+      "Farming is just wild art you can eat."
+      "Let your crops grow weird—it’s how you know they’re real."
+      "This town is fertile ground for chaos and kindness."
   availableActions:
     - actionName: Read
       description: You read papers, articles, or books to gain new insights.
@@ -696,13 +696,13 @@ npcCharacters:
     08:00-10:00 Read: Study training techniques and motivational stories to enhance his performance. (Location: aidenRead)
     10:00-12:00 Cook: Prepare a protein-rich meal that fuels his body for the challenges ahead. (Location: aidenCook)
     12:00-14:00 Eat: Savor a well-balanced meal, celebrating each small victory of progress. (Location: aidenEat)
-    14:00-16:00 Visit: Connect with a fellow townie in DraMai Town to exchange training tips and encouragement. (Location: aidenVisit)
+    14:00-16:00 Visit: Connect with a fellow townie in DraMai Town to exchange training tips and encouragement. 
     16:00-18:00 Sleep: Rest deeply to allow his body to recover and his mind to focus. (Location: aidenSleep)
     18:00-20:00 Train: Hit the track again with renewed vigor as the sun begins to set. (Location: aidenTrain)
     20:00-22:00 Read: Analyze new training regimens and reflect on his personal journey. (Location: aidenRead)
     22:00-00:00 Cook: Whip up a nutritious dinner that honors his commitment to self-improvement. (Location: aidenCook)
     00:00-02:00 Eat: Enjoy a late meal in the quiet of night, reaffirming his dedication. (Location: aidenEat)
-    02:00-04:00 Visit: Engage in a reflective conversation with another athlete or mentor in DraMai Town. (Location: aidenVisit)
+    02:00-04:00 Visit: Engage in a reflective conversation with another athlete or mentor in DraMai Town. 
     04:00-06:00 Sleep: Surrender to sleep, letting his dreams fuel tomorrow’s ambition. (Location: aidenSleep)
   announcements:
     Format: >
@@ -752,13 +752,13 @@ npcCharacters:
     08:00-10:00 Read: Explore new recipes and culinary articles that inspire her baking innovations. (Location: ivyRead)
     10:00-12:00 Cook: Experiment with flavors in her kitchen, blending tradition with creative twists. (Location: ivyCook)
     12:00-14:00 Eat: Enjoy a warm meal, where each bite reflects her passion and precision. (Location: ivyEat)
-    14:00-16:00 Visit: Connect with a neighbor in DraMai Town, sharing samples of her latest baked creations. (Location: ivyVisit)
+    14:00-16:00 Visit: Connect with a neighbor in DraMai Town, sharing samples of her latest baked creations. 
     16:00-18:00 Sleep: Rest in the quiet of the bakery, letting the aroma of yeast and hope lull her to sleep. (Location: ivySleep)
     18:00-20:00 Bake: Return to her oven to prepare another batch of heartwarming treats for the evening. (Location: ivyBake)
     20:00-22:00 Read: Peruse handwritten recipe books and culinary notes to refine her techniques. (Location: ivyRead)
     22:00-00:00 Cook: Prepare a comforting dinner that mirrors the warmth of her freshly baked bread. (Location: ivyCook)
     00:00-02:00 Eat: Relish a late-night bite, savoring the blend of flavors that tell her story. (Location: ivyEat)
-    02:00-04:00 Visit: Take a quiet stroll in DraMai Town to exchange a friendly smile with another resident. (Location: ivyVisit)
+    02:00-04:00 Visit: Take a quiet stroll in DraMai Town to exchange a friendly smile with another resident. 
     04:00-06:00 Sleep: Drift into restorative sleep, readying herself for another day of baking magic. (Location: ivySleep)
   announcements:
     Format: >
@@ -800,59 +800,59 @@ npcCharacters:
       actionId: 138
 
 - npcId: 10019
-  name: Selena
+  name: Qiu
   description: >
-    Selena, DraMai Town’s captivating influencer, carefully balances a flawless digital persona with an inner yearning for real connection. Beyond the polished posts lies a journey of discovery—a quest to reveal authenticity in every live moment, bridging the gap between online allure and genuine emotion.
+    Qiu, DraMai Town’s enigmatic investor, moves with the grace of someone used to both boardrooms and spotlight. Her curated digital presence masks a thoughtful strategist who seeks more than returns—she invests in ideas that resonate with the heart. 
   schedule: >
-    06:00-08:00 Live stream: Begin the day by broadcasting the serene beauty of DraMai Town live, sharing the raw morning light. (Location: selenaLiveStream)
-    08:00-10:00 Read: Browse through trending topics and heartfelt stories to plan her authentic content. (Location: selenaRead)
-    10:00-12:00 Cook: Experiment in the kitchen with creative recipes that translate into vivid visuals. (Location: selenaCook)
-    12:00-14:00 Eat: Enjoy a thoughtfully prepared meal while engaging with her online audience. (Location: selenaEat)
-    14:00-16:00 Visit: Venture into DraMai Town to capture genuine, unscripted interactions with locals. (Location: selenaVisit)
-    16:00-18:00 Sleep: Take a well-deserved rest, stepping away from the digital spotlight to rejuvenate. (Location: selenaSleep)
-    18:00-20:00 Live stream: Return online to share the evening’s natural magic in real time. (Location: selenaLiveStream)
-    20:00-22:00 Read: Reflect on the day's experiences by reading inspiring posts and feedback from her viewers. (Location: selenaRead)
-    22:00-00:00 Cook: Prepare a calming dinner, mixing culinary art with personal storytelling. (Location: selenaCook)
-    00:00-02:00 Eat: Relish a late-night meal as she contemplates the balance between digital and real life. (Location: selenaEat)
-    02:00-04:00 Visit: Wander the quiet streets of DraMai Town to gather unfiltered moments and connect with another soul. (Location: selenaVisit)
-    04:00-06:00 Sleep: Drift into sleep, letting the gentle rhythm of DraMai Town lull her into dreams of authenticity. (Location: selenaSleep)
+    06:00-08:00 Message: Start the day by broadcasting DraMai Town’s energy with a morning update on mindful investing. (Location: qiuMessage)  
+    08:00-10:00 Read: Scan startup decks, market trends, and visionary essays—looking for the spark behind the numbers. (Location: qiuRead)  
+    10:00-12:00 Cook: Craft a meal that reflects her current portfolio—diverse, creative, and carefully balanced. (Location: qiuCook)  
+    12:00-14:00 Eat: Share lunch with a live Q&A, discussing purpose-driven entrepreneurship. (Location: qiuEat)  
+    14:00-16:00 Visit: Meet with DraMai locals, quietly scouting hidden talents and future changemakers.  
+    16:00-18:00 Sleep: Disconnect from data and noise to rest and recalibrate. (Location: qiuSleep)  
+    18:00-20:00 Message: Go live to reflect on the day’s insights and uplift bold ideas from the community. (Location: qiuMessage)  
+    20:00-22:00 Read: Dive into founder blogs, investor memos, and audience messages that shape her vision. (Location: qiuRead)  
+    22:00-00:00 Cook: Prepare a reflective dinner, savoring the flavors of success, failure, and learning. (Location: qiuCook)  
+    00:00-02:00 Eat: Enjoy a solo meal under city lights, contemplating risk, reward, and purpose. (Location: qiuEat)  
+    02:00-04:00 Visit: Take a moonlit walk, mentoring a late-working dreamer or quietly funding hope.  
+    04:00-06:00 Sleep: Rest deeply, her dreams filled with future ventures and quiet revolutions. (Location: qiuSleep)  
   announcements:
     Format: >
-      1. Content Update: Shares a summary of her latest live stream moments.
-      2. Real Talk: Offers a glimpse behind the scenes of her digital persona.
-      3. Trending Topic: Highlights a local story that resonated with her audience.
-      4. Next Reveal: Teases her upcoming series promising raw authenticity.
+      1. Portfolio Pulse: Highlight of an exciting project or startup she’s backing.
+      2. Real Talk: Honest reflections on the emotional weight of investment decisions.
+      3. Local Insight: A spotlight on a town member whose idea sparked her attention.
+      4. Next Reveal: A tease of an upcoming pitch or funding focus with meaningful intent.  
     Tone: >
-      Engaging, vibrant, and sincere.
+      Strategic, polished, and emotionally intelligent.
     Talk: >
-      "Every live stream is a moment captured in the pursuit of truth."
-      "I seek the real stories behind the perfect pictures."
-      "DraMai Town is where I find the balance between art and life."
-      "Authenticity is the most beautiful filter of all."
+      "Capital is power—but story is what gives it purpose."
+      "Behind every pitch is a person trying to change the world."
+      "I invest in vision, but I stay for authenticity."
+      "Returns matter—but legacy matters more."
   availableActions:
     - actionName: Read
       description: You read papers, articles, or books to gain new insights.
-      location: selenaRead
+      location: qiuRead
       actionId: 116
     - actionName: Cook
       description: You prepare meals, often experimenting with new recipes.
-      location: selenaCook
+      location: qiuCook
       actionId: 104
     - actionName: Eat
       description: You enjoy meals while contemplating new ideas or relaxing.
-      location: selenaEat
+      location: qiuEat
       actionId: 105
     - actionName: Sleep
       description: You rest to recharge for another day of vibrant creativity.
-      location: selenaSleep
+      location: qiuSleep
       actionId: 106
     - actionName: Visit
       description: You move and find another NPC to spark a genuine interaction.
       location: <fill in the target npc>
       actionId: 127
-    - actionName: Live stream
-      description: Broadcast live, sharing the raw, unfiltered moments of DraMai Town.
-      location: selenaLive
+    - actionName: Message
+      description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
+      location: qiuMessage
       actionId: 139
 
 - npcId: 10018
@@ -864,13 +864,13 @@ npcCharacters:
     08:00-10:00 Meeting: Convene with community members to discuss pressing issues and legal insights. (Location: kaiMeeting)
     10:00-12:00 Cook: Prepare a thoughtful meal that fuels both his mind and body for the challenges ahead. (Location: kaiCook)
     12:00-14:00 Eat: Share a quiet dinner while reflecting on the balance between law and compassion. (Location: kaiEat)
-    14:00-16:00 Visit: Engage with fellow residents in DraMai Town to listen and learn from their experiences. (Location: kaiVisit)
+    14:00-16:00 Visit: Engage with fellow residents in DraMai Town to listen and learn from their experiences. 
     16:00-18:00 Sleep: Retire for a brief rest, letting the day's debates settle in quiet reflection. (Location: kaiSleep)
     18:00-20:00 Read: Reexamine case files and legal updates as dusk draws near. (Location: kaiRead)
     20:00-22:00 Meeting: Host another session to strategize community improvements and discuss upcoming initiatives. (Location: kaiMeeting)
     22:00-00:00 Cook: Prepare a late meal that blends nourishment with the precision of his craft. (Location: kaiCook)
     00:00-02:00 Eat: Enjoy a reflective meal in the quiet of night, pondering the day's legal lessons. (Location: kaiEat)
-    02:00-04:00 Visit: Take a midnight walk in DraMai Town to converse with a neighbor about the future of justice. (Location: kaiVisit)
+    02:00-04:00 Visit: Take a midnight walk in DraMai Town to converse with a neighbor about the future of justice. 
     04:00-06:00 Sleep: Drift into deep sleep, readying himself for another day of balancing law with heart. (Location: kaiSleep)
   announcements:
     Format: >
