@@ -53,7 +53,6 @@ def choiceOneToReply():
     msgId = input_from_java[3]
     senderId = input_from_java[4]
     content = input_from_java[5]
-
     # Get all comments for that npc
     all_comments = CmtRpyDBJavaBuffer.get_unprocessed_entries_of_npc(db_conn, npcId)
     print("All comments to choose from:")
@@ -62,14 +61,14 @@ def choiceOneToReply():
     data = []
     requestIdtoMark = []
     for comment in all_comments:
-        requestId_fromdb, time_fromdb, npcId_fromdb, msgId_fromdb, senderId_fromdb, content_fromdb, isProcessed_fromdb, sname_fromdb = comment
+        requestId_fromdb, time_fromdb, npcId_fromdb, msgId_fromdb, senderId_fromdb, content_fromdb, isProcessed_fromdb, sname_fromdb, privateMsg_fromdb = comment
         requestIdtoMark.append(requestId_fromdb)
         embedding = CmtRpyLgcGPTProcess.get_embedding(content_fromdb)
         # Deserialize the embedding back to a list
-        data.append([requestId_fromdb, time_fromdb, npcId_fromdb, msgId_fromdb, senderId_fromdb, content_fromdb, embedding, sname_fromdb])
+        data.append([requestId_fromdb, time_fromdb, npcId_fromdb, msgId_fromdb, senderId_fromdb, content_fromdb, embedding, sname_fromdb, privateMsg_fromdb])
 
     # Define DataFrame columns
-    columns = ['requestId', 'time', 'npcId', 'msgId', 'senderId', 'content', 'embedding', 'sname']
+    columns = ['requestId', 'time', 'npcId', 'msgId', 'senderId', 'content', 'embedding', 'sname', 'privateMsg']
 
     # Create DataFrame
     df = pd.DataFrame(data, columns=columns)
@@ -144,7 +143,7 @@ def choiceOneToReply():
     senderId_tosent = str(comment_row_reply['senderId'].iloc[0])
     time_tosent = comment_row_reply['time'].iloc[0]  # Get the first value if `time` is a Series
     sname_tosent = str(comment_row_reply['sname'].iloc[0])
-
+    privateMsg_tosent = comment_row_reply['privateMsg'].iloc[0]
 
     instruction_to_give = json.dumps({
         "actionId": 117,
@@ -158,7 +157,8 @@ def choiceOneToReply():
                 "type": 0,  # Assuming a static value for type; change if needed
                 "content": str(reply_tosent),
                 "time": str(int(time_tosent.timestamp() * 1000)),  # Convert datetime to milliseconds
-                "barrage": 0  # Assuming a static value for barrage; change if needed
+                "barrage": 0,  # Assuming a static value for barrage; change if needed
+                "privateMsg": str(bool(privateMsg_tosent))
             }
         }
     }, ensure_ascii=False)
