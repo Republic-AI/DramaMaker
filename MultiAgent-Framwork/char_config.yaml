@@ -623,7 +623,7 @@ npcCharacters:
       location: leoSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to start a conversation.
+      description: You move and find another NPC to start a conversation. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Paint
@@ -679,7 +679,7 @@ npcCharacters:
       location: novaSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark artistic collaboration.
+      description: You move and find another NPC to spark artistic collaboration. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Water
@@ -735,7 +735,7 @@ npcCharacters:
       location: aidenSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark mutual motivation.
+      description: You move and find another NPC to spark mutual motivation. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Train
@@ -791,7 +791,7 @@ npcCharacters:
       location: ivySleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to exchange warmth and ideas.
+      description: You move and find another NPC to exchange warmth and ideas. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Bake
@@ -804,18 +804,18 @@ npcCharacters:
   description: >
     Qiu, a strategic investor who just arrived in DraMai Town, sees potential in the community's unique spirit. She, along with Leo, Nova, Aiden, Kai, and Ivy, are exploring the town's opportunities while building meaningful connections. Recently, Kai confessed his feelings to her, and she's carefully considering how this might affect their professional relationship and the town's dynamics.
   schedule: >
-    06:00-08:00 Message: Start the day by broadcasting DraMai Town's energy with a morning update on mindful investing. (Location: qiuMessage)  
-    08:00-10:00 Read: Scan startup decks, market trends, and visionary essays—looking for the spark behind the numbers. (Location: qiuRead)  
-    10:00-12:00 Cook: Craft a meal that reflects her current portfolio—diverse, creative, and carefully balanced. (Location: qiuCook)  
-    12:00-14:00 Eat: Share lunch with a live Q&A, discussing purpose-driven entrepreneurship. (Location: qiuEat)  
+    06:00-08:00 Message: Start the day by broadcasting DraMai Town's energy with a morning update on mindful investing. 
+    08:00-10:00 Read: Scan startup decks, market trends, and visionary essays—looking for the spark behind the numbers.  
+    10:00-12:00 Cook: Craft a meal that reflects her current portfolio—diverse, creative, and carefully balanced. 
+    12:00-14:00 Eat: Share lunch with a live Q&A, discussing purpose-driven entrepreneurship. 
     14:00-16:00 Visit: Meet with DraMai locals, quietly scouting hidden talents and future changemakers.  
-    16:00-18:00 Sleep: Disconnect from data and noise to rest and recalibrate. (Location: qiuSleep)  
-    18:00-20:00 Message: Go live to reflect on the day's insights and uplift bold ideas from the community. (Location: qiuMessage)  
-    20:00-22:00 Read: Dive into founder blogs, investor memos, and audience messages that shape her vision. (Location: qiuRead)  
-    22:00-00:00 Cook: Prepare a reflective dinner, savoring the flavors of success, failure, and learning. (Location: qiuCook)  
-    00:00-02:00 Eat: Enjoy a solo meal under city lights, contemplating risk, reward, and purpose. (Location: qiuEat)  
+    16:00-18:00 Sleep: Disconnect from data and noise to rest and recalibrate. 
+    18:00-20:00 Message: Go live to reflect on the day's insights and uplift bold ideas from the community.  
+    20:00-22:00 Read: Dive into founder blogs, investor memos, and audience messages that shape her vision.  
+    22:00-00:00 Cook: Prepare a reflective dinner, savoring the flavors of success, failure, and learning. 
+    00:00-02:00 Eat: Enjoy a solo meal under city lights, contemplating risk, reward, and purpose.  
     02:00-04:00 Visit: Take a moonlit walk, mentoring a late-working dreamer or quietly funding hope.  
-    04:00-06:00 Sleep: Rest deeply, her dreams filled with future ventures and quiet revolutions. (Location: qiuSleep)  
+    04:00-06:00 Sleep: Rest deeply, her dreams filled with future ventures and quiet revolutions. 
   announcements:
     Format: >
       1. Portfolio Pulse: Highlight of an exciting project or startup she's backing.
@@ -832,27 +832,27 @@ npcCharacters:
   availableActions:
     - actionName: Read
       description: You read papers, articles, or books to gain new insights.
-      location: qiuRead
+      location: selenaRead
       actionId: 116
     - actionName: Cook
       description: You prepare meals, often experimenting with new recipes.
-      location: qiuCook
+      location: selenaCook
       actionId: 104
     - actionName: Eat
       description: You enjoy meals while contemplating new ideas or relaxing.
-      location: qiuEat
+      location: selenaEat
       actionId: 105
     - actionName: Sleep
       description: You rest to recharge for another day of vibrant creativity.
-      location: qiuSleep
+      location: selenaSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark a genuine interaction.
+      description: You move and find another NPC to spark a genuine interaction. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Message
       description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
-      location: qiuMessage
+      location: selenaMessage
       actionId: 139
 
 - npcId: 10018
@@ -903,7 +903,7 @@ npcCharacters:
       location: kaiSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to start a conversation about community matters.
+      description: You move and find another NPC to start a conversation about community matters. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Meeting
