@@ -623,7 +623,7 @@ npcCharacters:
       location: leoSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to start a conversation. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to start a conversation. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Paint
@@ -679,7 +679,7 @@ npcCharacters:
       location: novaSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark artistic collaboration. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to spark artistic collaboration. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Water
@@ -735,7 +735,7 @@ npcCharacters:
       location: aidenSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark mutual motivation. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to spark mutual motivation. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Train
@@ -791,7 +791,7 @@ npcCharacters:
       location: ivySleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to exchange warmth and ideas. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to exchange warmth and ideas. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Bake
@@ -847,7 +847,7 @@ npcCharacters:
       location: selenaSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to spark a genuine interaction. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to spark a genuine interaction. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Message
@@ -903,7 +903,7 @@ npcCharacters:
       location: kaiSleep
       actionId: 106
     - actionName: Visit
-      description: You move and find another NPC to start a conversation about community matters. You can only visit one of these five: Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
+      description: You move and find another NPC to start a conversation about community matters. You can only visit one of Leo, Nova, Aiden, Ivy, Qiu, Kai (excluding yourself).
       location: <fill in the target npc>
       actionId: 127
     - actionName: Meeting
