@@ -40,10 +40,10 @@ if is_chatgpt:
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(api_key=deepseak_key, base_url="https://openrouter.ai/api/v1") 
+    client = OpenAI(api_key=deepseak_key, base_url="https://api.gmi-serving.com/v1/models") 
     client_embedding = OpenAI(api_key=openai_key)
-    model_small = "deepseek/deepseek-r1-distill-llama-70b"
-    model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
 
 yaml_path = os.path.join(base_dir, 'char_config.yaml')
 
