@@ -164,10 +164,10 @@ def receive_input_long():
                 received_data += data
             
             response = received_data
-            # print('Received response long:')
+            # print('Received responses
             header, message = parse_response(response, is_iterative=False)
-            # print(f'Header: {header}')
-            # print(f'Message: {message.content.decode("utf-8")}')
+            print(f'Header: {header}')
+            print(f'Message: {message.content.decode("utf-8")}')
             output = message.content.decode("utf-8")
             return output
         
@@ -329,7 +329,7 @@ def receive_data():
                     time_stamp = dt_object.strftime('%Y-%m-%d %H:%M:%S') 
                     db_connection = establish_sql_connection()
 
-                    CmtRpyDBJavaBuffer.insert_into_table(db_connection, requestId, time_stamp, npcId, msgId, senderId, content, sname, False, privateMsg)
+                    CmtRpyDBJavaBuffer.insert_into_table(db_connection, requestId, time_stamp, npcId, msgId, senderId, content, sname, False, False, privateMsg)
                 except Exception as e:
                     print(f"Failed to insert into CommentReply Java Buffer for requestId {requestId} npcId {npcId}: {e}")
                     traceback.print_exc()
@@ -448,7 +448,7 @@ if __name__ == "__main__":
     # Keep the main thread alive
     try:
         while True:
-            time.sleep(40)
+            time.sleep(60)
             # time.sleep(300) 
             db_conn_temp = establish_sql_connection()
             BhrDBJavaBuffer.mark_all_entries_as_processed(db_conn_temp)

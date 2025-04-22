@@ -43,7 +43,7 @@ def create_database(connection):
 def create_table(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")  # Use the AITown database
+        cursor.execute("USE AITown")  # Use the AITown database
         create_table_query = """
         CREATE TABLE IF NOT EXISTS announcement_java_buffer (
             requestId BIGINT NOT NULL,
@@ -62,7 +62,7 @@ def create_table(connection):
 def insert_into_table(connection, requestId, time, npcId, content, isProcessed=False):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai") 
+        cursor.execute("USE AITown") 
         insert_query = """
         INSERT INTO announcement_java_buffer (requestId, time, npcId, content, isProcessed)
         VALUES (%s, %s, %s, %s, %s)
@@ -77,7 +77,7 @@ def insert_into_table(connection, requestId, time, npcId, content, isProcessed=F
 def delete_all_content_in_buffer(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")  # Ensure you're using the correct database
+        cursor.execute("USE AITown")  # Ensure you're using the correct database
         delete_query = "DELETE FROM announcement_java_buffer"
         cursor.execute(delete_query)
         connection.commit()
@@ -88,7 +88,7 @@ def delete_all_content_in_buffer(connection):
 def get_earliest_unprocessed_entry(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")
+        cursor.execute("USE AITown")
         query = """
         SELECT * FROM announcement_java_buffer 
         WHERE isProcessed = FALSE
@@ -131,7 +131,7 @@ def table_exists(connection, table_name = 'announcement_java_buffer'):
 def mark_entry_as_processed(connection, requestId):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")
+        cursor.execute("USE AITown")
         update_query = """
         UPDATE announcement_java_buffer
         SET isProcessed = TRUE

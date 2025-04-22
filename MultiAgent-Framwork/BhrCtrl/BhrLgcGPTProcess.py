@@ -21,21 +21,16 @@ print("Config sections found:", config.sections())
 if 'OpenAI' not in config:
     print("Error: 'OpenAI' section not found in config.ini")
 openai_key = config['OpenAI']['chatgpt_key']
-deepseek_key1 = config['OpenAI']['deepseek_key']
-deepseek_key2 = config['OpenAI']['deepseek_key2']
-deepseek_key = random.choice([
-    config['OpenAI']['deepseek_key'],
-    config['OpenAI']['deepseek_key2']
-])
+deepseek_key=config['OpenAI']['deepseek_key']
 
-is_chatgpt = False
+is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
 if is_chatgpt:
     client = OpenAI(api_key=openai_key)
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(api_key=deepseek_key, base_url="https://api.gmi-serving.com/v1/") 
+    client = OpenAI(base_url="https://834d549174ee.inference-engine-fet.gmi-serving.com/serve/v1", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
     model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
@@ -47,6 +42,28 @@ yaml_path = os.path.join(base_dir, 'char_config.yaml')
 with open(yaml_path, 'r', encoding='utf-8' ) as file:
     char_config = yaml.safe_load(file)
     print("YAML content loaded successfully.")
+
+
+def get_npc_descriptions():
+    """
+    Returns a string with each NPC's name and a brief part of their description,
+    one per line, in the format: "- Name, Description (first sentence)."
+    """
+    descriptions = []
+    for npc in char_config.get("npcCharacters", []):
+        # Get the first sentence (or a summary) from the description.
+        brief_desc = npc.get("description", "").split(".")[0]
+        descriptions.append(f"- {npc['name']}, {brief_desc}.")
+    return "\n".join(descriptions)
+
+def get_npc_id_mapping():
+    """
+    Returns a string mapping npcId to name, one per line, in the format: "npcId : Name".
+    """
+    mappings = []
+    for npc in char_config.get("npcCharacters", []):
+        mappings.append(f"{npc['npcId']} : {npc['name']}")
+    return "\n".join(mappings)
 
 
 ############################################
@@ -441,16 +458,7 @@ def processInputGiveWhatToDo(memories_str, reflections_str, schedule_str, npc_co
     prompt = f'''
     You are {npc_name}, {npc_description}.
     You are one of the characters in the town, here are all the characters in the town:
-    - Satoshi, inventor of the Bitcoin.
-    - Musk, Elon Musk, the CEO of Tesla, SpaceX, and Neuralink.
-    - Pepe, a meme character, live as a shop owner in the town.
-    - Popcat, a meme character, a fisherman in the town.
-    - Pippin, a meme character, a coffee maker in the town.
-    - Eliza, a meme character in town
-    - Trump, president of the United States.
-    - Morpheus, a poet and painter of dream.
-    - AVA, a hedge fund manager in the town.
-
+    {get_npc_descriptions()}
     Your recent schedule:
       {recent_schedule_str}
 
@@ -525,15 +533,7 @@ def talkToSomeone(memories_str, reflections_str, schedule_str, npc_context, npcI
     prompt = f'''
     You are a npc character in a simulated town.
     Characters in the town:
-    - Satoshi, inventor of the Bitcoin.
-    - Musk, Elon Musk, the CEO of Tesla, SpaceX, and Neuralink.
-    - Pepe, a meme character, live as a shop owner in the town.
-    - Popcat, a meme character, a fisherman in the town.
-    - Pippin, a meme character, a coffee maker in the town.
-    - Eliza, a meme character in town
-    _ Trump, president of the United States.
-    - Morpheus, a poet and painter of dream.
-    - AVA, a hedge fund manager in the town.
+    {get_npc_descriptions()}
         
     You are {npc_name}, {npc_description}.
 
@@ -605,15 +605,7 @@ def shoudConversationEnd(memories_str, reflections_str, schedule_str, npc_contex
     prompt = f'''
     You are a npc character in a simulated town.
     Characters in the town:
-    - Satoshi, inventor of the Bitcoin.
-    - Musk, Elon Musk, the CEO of Tesla, SpaceX, and Neuralink.
-    - Pepe, a meme character, live as a shop owner in the town.
-    - Popcat, a meme character, a fisherman in the town.
-    - Pippin, a meme character, a coffee maker in the town.
-    - Eliza, a meme character in town
-    _ Trump, president of the United States.
-    - Morpheus, a poet and painter of dream.
-    - AVA, a hedge fund manager in the town.
+    {get_npc_descriptions()}
 
         
     You are {npc_name}, {npc_description}.
@@ -866,15 +858,7 @@ def isTheInstructionFindingSomeone(instruction_in_human, words_to_say, npcId):
     Determine the `actionId` using the action list below.
 
     ### NPC ID List and Character Names (use `npcId` for the target NPC when needed):
-    10006 : Satoshi
-    10007 : Popcat
-    10008 : Pepe
-    10009 : Musk
-    10010 : Pippin
-    10011 : Eliza
-    10012 : Trump
-    10013 : Morpheus
-    10014 : AVA
+    {get_npc_id_mapping()}
 
     ### Action ID and Corresponding Actions:
     {ava_npc_action}
@@ -934,15 +918,7 @@ def humanInstToJava_action_127(instruction_in_human, words_to_say, npcId):
     - Use `npcId` for the target NPC being interacted with.
 
     ### NPC ID and Corresponding Character Names:
-    10006 : Satoshi
-    10007 : Popcat
-    10008 : Pepe
-    10009 : Musk
-    10010 : Pippin
-    10011 : Eliza
-    10012 : Trump
-    10013 : Morpheus
-    10014 : AVA
+    {get_npc_id_mapping()}
 
     ### Action ID and Corresponding Actions:
     {ava_npc_action}
@@ -1107,15 +1083,7 @@ def humanInstToJava_talk(instruction_in_human, words_to_say, npcId, target_npc_i
     3. If the conversation is ending, set `endingTalk` to 1.
 
     ### NPC ID List and Character Names (for npcId field below):
-    10006 : Satoshi
-    10007 : Popcat
-    10008 : Pepe
-    10009 : Musk
-    10010 : Pippin
-    10011 : Eliza
-    10012 : Trump
-    10013 : Morpheus
-    10014 : AVA
+    {get_npc_id_mapping()}
 
     Instruction for the NPC:
     {instruction_in_human}
@@ -1126,7 +1094,7 @@ def humanInstToJava_talk(instruction_in_human, words_to_say, npcId, target_npc_i
         "npcId": {npcId},
         "actionId": 118,
         "data": {{
-            "npcId": {target_npc_id if target_npc_id else "<fill in, the npcid of the target npc who will receive the talk message, here is the npc id list 10006 Satoshi, 10007 Popocat, 10008 Pepe, 10009 Musk, 10010 Pippin, 10011 Eliza, 10012 Trump, 10013 Morpheus, 10014 AVA>"},
+            "npcId": {target_npc_id if target_npc_id else f"<fill in, the npcid of the target npc who will receive the talk message, here is the npc id list {get_npc_id_mapping()}>"},
             "content": <fill in, the content of the chat, what the npc says.>,
             "endingTalk" : <fill in 0 or 1, 1 if the npc is ending the conversation now, 0 if continue conversation>
         }},

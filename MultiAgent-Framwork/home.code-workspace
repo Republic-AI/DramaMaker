@@ -13,6 +13,9 @@
     "settings": {
         "python.autoComplete.extraPaths": [
             "/data/app/game/aitown/AIModule/DBmanipulation"
+        ],
+        "python.analysis.extraPaths": [
+            "/data/app/game/aitown/AIModule/DBmanipulation"
         ]
     }
 }

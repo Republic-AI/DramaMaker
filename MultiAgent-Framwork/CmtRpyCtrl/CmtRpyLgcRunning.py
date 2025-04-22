@@ -10,6 +10,7 @@ import DBConnect.DBCon as DBCon
 from DBConnect import DBCon
 from DBConnect import CmtRpyDBJavaBuffer
 from DBConnect import CmtRpyDBInstruction
+from DBConnect import CmtRpyDBMemStre
 
 import CmtRpyLgcProcessOnce
 
@@ -25,6 +26,9 @@ if not CmtRpyDBJavaBuffer.table_exists(db_conn):
     
 if not CmtRpyDBInstruction.table_exists(db_conn):
     CmtRpyDBInstruction.create_comment_reply_table(db_conn)
+
+if not CmtRpyDBMemStre.table_exists(db_conn):
+    CmtRpyDBMemStre.create_table(db_conn)
 
 # Clear all content in the tables (optional)
 # CmtRpyDBJavaBuffer.delete_all_content_in_buffer(db_conn)

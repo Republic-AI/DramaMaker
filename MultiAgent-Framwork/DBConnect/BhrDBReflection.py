@@ -18,7 +18,7 @@ def check_connection(connection):
 
 def create_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")  # Use the AITown database
+    cursor.execute("USE AITown")  # Use the AITown database
     create_table_query = """
     CREATE TABLE IF NOT EXISTS behavior_reflection_stream (
         npcID VARCHAR(255) NOT NULL,
@@ -49,7 +49,7 @@ def table_exists(connection):
 
 def insert_into_table(connection, npcID, time, content):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     insert_query = """
     INSERT INTO behavior_reflection_stream (npcID, Time, Content)
     VALUES (%s, %s, %s)
@@ -61,7 +61,7 @@ def insert_into_table(connection, npcID, time, content):
 
 def retrieve_entry(connection, npcID, time):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = "SELECT Content FROM behavior_reflection_stream WHERE npcID = %s AND Time = %s"
     cursor.execute(select_query, (npcID, time))
     result = cursor.fetchone()
@@ -75,7 +75,7 @@ def retrieve_entry(connection, npcID, time):
 
 def delete_entry(connection, npcID, time):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     delete_query = "DELETE FROM behavior_reflection_stream WHERE npcID = %s AND Time = %s"
     cursor.execute(delete_query, (npcID, time))
     connection.commit()
@@ -83,7 +83,7 @@ def delete_entry(connection, npcID, time):
 
 def delete_all_content(connection):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     delete_query = "DELETE FROM behavior_reflection_stream"
     cursor.execute(delete_query)
     connection.commit()
@@ -91,7 +91,7 @@ def delete_all_content(connection):
 
 def retrieve_entries_between_time(connection, npcID, start_time, end_time, limit=300):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = """
     SELECT npcID, Time, Content
     FROM behavior_reflection_stream
@@ -115,7 +115,7 @@ def retrieve_entries_between_time(connection, npcID, start_time, end_time, limit
 
 def retrieve_last_entry_before_time(connection, npcID, before_time):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = """
     SELECT npcID, Time, Content
     FROM behavior_reflection_stream

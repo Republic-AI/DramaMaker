@@ -51,7 +51,7 @@ def database_exists(connection):
 
 def create_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")  # Use the AITown database
+    cursor.execute("USE AITown")  # Use the AITown database
     create_table_query = """
     CREATE TABLE IF NOT EXISTS behavior_memeory_stream (
         npcID VARCHAR(255) NOT NULL,
@@ -68,7 +68,7 @@ def create_table(connection):
 
 def delete_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     delete_table_query = "DROP TABLE IF EXISTS behavior_memeory_stream"
     cursor.execute(delete_table_query)
     connection.commit()
@@ -93,7 +93,7 @@ def table_exists(connection):
 
 def insert_into_table(connection, npcID, time, isInstruction, content, importance, embedding):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     embedding_blob = pickle.dumps(embedding)
     insert_query = """
     INSERT INTO behavior_memeory_stream (npcID, Time, isInstruction, Content, Importance, Embedding)
@@ -106,7 +106,7 @@ def insert_into_table(connection, npcID, time, isInstruction, content, importanc
 
 def retrieve_entry(connection, npcID, time, isInstruction):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = "SELECT Content, Importance, Embedding FROM behavior_memeory_stream WHERE npcID = %s AND Time = %s AND isInstruction = %s"
     cursor.execute(select_query, (npcID, time, isInstruction))
     result = cursor.fetchone()
@@ -121,7 +121,7 @@ def retrieve_entry(connection, npcID, time, isInstruction):
 
 def delete_entry_in_buffer(connection, npcID, time, isInstruction):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     delete_query = "DELETE FROM behavior_memeory_stream WHERE npcID = %s AND Time = %s AND isInstruction = %s"
     cursor.execute(delete_query, (npcID, time, isInstruction))
     connection.commit()
@@ -129,7 +129,7 @@ def delete_entry_in_buffer(connection, npcID, time, isInstruction):
 
 def delete_all_content_in_buffer(connection):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     delete_query = "DELETE FROM behavior_memeory_stream"
     cursor.execute(delete_query)
     connection.commit()
@@ -137,7 +137,7 @@ def delete_all_content_in_buffer(connection):
 
 def retrieve_most_recent_entries(connection, npcID, before_time, limit=300):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = """
     SELECT npcID, Time, isInstruction, Content, Importance, Embedding
     FROM behavior_memeory_stream
@@ -163,7 +163,7 @@ def retrieve_most_recent_entries(connection, npcID, before_time, limit=300):
 
 def retrieve_entries_between_time(connection, npcID, start_time, end_time, limit=300):
     cursor = connection.cursor()
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
     select_query = """
     SELECT npcID, Time, isInstruction, Content, Importance, Embedding
     FROM behavior_memeory_stream

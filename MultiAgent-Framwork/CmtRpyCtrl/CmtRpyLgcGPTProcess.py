@@ -26,21 +26,15 @@ print("Config sections found:", config.sections())
 if 'OpenAI' not in config:
     print("Error: 'OpenAI' section not found in config.ini")
 openai_key = config['OpenAI']['chatgpt_key']
-deepseak_key = config['OpenAI']['deepseek_key']
-deepseek_key1 = config['OpenAI']['deepseek_key']
-deepseek_key2 = config['OpenAI']['deepseek_key2']
-deepseek_key = random.choice([
-    config['OpenAI']['deepseek_key'],
-    config['OpenAI']['deepseek_key2']
-])
-is_chatgpt = False
+deepseek_key = config['OpenAI']['deepseek_key']
+is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
 if is_chatgpt:
     client = OpenAI(api_key=openai_key)
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(api_key=deepseak_key, base_url="https://api.gmi-serving.com/v1/models") 
+    client = OpenAI(base_url="https://834d549174ee.inference-engine-fet.gmi-serving.com/serve/v1", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
     model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
@@ -101,6 +95,9 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     except Exception as e:
         print("Error generating response:", e)
         return "I'm currently unable to respond. Please try again later."
+    
+
+
 
 
 def get_embedding(text, model="text-embedding-3-small"):
@@ -128,3 +125,46 @@ def get_importance(mem_single_str):
       ]
     )
     return completion.choices[0].message.content
+
+def replyToUser(hisAnn, comment, npcId, prior_conversation, special_instruction=''):
+    npc = next((npc for npc in char_config['npcCharacters'] if npc['npcId'] == npcId), None)
+    if not npc:
+        raise ValueError(f"NPC with npcId {npcId} not found in char.yaml")
+
+    npc_name = npc['name']
+    npc_description = npc['description']
+    base_prompt = f"""
+    You are {npc_name}, {npc_description}
+
+    Past Memeories: {hisAnn}
+
+    Prior Conversation: {prior_conversation}
+
+    Comment to reply to: {comment}
+
+    {special_instruction}
+
+    Task:
+    - Provide a concise, conversational response in 35 words or fewer.
+    - Do not use emojis or unnecessary comments.
+    """
+    try:
+        completion = client.chat.completions.create(
+            model=model_small,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a skilled and detail-oriented thinker, responding in brief, clear, and inspiring statements."
+                },
+                {
+                    "role": "user",
+                    "content": base_prompt
+                }
+            ]
+        )
+        response = completion.choices[0].message.content.strip()
+        print("Generated response:", response)
+        return response
+    except Exception as e:
+        print("Error generating response:", e)
+        return "I'm currently unable to respond. Please try again later."

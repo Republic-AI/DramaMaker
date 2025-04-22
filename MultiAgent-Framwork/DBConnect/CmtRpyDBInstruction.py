@@ -16,7 +16,7 @@ def check_connection(connection):
 def create_comment_reply_table(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")  # Use the AITown database
+        cursor.execute("USE AITown")  # Use the AITown database
         create_table_query = """
         CREATE TABLE IF NOT EXISTS comment_reply_instruction_buffer (
             requestId BIGINT UNSIGNED NOT NULL PRIMARY KEY,
@@ -35,7 +35,7 @@ def create_comment_reply_table(connection):
 def insert_into_instruction_table(connection, requestId, time, npcId, msgId, instruction, isProcessed=False):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai") 
+        cursor.execute("USE AITown") 
         insert_query = """
         INSERT INTO comment_reply_instruction_buffer (requestId, time, npcId, msgId, instruction, isProcessed)
         VALUES (%s, %s, %s, %s, %s, %s)
@@ -50,7 +50,7 @@ def insert_into_instruction_table(connection, requestId, time, npcId, msgId, ins
 def delete_comment_reply_table(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")  # Ensure you're using the correct database
+        cursor.execute("USE AITown")  # Ensure you're using the correct database
         delete_table_query = "DROP TABLE IF EXISTS comment_reply_instruction_buffer"
         cursor.execute(delete_table_query)
         connection.commit()
@@ -61,7 +61,7 @@ def delete_comment_reply_table(connection):
 def delete_all_instructions(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")  # Ensure you're using the correct database
+        cursor.execute("USE AITown")  # Ensure you're using the correct database
         delete_query = "DELETE FROM comment_reply_instruction_buffer"
         cursor.execute(delete_query)
         connection.commit()
@@ -72,7 +72,7 @@ def delete_all_instructions(connection):
 def get_earliest_unprocessed_instruction(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")
+        cursor.execute("USE AITown")
         query = """
         SELECT * FROM comment_reply_instruction_buffer 
         WHERE isProcessed = FALSE
@@ -94,7 +94,7 @@ def get_earliest_unprocessed_instruction(connection):
 def mark_instruction_as_processed(connection, requestId):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")
+        cursor.execute("USE AITown")
         update_query = """
         UPDATE comment_reply_instruction_buffer
         SET isProcessed = TRUE
@@ -109,7 +109,7 @@ def mark_instruction_as_processed(connection, requestId):
 def get_all_unprocessed_instructions(connection):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE Dramai")
+        cursor.execute("USE AITown")
         query = """
         SELECT * FROM comment_reply_instruction_buffer 
         WHERE isProcessed = FALSE

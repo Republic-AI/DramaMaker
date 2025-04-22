@@ -2311,7 +2311,7 @@ Traceback (most recent call last):
   File "/Users/jackhan/Desktop/AITown/satoshiLive/memelive/MultiAgent-Framwork/BhrCtrl/BhrLgcProcessOnce.py", line 317, in processOneInputGiveOneInstruction
     BhrDBInstruction.insert_into_instruction_table(db_conn, curTime, npcId, instruction_to_give, request_id)
   File "/Users/jackhan/Desktop/AITown/satoshiLive/memelive/MultiAgent-Framwork/DBConnect/BhrDBInstruction.py", line 35, in insert_into_instruction_table
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
   File "/Users/jackhan/anaconda3/envs/aitown/lib/python3.11/site-packages/mysql/connector/cursor_cext.py", line 279, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
@@ -2422,7 +2422,7 @@ Traceback (most recent call last):
   File "/Users/jackhan/Desktop/AITown/satoshiLive/memelive/MultiAgent-Framwork/BhrCtrl/BhrLgcProcessOnce.py", line 317, in processOneInputGiveOneInstruction
     BhrDBInstruction.insert_into_instruction_table(db_conn, curTime, npcId, instruction_to_give, request_id)
   File "/Users/jackhan/Desktop/AITown/satoshiLive/memelive/MultiAgent-Framwork/DBConnect/BhrDBInstruction.py", line 35, in insert_into_instruction_table
-    cursor.execute("USE Dramai")
+    cursor.execute("USE AITown")
   File "/Users/jackhan/anaconda3/envs/aitown/lib/python3.11/site-packages/mysql/connector/cursor_cext.py", line 279, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^

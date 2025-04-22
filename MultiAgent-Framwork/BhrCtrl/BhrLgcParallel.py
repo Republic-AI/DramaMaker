@@ -1,6 +1,7 @@
 import sys
 import os
 import time
+import yaml
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -61,7 +62,28 @@ def process_task(task_id):
     """
     return BhrLgcProcessOnce.processOneInputGiveOneInstruction()
 
-num_workers = 18
+def get_num_workers():
+    try:
+        # Path to char_config.yaml
+        config_path = os.path.join(base_dir, 'char_config.yaml')
+        
+        # Read and parse the YAML file
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+        
+        # Count the number of NPCs by counting npcId entries
+        npc_count = len(config.get('npcCharacters', []))
+        
+        # Set num_workers to 2 times the number of NPCs
+        return max(2, npc_count * 2)  # Ensure at least 2 workers
+    except Exception as e:
+        print(f"Error reading char_config.yaml: {e}")
+        return 18  # Default fallback value
+
+# Dynamically set num_workers based on npcCharacters count
+num_workers = get_num_workers()
+print(f"Setting num_workers to {num_workers} (2 * {num_workers//2} NPCs)")
+
 n = 0
 
 with ThreadPoolExecutor(max_workers=num_workers) as executor:
