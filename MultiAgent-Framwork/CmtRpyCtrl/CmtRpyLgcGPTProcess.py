@@ -34,7 +34,7 @@ if is_chatgpt:
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(base_url="https://834d549174ee.inference-engine-fet.gmi-serving.com/serve/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://api.gmi-serving.com/v1/", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
     model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
