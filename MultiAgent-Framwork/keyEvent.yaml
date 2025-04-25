@@ -1,6 +1,6 @@
 npcEvents:
   - npcId: 10016
-    npcName: Yves
+    name: Yves
     events:
       - id: "leaving_hollywood"
         intro: "Left my acting career behind to become a painter."
@@ -12,18 +12,118 @@ npcEvents:
       - id: "painting_nova"
         intro: "Found my true calling while painting in the lilac field."
         details:
-          - "The sketchboard framed her like a perfect shot"
-          - "My palette found colors no camera could capture"
-          - "The easel became my director's chair, but this scene was real"
-          - "My phone stayed silent, and I was finally the artist I wanted to be"
+          - "The sketchboard framed her like a perfect shot at the edge of the lilac field"
+          - "My palette found colors no camera could capture in the golden afternoon light"
+          - "The easel stood where the lilacs swayed in the gentle breeze"
+          - "My phone stayed silent as I watched her water the flowers"
+      - id: "meeting_nina"
+        intro: "Received a mysterious gift from an admirer."
+        details:
+          - "A small package arrived at my studio, wrapped in delicate paper"
+          - "Inside was an antique paintbrush, its handle worn smooth by time"
+          - "No note, just the faint scent of lilacs lingering on the wrapping"
+          - "The gift stirred something deep within my artistic soul"
 
   - npcId: 10020
-    npcName: Nova
+    name: Nova
     events:
       - id: "afternoon_in_garden"
         intro: "Tended to my lilac garden in the afternoon sun."
         details:
-          - "My old watering can sparkled in the golden light"
-          - "The gardening gloves were warm from the afternoon sun"
-          - "The lilac flowers swayed in the gentle breeze"
-          - "I never noticed the artist watching from afar"
+          - "My old watering can sparkled in the golden light at the edge of the field"
+          - "The gardening gloves were warm from the afternoon sun as I worked"
+          - "The lilac flowers swayed in the gentle breeze around me"
+          - "I never noticed the artist watching from the edge of the field"
+      - id: "discovering_art"
+        intro: "Found a beautiful sketch of myself in the garden."
+        details:
+          - "A delicate drawing was left on my garden bench one morning"
+          - "The artist had captured the way the light danced through the lilacs"
+          - "My watering can was perfectly placed in the composition"
+          - "The signature was unfamiliar, but the style felt strangely familiar"
+
+  - npcId: 10021
+    name: Ryan
+    events:
+      - id: "basketball_injury"
+        intro: "Suffered an injury during the university tournament."
+        details:
+          - "The crowd's cheers turned to gasps as I fell to the court"
+          - "My knee throbbed with pain, but my pride hurt more"
+          - "The championship dreams slipped away with each passing second"
+          - "A kind baker's face appeared through the haze of pain"
+      - id: "meeting_ivy"
+        intro: "Received a special dessert from a caring baker."
+        details:
+          - "A small box appeared on my hospital tray, wrapped in pink paper"
+          - "Inside was a strawberry shortcake, decorated with fresh flowers"
+          - "The note simply said 'For your recovery' in delicate handwriting"
+          - "The sweetness of the cake matched the warmth of the gesture"
+      - id: "reconnecting_liam"
+        intro: "Reunited with my estranged brother after the injury."
+        details:
+          - "Liam appeared at my hospital room door, looking concerned"
+          - "Years of silence melted away in that moment"
+          - "He brought legal papers, but stayed to talk about family"
+          - "The injury brought us back together in unexpected ways"
+
+  - npcId: 10017
+    name: Ivy
+    events:
+      - id: "tournament_day"
+        intro: "Handed out desserts during the basketball tournament."
+        details:
+          - "The cherry blossoms fell like snow as I set up my dessert stand"
+          - "My strawberry shortcakes were a hit with the crowd"
+          - "I noticed a tall player watching me from the sidelines"
+          - "His smile was brighter than the afternoon sun"
+      - id: "special_delivery"
+        intro: "Created a special dessert for an injured player."
+        details:
+          - "I carefully crafted a reduced-sugar version of my signature cake"
+          - "The flowers were arranged just so, with extra care"
+          - "I left it at the hospital with a simple note"
+          - "The nurse promised to deliver it to his room"
+
+  - npcId: 10019
+    name: Nina
+    events:
+      - id: "auction_day"
+        intro: "Donated the original deed to DraMai Town at auction."
+        details:
+          - "The auction hall was filled with wealthy bidders"
+          - "I watched as Liam placed his extravagant bid"
+          - "My expression remained composed, hiding my true feelings"
+          - "The deed changed hands, but the story was just beginning"
+      - id: "town_development"
+        intro: "Began the redevelopment project in DraMai Town."
+        details:
+          - "The town square buzzed with construction and change"
+          - "I reviewed architectural plans with careful precision"
+          - "Liam appeared, offering legal expertise and questions"
+          - "Our professional relationship masked deeper connections"
+
+  - npcId: 10018
+    name: Liam
+    events:
+      - id: "auction_bid"
+        intro: "Bid millions for the DraMai Town deed at auction."
+        details:
+          - "The auctioneer's voice echoed through the grand hall"
+          - "I raised my paddle without hesitation"
+          - "Nina's composed expression intrigued me"
+          - "The deed was mine, but the mystery remained"
+      - id: "finding_ryan"
+        intro: "Discovered my injured brother in DraMai Town."
+        details:
+          - "The hospital room was quiet except for the TV"
+          - "Ryan looked up in surprise as I entered"
+          - "Years of estrangement hung between us"
+          - "The injury became our chance to reconnect"
+      - id: "meeting_nina_again"
+        intro: "Encountered Nina as the town's redeveloper."
+        details:
+          - "The construction site was bustling with activity"
+          - "Nina stood reviewing plans with her team"
+          - "Our eyes met, recognition passing between us"
+          - "The town's future became our shared project"
