@@ -1,0 +1,29 @@
+npcEvents:
+  - npcId: 10016
+    npcName: Yves
+    events:
+      - id: "leaving_hollywood"
+        intro: "Left my acting career behind to become a painter."
+        details:
+          - "My old phone was filled with unread messages from producers"
+          - "The sketchboard in my trailer had been untouched for years"
+          - "The folding easel was still packed from my art school days"
+          - "My palette was dry, just like my creative spirit"
+      - id: "painting_nova"
+        intro: "Found my true calling while painting in the lilac field."
+        details:
+          - "The sketchboard framed her like a perfect shot"
+          - "My palette found colors no camera could capture"
+          - "The easel became my director's chair, but this scene was real"
+          - "My phone stayed silent, and I was finally the artist I wanted to be"
+
+  - npcId: 10020
+    npcName: Nova
+    events:
+      - id: "afternoon_in_garden"
+        intro: "Tended to my lilac garden in the afternoon sun."
+        details:
+          - "My old watering can sparkled in the golden light"
+          - "The gardening gloves were warm from the afternoon sun"
+          - "The lilac flowers swayed in the gentle breeze"
+          - "I never noticed the artist watching from afar"

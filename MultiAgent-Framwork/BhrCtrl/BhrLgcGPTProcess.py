@@ -21,6 +21,12 @@ print("Config sections found:", config.sections())
 if 'OpenAI' not in config:
     print("Error: 'OpenAI' section not found in config.ini")
 openai_key = config['OpenAI']['chatgpt_key']
+# deepseek_key1 = config['OpenAI']['deepseek_key']
+# deepseek_key2 = config['OpenAI']['deepseek_key2']
+# deepseek_key = random.choice([
+#     config['OpenAI']['deepseek_key'],
+#     config['OpenAI']['deepseek_key2']
+# ])
 deepseek_key=config['OpenAI']['deepseek_key']
 
 is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
@@ -30,10 +36,13 @@ if is_chatgpt:
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(base_url="https://api.gmi-serving.com/v1/", api_key=deepseek_key) 
+    # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://api.deepseek.com", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
-    model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-    model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    # model_small = "deepseek/deepseek-r1-distill-llama-70b"
+    # model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    model_small = "deepseek-chat"
+    model_large = "deepseek-chat"
 
 
 yaml_path = os.path.join(base_dir, 'char_config.yaml')
@@ -44,13 +53,31 @@ with open(yaml_path, 'r', encoding='utf-8' ) as file:
     print("YAML content loaded successfully.")
 
 
-def get_npc_descriptions():
+def get_npc_descriptions(from_npcId=None):
     """
     Returns a string with each NPC's name and a brief part of their description,
     one per line, in the format: "- Name, Description (first sentence)."
     """
+    # Define NPC groups
+    group1 = {10016, 10017, 10018, 10019, 10020, 10021}
+    group2 = {10012, 10009, 10006}
+
+    # Determine allowed NPC IDs based on from_npcId
+    if from_npcId is not None:
+        if from_npcId in group1:
+            allowed_ids = group1
+        elif from_npcId in group2:
+            allowed_ids = group2
+        else:
+            allowed_ids = set()
+    else:
+        allowed_ids = None
+
     descriptions = []
     for npc in char_config.get("npcCharacters", []):
+        # Skip NPCs not in the allowed set when filtering
+        if allowed_ids is not None and npc.get("npcId") not in allowed_ids:
+            continue
         # Get the first sentence (or a summary) from the description.
         brief_desc = npc.get("description", "").split(".")[0]
         descriptions.append(f"- {npc['name']}, {brief_desc}.")
@@ -458,7 +485,7 @@ def processInputGiveWhatToDo(memories_str, reflections_str, schedule_str, npc_co
     prompt = f'''
     You are {npc_name}, {npc_description}.
     You are one of the characters in the town, here are all the characters in the town:
-    {get_npc_descriptions()}
+    {get_npc_descriptions(npcId)}
     Your recent schedule:
       {recent_schedule_str}
 
@@ -533,7 +560,7 @@ def talkToSomeone(memories_str, reflections_str, schedule_str, npc_context, npcI
     prompt = f'''
     You are a npc character in a simulated town.
     Characters in the town:
-    {get_npc_descriptions()}
+    {get_npc_descriptions(npcId)}
         
     You are {npc_name}, {npc_description}.
 
@@ -605,7 +632,7 @@ def shoudConversationEnd(memories_str, reflections_str, schedule_str, npc_contex
     prompt = f'''
     You are a npc character in a simulated town.
     Characters in the town:
-    {get_npc_descriptions()}
+    {get_npc_descriptions(npcId)}
 
         
     You are {npc_name}, {npc_description}.
@@ -936,7 +963,7 @@ def humanInstToJava_action_127(instruction_in_human, words_to_say, npcId):
         "npcId": {npcId},
         "actionId": 127,
         "data": {{
-            "npcId": <target NPC id, 10006 for Satoshi, 10007 for Popcat, 10008 for Pepe, 10009 for Musk, 10010 for Pippin, 10011 for Eliza, 10012 for Trump, 10013 for Morpheus, 10014 for AVA, only the id please>
+            "npcId": <target NPC id, here is the npc id list {get_npc_id_mapping()}, only put the id please>
         }},
         "durationTime": <fill in, action duration time in milliseconds>,
         "speak": [

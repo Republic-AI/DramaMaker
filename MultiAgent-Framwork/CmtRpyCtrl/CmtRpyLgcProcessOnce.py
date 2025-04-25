@@ -10,6 +10,7 @@ import hashlib
 import configparser
 import yaml
 import traceback
+import ast
 
 # Add the base directory (one level up from AnnCtrl)
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -46,7 +47,16 @@ yaml_path = os.path.join(base_dir, 'char_config.yaml')
 # Load the YAML file
 with open(yaml_path, 'r', encoding='utf-8' ) as file:
     char_config = yaml.safe_load(file)
-    print("YAML content loaded successfully.")
+    print("Config YAML content loaded successfully.")
+
+
+event_path = os.path.join(base_dir, 'keyEvent.yaml')
+# Load the YAML file
+with open(event_path, 'r', encoding='utf-8' ) as file:
+    event_config = yaml.safe_load(file)
+    print("Event YAML content loaded successfully.")
+
+
 
 def choiceOneToReply():
     db_conn = DBCon.establish_sql_connection()
@@ -104,6 +114,53 @@ def choiceOneToReply():
     commet_to_reply = comment_row_reply['content']
     # Convert the pandas Series to a string
     
+    npc_events_entry = next((item for item in event_config.get('npcEvents', []) if item.get('npcId') == npcId), None)
+    print(npc_events_entry)
+    if npc_events_entry:
+        events_list = npc_events_entry.get('events', [])
+        events_data = []
+        for ev in events_list:
+            ev_id = ev.get('id')
+            ev_intro = ev.get('intro')
+            ev_detail = str(ev.get('details'))
+            ev_embedding = CmtRpyLgcGPTProcess.get_embedding(ev_intro)
+            events_data.append([ev_id, ev_intro, ev_detail, ev_embedding])
+        events_df = pd.DataFrame(events_data, columns=['eventId', 'intro', 'detail', 'embedding'])
+    else:
+        events_df = pd.DataFrame(columns=['eventId', 'intro', 'detail', 'embedding'])
+
+    comment_str = str(commet_to_reply)
+    comment_embedding = CmtRpyLgcGPTProcess.get_embedding(comment_str)
+
+    def cosine_similarity(vec1, vec2):
+        dot_product = np.dot(vec1, vec2)
+        norm1 = np.linalg.norm(vec1)
+        norm2 = np.linalg.norm(vec2)
+        return dot_product / (norm1 * norm2)
+
+    events_df['similary'] = events_df['embedding'].apply(lambda emb: cosine_similarity(emb, comment_embedding))
+
+    threshold = 0.3
+    selected_event = (
+        events_df[events_df['similary'] > threshold]
+        .sort_values(by='similary', ascending=False)
+        .head(3)
+    )
+    paragraphs = []
+    for _, row in selected_event.iterrows():
+        # Parse the stringified list of details back into a Python list
+        details_list = ast.literal_eval(row['detail'])
+        # Join all detail items into a single string
+        details_text = " ".join(details_list)
+        # Form the paragraph: intro followed by details
+        paragraph = f"{row['intro']} {details_text}"
+        paragraphs.append(paragraph)
+
+
+    relevent_event = "\n\n".join(
+        f"relevent event {idx}: {para}"
+        for idx, para in enumerate(paragraphs, start=1)
+    )
 
     info_for_reply = ''
     # Get memeory stream 
@@ -197,7 +254,7 @@ def choiceOneToReply():
     else:
         prior_conversation = 'No conversation yet'
 
-    reply_tosent = CmtRpyLgcGPTProcess.replyToUser(info_for_reply,  commet_to_reply, npcId, prior_conversation)
+    reply_tosent = CmtRpyLgcGPTProcess.replyToUser(info_for_reply,  commet_to_reply, npcId, prior_conversation, relevent_event)
  
     # Sent Reply
     requestId_tosent = str(comment_row_reply['requestId'].iloc[0])

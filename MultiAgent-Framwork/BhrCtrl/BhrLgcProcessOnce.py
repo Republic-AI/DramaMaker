@@ -168,18 +168,7 @@ def processOneInputGiveOneInstruction():
         is_talk_instruction = False
         talkInst_target_npcid = None
 
-        # npcId_to_Name = {
-        #     10006: 'Satoshi',
-        #     10007: 'Popcat',
-        #     10008: 'Pepe',
-        #     10009: 'Elon Musk',
-        #     10010: 'Pippin',
-        #     10011: 'Eliza',
-        #     10012: 'Trump',
-        #     10013: 'Morpheus',
-        #     10014: 'AVA',
-        #     10015: 'Luna'
-        # }
+    
         npcId_to_Name = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
         # Determine next action based on current states
@@ -307,17 +296,11 @@ def processOneInputGiveOneInstruction():
                     if is_talk_instruction:
                         instruction_to_give = BhrLgcGPTProcess.humanInstToJava_talk(
                             instruction_in_human, words_to_say, npcId, talkInst_target_npcid
-                        )
+                        ).strip("```json").strip("```")
                     else:
                         instruction_to_give = BhrLgcGPTProcess.humanInstToJava_action(
                             instruction_in_human, words_to_say, npcId
-                        )
-                    match = re.search(r'```json\n(.*?)\n```', instruction_to_give, re.DOTALL)
-                    if match:
-                        instruction_to_give = match.group(1)
-                    else: 
-                        instruction_to_give = instruction_to_give.strip("```json").strip("```")
-                    print('Instruction to give:', instruction_to_give)
+                        ).strip("```json").strip("```")
                     instruction_json = json.loads(instruction_to_give)
                     instruction_json['requestId'] = request_id
                     # Re-serialize the JSON after adding requestId

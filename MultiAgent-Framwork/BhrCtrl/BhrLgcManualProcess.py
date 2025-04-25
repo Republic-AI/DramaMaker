@@ -73,17 +73,6 @@ def parse_npc_info_formemory(json_input):
         return result
 
     npc = npcs[0]
-    # npc_names = {
-    #     10006: "Satoshi",
-    #     10007: "Popcat",
-    #     10008: "Pepe",
-    #     10009: "Musk",
-    #     10010: "Pippin",
-    #     10011: "Eliza",
-    #     10012: "Trump",
-    #     10013: "Morpheus",
-    #     10014: "AVA",
-    # }
     npc_names = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
     talk_info = npc.get('talk', {})
@@ -122,17 +111,6 @@ def parse_talking_from_java(json_input):
         return result, False
     
     npc = npcs[0]
-    # npc_names = {
-    #     10006: "Satoshi",
-    #     10007: "Popcat",
-    #     10008: "Pepe",
-    #     10009: "Musk",
-    #     10010: "Pippin",
-    #     10011: "Eliza",
-    #     10012: "Trump",
-    #     10013: "Morpheus",
-    #     10014: "AVA",
-    # }
     npc_names = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
     talk_info = npc.get('talk', {})
@@ -360,17 +338,6 @@ def parse_target_sleeping(json_input):
         print("Method: parse_target_sleeping | Description: Checks if target NPC is sleeping | Result:", (False, None), "\n")
         return False, None
 
-    # npc_names = {
-    #     10006: "Satoshi",
-    #     10007: "Popcat",
-    #     10008: "Pepe",
-    #     10009: "Musk",
-    #     10010: "Pippin",
-    #     10011: "Eliza",
-    #     10012: "Trump",
-    #     10013: "Morpheus",
-    #     10014: "AVA",
-    # }
     npc_names = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
     surrounding_npcs = npc.get('surroundings', {}).get('people', [])
@@ -413,17 +380,6 @@ def parse_target_talking(json_input):
         print("Method: parse_target_talking | Description: Checks if target NPC is talking | Result:", (False, None), "\n")
         return False, None
 
-    # npc_names = {
-    #     10006: "Satoshi",
-    #     10007: "Popcat",
-    #     10008: "Pepe",
-    #     10009: "Musk",
-    #     10010: "Pippin",
-    #     10011: "Eliza",
-    #     10012: "Trump",
-    #     10013: "Morpheus",
-    #     10014: "AVA",
-    # }
     npc_names = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
     surrounding_npcs = npc.get('surroundings', {}).get('people', [])
@@ -477,17 +433,6 @@ def parse_target_oid_owner_at_shop(json_input):
         print("Method: parse_target_oid_owner_at_shop | Description: Checks if OID owner NPC is at shop | Result:", (False, None), "\n")
         return False, None
 
-    # npc_names = {
-    #     10006: "Satoshi",
-    #     10007: "Popcat",
-    #     10008: "Pepe",
-    #     10009: "Musk",
-    #     10010: "Pippin",
-    #     10011: "Eliza",
-    #     10012: "Trump",
-    #     10013: "Morpheus",
-    #     10014: "AVA",
-    # }
     npc_names = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
 
     surrounding_npcs = npc.get('surroundings', {}).get('people', [])
@@ -519,17 +464,6 @@ def parse_current_converstation(json_input):
     contents = talk_info.get('contents', [])
     content = contents[0] if contents else {}
     senderId = content.get('sender', None)
-    # npcId_to_Name = {
-    #         10006: 'Satoshi',
-    #         10007: 'Popcat',
-    #         10008: 'Pepe',
-    #         10009: 'Elon Musk',
-    #         10010: 'Pippin',
-    #         10011: "Eliza",
-    #         10012: "Trump",
-    #         10013: "Morpheus",
-    #         10014: "AVA",
-    #     }
     npcId_to_Name = {npc['npcId']: npc['name'] for npc in char_config.get('npcCharacters', [])}
     if senderId:
         senderName = npcId_to_Name.get(senderId, 'Unknown')

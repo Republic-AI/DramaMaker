@@ -27,6 +27,12 @@ if 'OpenAI' not in config:
     print("Error: 'OpenAI' section not found in config.ini")
 openai_key = config['OpenAI']['chatgpt_key']
 deepseek_key = config['OpenAI']['deepseek_key']
+# deepseek_key1 = config['OpenAI']['deepseek_key']
+# deepseek_key2 = config['OpenAI']['deepseek_key2']
+# deepseek_key = random.choice([
+#     config['OpenAI']['deepseek_key'],
+#     config['OpenAI']['deepseek_key2']
+# ])
 is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
 if is_chatgpt:
     client = OpenAI(api_key=openai_key)
@@ -34,10 +40,13 @@ if is_chatgpt:
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(base_url="https://api.gmi-serving.com/v1/", api_key=deepseek_key) 
+    # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://api.deepseek.com", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
-    model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-    model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    # model_small = "deepseek/deepseek-r1-distill-llama-70b"
+    # model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    model_small = "deepseek-chat"
+    model_large = "deepseek-chat"
 
 yaml_path = os.path.join(base_dir, 'char_config.yaml')
 
@@ -126,7 +135,7 @@ def get_importance(mem_single_str):
     )
     return completion.choices[0].message.content
 
-def replyToUser(hisAnn, comment, npcId, prior_conversation, special_instruction=''):
+def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,special_instruction=''):
     npc = next((npc for npc in char_config['npcCharacters'] if npc['npcId'] == npcId), None)
     if not npc:
         raise ValueError(f"NPC with npcId {npcId} not found in char.yaml")
@@ -139,6 +148,8 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, special_instruction=
     Past Memeories: {hisAnn}
 
     Prior Conversation: {prior_conversation}
+
+    Relevent Events might be related to the comment: {relevent_event}
 
     Comment to reply to: {comment}
 
