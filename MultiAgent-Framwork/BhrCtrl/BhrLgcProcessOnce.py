@@ -296,11 +296,16 @@ def processOneInputGiveOneInstruction():
                     if is_talk_instruction:
                         instruction_to_give = BhrLgcGPTProcess.humanInstToJava_talk(
                             instruction_in_human, words_to_say, npcId, talkInst_target_npcid
-                        ).strip("```json").strip("```")
+                        )
                     else:
                         instruction_to_give = BhrLgcGPTProcess.humanInstToJava_action(
                             instruction_in_human, words_to_say, npcId
-                        ).strip("```json").strip("```")
+                        )
+                    match = re.search(r'```json\n(.*?)\n```', instruction_to_give, re.DOTALL)
+                    if match:
+                        instruction_to_give = match.group(1)
+                    else:
+                        instruction_to_give = instruction_to_give.replace('```json', '').replace('```', '')
                     instruction_json = json.loads(instruction_to_give)
                     instruction_json['requestId'] = request_id
                     # Re-serialize the JSON after adding requestId
