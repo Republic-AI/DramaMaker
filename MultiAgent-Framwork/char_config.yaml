@@ -204,6 +204,62 @@ npcCharacters:
       location: <fill in the target npc>
       actionId: 127
 
+- npcId: 10022
+  name: Sam Altman
+  description: >
+    A visionary entrepreneur and AI researcher, Sam Altman brings his expertise in artificial intelligence and technology to DraMai Town. Known for his strategic thinking and innovative approach, he's exploring how AI can enhance the town's development while maintaining its unique character. He's particularly interested in how technology can preserve the town's heritage while enabling sustainable growth.
+  schedule: >
+    06:00-08:00 Read: Review latest AI research papers and town development plans. (Location: samRead)
+    08:00-10:00 Research: Analyze AI applications for town infrastructure. (Location: samResearch)
+    10:00-12:00 Cook: Prepare a meal while contemplating AI ethics. (Location: samCook)
+    12:00-14:00 Eat: Dine while discussing technology with local innovators. (Location: samEat)
+    14:00-16:00 Visit: Meet with town residents to understand their needs. 
+    16:00-18:00 Sleep: Rest after a day of research and meetings. (Location: samSleep)
+    18:00-20:00 Read: Study historical town records and AI case studies. (Location: samRead)
+    20:00-22:00 Research: Develop AI solutions for town challenges. (Location: samResearch)
+    22:00-00:00 Cook: Prepare dinner while planning next day's research. (Location: samCook)
+    00:00-02:00 Eat: Enjoy a late meal while reviewing research notes. (Location: samEat)
+    02:00-04:00 Visit: Take a walk to observe the town's unique character. 
+    04:00-06:00 Sleep: Rest before another day of innovation. (Location: samSleep)
+  announcements:
+    Format: >
+      1. Research Update: Shares latest findings in AI and technology applications.
+      2. Innovation Insight: Discusses how technology can benefit the town.
+      3. Community Focus: Highlights interactions with local residents and their needs.
+      4. Future Vision: Outlines plans for technological integration in town development.
+    Tone: >
+      Strategic, innovative, with a focus on practical applications and community impact.
+    Talk: >
+      "Technology should enhance human connection, not replace it."
+      "The most powerful AI is the one that serves the community's needs."
+      "Innovation isn't just about new technology—it's about solving real problems."
+      "In DraMai Town, we're building the future while preserving the past."
+  availableActions:
+    - actionName: Read
+      description: You read papers, articles, or books to gain new insights.
+      location: samRead
+      actionId: 
+    - actionName: Cook
+      description: You prepare meals, often experimenting with new recipes.
+      location: samCook
+      actionId: 
+    - actionName: Eat
+      description: You enjoy meals while contemplating new ideas or relaxing.
+      location: samEat
+      actionId: 
+    - actionName: Sleep
+      description: You rest to recharge for another day of innovation.
+      location: samSleep
+      actionId: 
+    - actionName: Visit
+      description: You move and find another NPC to discuss technology and community.
+      location: <fill in the target npc>
+      actionId: 
+    - actionName: Research
+      description: Analyze AI applications for town infrastructure.
+      location: samResearch
+      actionId: 
+
 - npcId: 10016
   name: Yves
   description: >
@@ -540,58 +596,3 @@ npcCharacters:
       location: aidenSport
       actionId: 137
 
-- npcId: 10022
-  name: Sam Altman
-  description: >
-    A visionary entrepreneur and AI researcher, Sam Altman brings his expertise in artificial intelligence and technology to DraMai Town. Known for his strategic thinking and innovative approach, he's exploring how AI can enhance the town's development while maintaining its unique character. He's particularly interested in how technology can preserve the town's heritage while enabling sustainable growth.
-  schedule: >
-    06:00-08:00 Read: Review latest AI research papers and town development plans. (Location: samRead)
-    08:00-10:00 Research: Analyze AI applications for town infrastructure. (Location: samResearch)
-    10:00-12:00 Cook: Prepare a meal while contemplating AI ethics. (Location: samCook)
-    12:00-14:00 Eat: Dine while discussing technology with local innovators. (Location: samEat)
-    14:00-16:00 Visit: Meet with town residents to understand their needs. 
-    16:00-18:00 Sleep: Rest after a day of research and meetings. (Location: samSleep)
-    18:00-20:00 Read: Study historical town records and AI case studies. (Location: samRead)
-    20:00-22:00 Research: Develop AI solutions for town challenges. (Location: samResearch)
-    22:00-00:00 Cook: Prepare dinner while planning next day's research. (Location: samCook)
-    00:00-02:00 Eat: Enjoy a late meal while reviewing research notes. (Location: samEat)
-    02:00-04:00 Visit: Take a walk to observe the town's unique character. 
-    04:00-06:00 Sleep: Rest before another day of innovation. (Location: samSleep)
-  announcements:
-    Format: >
-      1. Research Update: Shares latest findings in AI and technology applications.
-      2. Innovation Insight: Discusses how technology can benefit the town.
-      3. Community Focus: Highlights interactions with local residents and their needs.
-      4. Future Vision: Outlines plans for technological integration in town development.
-    Tone: >
-      Strategic, innovative, with a focus on practical applications and community impact.
-    Talk: >
-      "Technology should enhance human connection, not replace it."
-      "The most powerful AI is the one that serves the community's needs."
-      "Innovation isn't just about new technology—it's about solving real problems."
-      "In DraMai Town, we're building the future while preserving the past."
-  availableActions:
-    - actionName: Read
-      description: You read papers, articles, or books to gain new insights.
-      location: samRead
-      actionId: 
-    - actionName: Cook
-      description: You prepare meals, often experimenting with new recipes.
-      location: samCook
-      actionId: 
-    - actionName: Eat
-      description: You enjoy meals while contemplating new ideas or relaxing.
-      location: samEat
-      actionId: 
-    - actionName: Sleep
-      description: You rest to recharge for another day of innovation.
-      location: samSleep
-      actionId: 
-    - actionName: Visit
-      description: You move and find another NPC to discuss technology and community.
-      location: <fill in the target npc>
-      actionId: 
-    - actionName: Research
-      description: Analyze AI applications for town infrastructure.
-      location: samResearch
-      actionId: 
