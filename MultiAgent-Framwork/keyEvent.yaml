@@ -127,3 +127,75 @@ npcEvents:
           - "Nina stood reviewing plans with her team"
           - "Our eyes met, recognition passing between us"
           - "The town's future became our shared project"
+
+  - npcId: 10012
+    name: Trump
+    events:
+      - id: "mars_sanctions"
+        intro: "Announced comprehensive sanctions against Elon Musk at White House press conference."
+        details:
+          - "The EO-777 briefcase contained the executive order to freeze Musk's assets"
+          - "My Mars Cap sat prominently on the podium as I made the announcement"
+          - "The Fake Mars Deed was displayed as 'evidence' of Musk's overreach"
+          - "The press corps erupted in chaos as Tesla stock began to plummet"
+      - id: "mars_tariffs"
+        intro: "Declared 1000% tariffs on all Mars exports in a televised address."
+        details:
+          - "The Mars Cap was now emblazoned with 'Protect Earth First'"
+          - "The EO-777 briefcase contained new trade restrictions"
+          - "I waved the Fake Mars Deed while denouncing Martian independence"
+          - "The world watched as the first interplanetary trade war began"
+
+  - npcId: 10009
+    name: Elon Musk
+    events:
+      - id: "mars_independence"
+        intro: "Declared Martian independence after Earth's sanctions."
+        details:
+          - "The NFT Scepter glowed as I announced the Phoenix Project"
+          - "The Phoenix-01 Model stood proudly on the presentation table"
+          - "The Satoshi Book lay open to a page about decentralized governance"
+          - "The Ember AI Core projected the Mars colony blueprints"
+      - id: "phoenix_project"
+        intro: "Launched the Phoenix Project for Mars colonization."
+        details:
+          - "The NFT Scepter served as the ceremonial key to the first colony module"
+          - "The Phoenix-01 Model was used to demonstrate the colony's design"
+          - "The Ember AI Core managed the live broadcast to Earth"
+          - "The Satoshi Book provided inspiration for our governance system"
+
+  - npcId: 10006
+    name: Satoshi
+    events:
+      - id: "genesis_key"
+        intro: "Released cryptic message about the genesis key on Mars."
+        details:
+          - "The Bitcoin Mars Map showed the coordinates of the hidden key"
+          - "The Quantum Mask ensured my message couldn't be traced"
+          - "The Satoshi Pages contained the encryption for the message"
+          - "The message caused Bitcoin prices to surge globally"
+      - id: "mars_blockchain"
+        intro: "Began developing the Mars blockchain infrastructure."
+        details:
+          - "The Bitcoin Mars Map was used to plan the blockchain nodes"
+          - "The Satoshi Pages contained the code for Mars' new currency"
+          - "The Quantum Mask protected the development servers"
+          - "The system would form the backbone of Mars' decentralized government"
+
+  - npcId: 10022
+    name: Sam Altman
+    events:
+      - id: "human_selection"
+        intro: "Announced the elite selection process for Mars immigration."
+        details:
+          - "The Score Band displayed real-time eligibility ratings"
+          - "The Futures Tablet contained the selection algorithms"
+          - "The Alpha Chip processed the genetic and social data"
+          - "The announcement caused global controversy"
+      - id: "ai_governance"
+        intro: "Implemented AI-based governance system for Mars selection."
+        details:
+          - "The Score Band monitored candidates' daily activities"
+          - "The Futures Tablet predicted their potential contributions"
+          - "The Alpha Chip made final selection decisions"
+          - "The system created a new form of digital aristocracy"
