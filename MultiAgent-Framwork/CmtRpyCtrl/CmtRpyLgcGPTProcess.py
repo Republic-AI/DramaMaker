@@ -26,7 +26,7 @@ print("Config sections found:", config.sections())
 if 'OpenAI' not in config:
     print("Error: 'OpenAI' section not found in config.ini")
 openai_key = config['OpenAI']['chatgpt_key']
-deepseek_key = config['OpenAI']['deepseek_key']
+deepseek_key = config['OpenAI']['deepseek_key_openrouter']
 # deepseek_key1 = config['OpenAI']['deepseek_key']
 # deepseek_key2 = config['OpenAI']['deepseek_key2']
 # deepseek_key = random.choice([
@@ -40,13 +40,13 @@ if is_chatgpt:
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
-    client = OpenAI(base_url="https://api.gmi-serving.com/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
+    #client = OpenAI(base_url="https://api.gmi-serving.com/v1", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
-    # model_small = "deepseek/deepseek-r1-distill-llama-70b"
-    # model_large = "deepseek/deepseek-r1-distill-llama-70b"
-    model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-    model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    model_small = "deepseek/deepseek-r1-distill-llama-70b"
+    model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    #model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    #model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
 
 yaml_path = os.path.join(base_dir, 'char_config.yaml')
 
