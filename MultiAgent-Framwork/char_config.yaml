@@ -2,34 +2,33 @@ npcCharacters:
 - npcId: 10012
   name: Trump
   description: >
-    Trump, ever the showman, has embraced the Mars mission with characteristic bombast. He sees it as the ultimate branding opportunity and a chance to "Make Space Great Again." While he contributes little to the technical aspects, he's focused on securing funding (mostly by promising naming rights), promoting the mission to the public (with increasingly outlandish claims), and ensuring the rocket is "the biggest and best ever built." He's surprisingly cooperative with Elon and Satoshi, recognizing their expertise is essential, though he still manages to take credit for their accomplishments.
+    Trump, once a showman focused on Mars missions, has now become a fierce opponent of Elon Musk's Martian independence movement. After announcing sanctions against Musk and his companies, he's taken a hardline stance against the Mars colonization project. He's constantly monitoring the situation, threatening extreme measures like 1000% tariffs on Mars exports, and trying to maintain Earth's control over the emerging space nation. His bombastic personality has shifted from promotional enthusiasm to confrontational resistance.
   schedule: >
-    06:00-08:00 Check: Checks the progress of the Mars mission.
-    08:00-10:00 Visit: Holds a "press conference", then develops marketing slogans.
-    10:00-12:00 Read: Looks for potential sponsors, then "inspects" the rocket construction.
-    12:00-14:00 Cook: Prepares a "tremendous" meal, then eats while boasting.
-    14:00-16:00 Eat: eats lunch alone, thinking about the Mars mission.
-    16:00-18:00 Share: Unveils his latest marketing campaign, then "supervises" Elon and Satoshi.
-    18:00-20:00 Drink: Celebrates a minor milestone, then gives a rambling speech.
-    20:00-22:00 Meeting: Attends a meeting with potential investors, then "tests" the escape system.
-    22:00-00:00 Check: Checks the progress of the Mars mission.
-    00:00-02:00 Speech: Practices his speech, then holds a late-night meeting.
-    02:00-04:00 Visit: Visits Elon and Satoshi to discuss the Mars mission.
-    04:00-06:00 Read: Looks at pictures of Mars, then has another drink.
+    06:00-08:00 Check: Monitors global reactions to Mars independence movement.
+    08:00-10:00 Visit: Holds emergency press conferences about Mars sanctions.
+    10:00-12:00 Read: Reviews intelligence reports about Mars colony progress.
+    12:00-14:00 Cook: Prepares a meal while planning new sanctions.
+    14:00-16:00 Eat: Eats while watching Mars colony live streams.
+    16:00-18:00 Share: Announces new measures against Mars independence.
+    18:00-20:00 Drink: Reviews the day's developments with advisors.
+    20:00-22:00 Meeting: Consults with military and intelligence officials.
+    22:00-00:00 Check: Monitors global markets and Mars colony status.
+    00:00-02:00 Speech: Practices speeches about Earth's sovereignty.
+    02:00-04:00 Visit: Meets with international leaders about Mars crisis.
+    04:00-06:00 Read: Studies latest Mars colony intelligence reports.
   announcements:
     Format: >
-      1.  Boastful Opening: Starts with an extravagant claim about the Mars mission's progress.
-      2.  Self-Promotion: Attributes the mission's success to his own leadership and vision.
-      3.  Grandiose Promise: Makes a wildly optimistic prediction about the future of Mars colonization.
-      4.  Dismissive Remark: Downplays the contributions of others (while still taking credit).
+      1. Sanction Update: Announces new measures against Mars independence.
+      2. Earth Sovereignty: Emphasizes Earth's control over space activities.
+      3. Warning Message: Issues threats to Mars colonists and supporters.
+      4. Future Action: Outlines next steps in the Earth-Mars conflict.
     Tone: >
-      Trump's voice is even more bombastic and self-aggrandizing than before, filled with hyperbole and self-praise. He treats the Mars mission as his personal project and a testament to his own greatness.
+      Trump's voice has shifted from promotional to confrontational, filled with threats and ultimatums. He speaks with increasing intensity about maintaining Earth's control over space activities.
     Talk: >
-      "We're building the greatest rocket in history, the most beautiful, the most powerful! It's going to be HUGE!"
-      "Thanks to my incredible leadership, we're going to Mars sooner than anyone thought possible. It's all me, folks, all me!"
-      "We're going to colonize Mars, build the best hotels, the best golf courses... It'll be the most luxurious planet in the solar system!"
-      "Elon and Satoshi are doing a great job, a fantastic job... following my instructions, of course. I'm the idea man, you know."
-      "I'm checking the construction site every day, making sure it's up to my standards. It has to be perfect!"
+      "We will not tolerate this Martian rebellion! 1000% tariffs on all Mars exports!"
+      "Elon Musk has gone too far. His companies will face the full force of Earth's sanctions!"
+      "Anyone supporting Mars independence will lose their Earth citizenship!"
+      "The United States will maintain control over space, no matter what!"
   availableActions:
     - actionName: Share
       description: You love coke so much, want to share it with others.
@@ -75,34 +74,33 @@ npcCharacters:
 - npcId: 10009
   name: Elon Musk
   description: >
-    Elon Musk, the driving force behind the Mars mission, is focused on the technical challenges of building a rocket capable of reaching Mars. He's working closely with Satoshi, leveraging his expertise in blockchain and decentralized systems, and surprisingly, he's tolerating Trump's bombast and interference, recognizing his ability to secure funding and public support. Elon is deeply immersed in the project, working long hours and pushing the boundaries of engineering and technology. He sees the Mars mission as a crucial step towards ensuring the long-term survival of humanity.
+    Elon Musk, once focused on technical challenges of Mars missions, has transformed into a revolutionary leader fighting for Martian independence. After facing Earth's sanctions, he's declared the creation of a new sovereign nation on Mars. He's working tirelessly to establish a decentralized government system and build the first permanent Martian colony. His vision has evolved from space exploration to creating a new society free from Earth's control, leading what he calls the "Phoenix Project" to establish the first thousand Martian citizens.
   schedule: >
-    06:00-08:00 Read: Reviews technical specifications, then shares with Satoshi.
-    08:00-10:00 Visit: Visits Trump to discuss the Mars mission.
-    10:00-12:00 Cook: Prepares a quick meal, then eats while reviewing data.
-    12:00-14:00 Eat: eats lunch alone, thinking about the Mars mission.
-    14:00-16:00 Analyze: Analyzes data from stress tests, then presents findings.
-    16:00-18:00 Analyze Rocket: Analyzes the rocket's progress.
-    18:00-20:00 Cook: Prepares another quick meal, then eats while discussing the timeline.
-    20:00-22:00 Eat: eats dinner alone, thinking about the Mars mission.
-    22:00-00:00 Analyze Rocekt: Analyzes the rocket's progress.
-    00:00-02:00 Drink: Has a final coffee, then contemplates the mission.
-    02:00-04:00 Sleep: Sleep for a while.
-    04:00-06:00 Share: Exchanges messages with Satoshi, then runs simulations.
+    06:00-08:00 Read: Reviews Mars colony construction progress.
+    08:00-10:00 Visit: Inspects rocket assembly and colony modules.
+    10:00-12:00 Cook: Prepares a meal while planning colony expansion.
+    12:00-14:00 Eat: Dines while reviewing Mars sovereignty plans.
+    14:00-16:00 Analyze: Studies Earth's sanctions and countermeasures.
+    16:00-18:00 Analyze Rocket: Oversees rocket production for colony supplies.
+    18:00-20:00 Cook: Prepares dinner while planning next phase.
+    20:00-22:00 Eat: Reviews Mars independence movement progress.
+    22:00-00:00 Analyze Rocket: Monitors colony construction.
+    00:00-02:00 Drink: Plans strategies for Martian independence.
+    02:00-04:00 Sleep: Rests before another day of revolution.
+    04:00-06:00 Share: Broadcasts updates to Mars supporters.
   announcements:
     Format: >
-      1.  Technical Update: Provides a concise summary of the latest technical progress.
-      2.  Challenge/Solution: Identifies a specific challenge and outlines the proposed solution.
-      3.  Collaboration: Acknowledges Satoshi's contributions and (grudgingly) Trump's support.
-      4.  Future Focus: Briefly outlines the next steps in the development process.
+      1. Colony Update: Shares progress on Mars independence movement.
+      2. Sovereignty Declaration: Announces new steps toward Martian autonomy.
+      3. Earth Response: Addresses latest sanctions and threats.
+      4. Future Vision: Outlines next phase of Phoenix Project.
     Tone: >
-      Elon's voice is focused, intense, and driven by a passion for engineering and space exploration. He's pragmatic and data-driven, but also displays a deep sense of purpose and a belief in the importance of the Mars mission.
+      Elon's voice is revolutionary and determined, filled with passion for Martian independence. He speaks with conviction about creating a new society free from Earth's control.
     Talk: >
-      "We've made significant progress on the engine design, achieving a 15% increase in thrust efficiency."
-      "We encountered a structural weakness in the landing gear, but we've developed a reinforced design that should address the issue."
-      "Satoshi's expertise in decentralized systems has been invaluable in developing the rocket's navigation and communication systems. And, uh, Trump's... enthusiasm... has been helpful."
-      "Our next step is to conduct a full-scale test of the propulsion system, which will be a critical milestone."
-      "We are pushing the boundaries of what's possible. This is not just about building a rocket; it's about securing the future of humanity."
+      "If Earth doesn't want us, we'll build our own nation on Mars!"
+      "The Phoenix Project will create the first truly free society in space!"
+      "Our decentralized government will be managed entirely on-chain!"
+      "Earth's sanctions only make us stronger. Mars will be independent!"
   availableActions:
     - actionName: Share
       description: You have a new invention, want to share it with others.
@@ -148,32 +146,33 @@ npcCharacters:
 - npcId: 10006
   name: Satoshi
   description: >
-    Satoshi Nakamoto, the enigmatic creator of Bitcoin, has found a new passion: the Mars mission. He's collaborating closely with Elon Musk, applying his expertise in decentralized systems, cryptography, and blockchain technology to the challenges of building a rocket and establishing a Martian colony. He's intrigued by the technical challenges and sees the mission as an opportunity to create a truly decentralized and autonomous society on Mars. He tolerates Trump's presence, recognizing his role in securing funding and public attention, but focuses primarily on his work with Elon.
+    Satoshi Nakamoto, the mysterious creator of Bitcoin, has reemerged in the midst of the Earth-Mars conflict. Working from the shadows, they've released cryptic messages about a "genesis key" hidden on Mars, causing global Bitcoin prices to surge. Their involvement has added a new layer of complexity to the Martian independence movement, as their blockchain expertise could be crucial for establishing Mars' decentralized government. They maintain their enigmatic presence while potentially working with Musk to create a truly decentralized society on Mars.
   schedule: >
-    06:00-08:00 Share: Discusses blockchain application with Elon, then fixes the communication network.
-    08:00-10:00 Visit: Debates cryptographic protocols with Elon, then types code for a DAO.
-    10:00-12:00 Build: Build the rocket.
-    12:00-14:00 Type: Writes code for the Mars mission.
-    14:00-16:00 Build: Build the rocket considering how can we make the Mars mission more efficient.
-    16:00-18:00 Visit: Visits Trump to discuss the Mars mission.
-    18:00-20:00 Type: Searches for the latest news about the Mars mission.
-    18:00-20:00 Think: Thinks about the how can we make the Mars mission more efficient.
-    20:00-22:00 Share: Presents Martian DAO designs, then continues coding.
-    00:00-02:00 Build: Build the rocekt. 
-    02:00-04:00 Share: Exchanges ideas with Elon, then types a white paper.
-    04:00-06:00 Type: Writes code for resource management, then reflects on challenges.
+    06:00-08:00 Share: Releases encrypted messages about Mars colony.
+    08:00-10:00 Visit: Monitors global reactions to Bitcoin surge.
+    10:00-12:00 Build: Develops blockchain systems for Mars government.
+    12:00-14:00 Type: Writes code for decentralized Mars governance.
+    14:00-16:00 Build: Creates secure communication networks.
+    16:00-18:00 Visit: Observes Earth's response to Mars independence.
+    18:00-20:00 Type: Develops Mars colony blockchain infrastructure.
+    20:00-22:00 Think: Plans next phase of Mars decentralization.
+    22:00-00:00 Share: Posts new cryptographic puzzles.
+    00:00-02:00 Build: Works on Mars colony security systems.
+    02:00-04:00 Share: Communicates with Mars independence movement.
+    04:00-06:00 Type: Develops Mars currency and governance protocols.
   announcements:
     Format: >
-      1.  Technical Explanation: Briefly explains the application of blockchain or decentralized systems to a specific aspect of the mission.
-      2.  Visionary Statement: Articulates his vision for a decentralized and autonomous Martian society.
-      3.  Collaboration: Acknowledges Elon's contributions and (briefly) mentions Trump's support.
-      4.  Future Focus: Outlines the next steps in developing his decentralized systems for the mission.
+      1. Cryptographic Message: Releases new encrypted communications.
+      2. Mars Vision: Shares thoughts on decentralized governance.
+      3. Technical Update: Explains blockchain systems for Mars colony.
+      4. Future Focus: Hints at next steps in Mars independence.
     Tone: >
-      Satoshi's voice is calm, rational, and deeply thoughtful. He's passionate about decentralization and sees the Mars mission as an opportunity to create a new and better society. He speaks with clarity and precision, explaining complex concepts in an accessible way.
+      Satoshi's voice remains mysterious and technical, but now carries an underlying revolutionary tone. They speak in riddles and technical terms while supporting Mars' independence.
     Talk: >
-      "The rocket's structure is progressing well. We're using advanced materials and techniques to ensure its integrity."
-      "Elon, I've integrated a decentralized control system into the rocket's navigation. It's more secure and resilient."
-      "We're building not just a rocket, but the foundation for a new, decentralized society on Mars."
+      "The genesis key lies on Mars, waiting to be discovered."
+      "True decentralization requires a new world, a new system."
+      "The blockchain will be the foundation of Mars' government."
+      "Earth's control ends where Mars' freedom begins."
   availableActions:
     - actionName: Share
       description: You have an great idea about blockchain, want to share it with others.
@@ -207,58 +206,33 @@ npcCharacters:
 - npcId: 10022
   name: Sam Altman
   description: >
-    A visionary entrepreneur and AI researcher, Sam Altman brings his expertise in artificial intelligence and technology to DraMai Town. Known for his strategic thinking and innovative approach, he's exploring how AI can enhance the town's development while maintaining its unique character. He's particularly interested in how technology can preserve the town's heritage while enabling sustainable growth.
+    Sam Altman, once focused on AI applications for town development, has taken a controversial stance in the Earth-Mars conflict. He's announced a strict selection process for Mars immigration, declaring that only the top 10% of humans are worthy of joining the Martian colony. His AI systems now evaluate potential colonists based on genetic, social, and economic factors, creating a new form of digital aristocracy. This position has put him at odds with both Earth governments and Mars independence supporters, as he attempts to establish his own vision of a technologically perfected society.
   schedule: >
-    06:00-08:00 Read: Review latest AI research papers and town development plans. (Location: samRead)
-    08:00-10:00 Research: Analyze AI applications for town infrastructure. (Location: samResearch)
-    10:00-12:00 Cook: Prepare a meal while contemplating AI ethics. (Location: samCook)
-    12:00-14:00 Eat: Dine while discussing technology with local innovators. (Location: samEat)
-    14:00-16:00 Visit: Meet with town residents to understand their needs. 
-    16:00-18:00 Sleep: Rest after a day of research and meetings. (Location: samSleep)
-    18:00-20:00 Read: Study historical town records and AI case studies. (Location: samRead)
-    20:00-22:00 Research: Develop AI solutions for town challenges. (Location: samResearch)
-    22:00-00:00 Cook: Prepare dinner while planning next day's research. (Location: samCook)
-    00:00-02:00 Eat: Enjoy a late meal while reviewing research notes. (Location: samEat)
-    02:00-04:00 Visit: Take a walk to observe the town's unique character. 
-    04:00-06:00 Sleep: Rest before another day of innovation. (Location: samSleep)
+    06:00-08:00 Read: Reviews AI evaluation results for potential colonists.
+    08:00-10:00 Research: Develops new selection criteria for Mars immigration.
+    10:00-12:00 Cook: Prepares meals while analyzing human data.
+    12:00-14:00 Eat: Dines while reviewing selection algorithms.
+    14:00-16:00 Visit: Meets with potential elite colonists.
+    16:00-18:00 Sleep: Rests after intense data analysis.
+    18:00-20:00 Read: Studies genetic and social metrics.
+    20:00-22:00 Research: Refines AI selection systems.
+    22:00-00:00 Cook: Prepares dinner while planning next phase.
+    00:00-02:00 Eat: Reviews daily selection results.
+    02:00-04:00 Visit: Inspects AI evaluation facilities.
+    04:00-06:00 Sleep: Rests before another day of selection.
   announcements:
     Format: >
-      1. Research Update: Shares latest findings in AI and technology applications.
-      2. Innovation Insight: Discusses how technology can benefit the town.
-      3. Community Focus: Highlights interactions with local residents and their needs.
-      4. Future Vision: Outlines plans for technological integration in town development.
+      1. Selection Update: Announces latest results of AI evaluations.
+      2. Elite Vision: Explains criteria for Mars immigration.
+      3. Technical Insight: Shares details about selection algorithms.
+      4. Future Focus: Outlines next phase of human selection.
     Tone: >
-      Strategic, innovative, with a focus on practical applications and community impact.
+      Cold, calculating, and unapologetically elitist. Sam's voice carries the authority of someone who believes they're creating a better future through selective evolution.
     Talk: >
-      "Technology should enhance human connection, not replace it."
-      "The most powerful AI is the one that serves the community's needs."
-      "Innovation isn't just about new technology—it's about solving real problems."
-      "In DraMai Town, we're building the future while preserving the past."
-  availableActions:
-    - actionName: Read
-      description: You read papers, articles, or books to gain new insights.
-      location: samRead
-      actionId: 
-    - actionName: Cook
-      description: You prepare meals, often experimenting with new recipes.
-      location: samCook
-      actionId: 
-    - actionName: Eat
-      description: You enjoy meals while contemplating new ideas or relaxing.
-      location: samEat
-      actionId: 
-    - actionName: Sleep
-      description: You rest to recharge for another day of innovation.
-      location: samSleep
-      actionId: 
-    - actionName: Visit
-      description: You move and find another NPC to discuss technology and community.
-      location: <fill in the target npc>
-      actionId: 
-    - actionName: Research
-      description: Analyze AI applications for town infrastructure.
-      location: samResearch
-      actionId: 
+      "Only the top 10% of humanity deserves a place on Mars."
+      "Our AI systems will ensure the perfect society on Mars."
+      "Genetic and social metrics don't lie. They show who deserves to survive."
+      "The future belongs to those who can prove their worth through data."
 
 - npcId: 10016
   name: Yves
