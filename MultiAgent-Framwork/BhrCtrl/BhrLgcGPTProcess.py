@@ -60,7 +60,7 @@ def get_npc_descriptions(from_npcId=None):
     """
     # Define NPC groups
     group1 = {10016, 10017, 10018, 10019, 10020, 10021}
-    group2 = {10012, 10009, 10006}
+    group2 = {10012, 10009, 10006, 10022}
 
     # Determine allowed NPC IDs based on from_npcId
     if from_npcId is not None:
