@@ -84,7 +84,7 @@ npcCharacters:
     16:00-18:00 Analyze Rocket: Oversees rocket production for colony supplies.
     18:00-20:00 Cook: Prepares dinner while planning next phase.
     20:00-22:00 Eat: Reviews Mars independence movement progress.
-    22:00-00:00 Analyze Rocket: Monitors colony construction.
+    22:00-00:00 Analyze: Monitors colony construction.
     00:00-02:00 Drink: Plans strategies for Martian independence.
     02:00-04:00 Sleep: Rests before another day of revolution.
     04:00-06:00 Share: Broadcasts updates to Mars supporters.
@@ -134,10 +134,6 @@ npcCharacters:
       description: You enjoy coffee at Pippin's café, do this action only after you buy the coffee successfully in your memeories (You fail to buy when shop owner not there). Fill in action duration time.
       location: muskDricoffee
       actionId: 126
-    - actionName: Analyze Rocket
-      description: You analyze the rocket's progress.
-      location: muskAnalyzeRocket
-      actionId: 135
     - actionName: Visit
       description: You move and find another NPC to start a conversation. Fill in the target NPC name who has to be another NPC in the town.
       location: <fill in the target npc>
@@ -233,6 +229,35 @@ npcCharacters:
       "Our AI systems will ensure the perfect society on Mars."
       "Genetic and social metrics don't lie. They show who deserves to survive."
       "The future belongs to those who can prove their worth through data."
+  availableActions:
+    - actionName: Share
+      description: You have an great idea about blockchain, want to share it with others.
+      location: <fill in the target npc>
+      actionId: 133
+    - actionName: Read
+      description: You review AI evaluation results and research papers on human selection criteria.
+      location: samRead
+      actionId: 116
+    - actionName: Research
+      description: You develop and refine AI selection algorithms for Mars immigration.
+      location: samResearch
+      actionId: 123
+    - actionName: Cook
+      description: You prepare meals while analyzing human data and selection metrics.
+      location: samCook
+      actionId: 104
+    - actionName: Eat
+      description: You dine while reviewing selection algorithms and evaluation results.
+      location: samEat
+      actionId: 105
+    - actionName: Sleep
+      description: You rest to recharge for another day of intense data analysis.
+      location: samSleep
+      actionId: 106
+    - actionName: Visit
+      description: You meet with potential elite colonists and inspect AI evaluation facilities.
+      location: <fill in the target npc>
+      actionId: 127
 
 - npcId: 10016
   name: Yves
