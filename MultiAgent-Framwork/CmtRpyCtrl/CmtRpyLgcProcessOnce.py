@@ -73,7 +73,7 @@ def choiceOneToReply():
         print('Processing the following input:')
         print(input_from_java)
     
-   
+    print("input_from_java: ", input_from_java)
     requestId = input_from_java[0]
 
     # Now all print statements go into f

@@ -1,10 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
-import threading
 
-# Create a global lock
-lock = threading.Lock()
-
+# Connection health check
 def check_connection(connection):
     if connection.is_connected():
         print("Connection is still active.")
@@ -16,10 +13,12 @@ def check_connection(connection):
         else:
             print("Reconnection failed.")
 
+# Database management
 def delete_database(connection, db_name):
     cursor = connection.cursor()
     cursor.execute(f"DROP DATABASE IF EXISTS {db_name}")
     print(f"Database '{db_name}' deleted successfully.")
+
 
 def list_databases(connection):
     cursor = connection.cursor()
@@ -29,29 +28,30 @@ def list_databases(connection):
     for db in databases:
         print(db[0])
 
+
 def create_database(connection):
-    db_name = 'AITown'
     cursor = connection.cursor()
-    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {db_name}")
-    print(f"Database '{db_name}' checked/created successfully.")
+    cursor.execute("CREATE DATABASE IF NOT EXISTS AITown")
+    print("Database 'AITown' checked/created successfully.")
+
 
 def database_exists(connection):
-    db_name = 'AITown'
     cursor = connection.cursor()
-    cursor.execute(f"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{db_name}'")
+    cursor.execute("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'AITown'")
     result = cursor.fetchone()
     if result:
-        print(f"Database '{db_name}' exists.")
+        print("Database 'AITown' exists.")
         return True
     else:
-        print(f"Database '{db_name}' does not exist.")
+        print("Database 'AITown' does not exist.")
         return False
 
+# Table management
 def create_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Use the AITown database
-    create_table_query = """
-    CREATE TABLE IF NOT EXISTS behavior_java_buffer (
+    cursor.execute("USE AITown")
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS behavior_java_buffer (
         requestId BIGINT NOT NULL,
         time DATETIME NOT NULL,
         npcId INT NOT NULL,
@@ -60,198 +60,217 @@ def create_table(connection):
         isBeingProcessed BOOLEAN NOT NULL DEFAULT FALSE,
         isFullyProcessed BOOLEAN NOT NULL DEFAULT FALSE,
         PRIMARY KEY (requestId, time)
+    )"""
     )
-    """
-    cursor.execute(create_table_query)
     print("Table 'behavior_java_buffer' checked/created successfully.")
+
 
 def delete_table(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
-    delete_table_query = f"DROP TABLE IF EXISTS behavior_java_buffer"
-    cursor.execute(delete_table_query)
+    cursor.execute("USE AITown")
+    cursor.execute("DROP TABLE IF EXISTS behavior_java_buffer")
     connection.commit()
-    print(f"Table behavior_java_buffer has been deleted successfully.")
+    print("Table behavior_java_buffer has been deleted successfully.")
+
 
 def table_exists(connection):
-    db_name = 'AITown'
-    table_name = 'behavior_java_buffer'
     cursor = connection.cursor()
-    cursor.execute(f"""
-        SELECT TABLE_NAME 
-        FROM INFORMATION_SCHEMA.TABLES 
-        WHERE TABLE_SCHEMA = '{db_name}' AND TABLE_NAME = '{table_name}'
-    """)
+    cursor.execute(
+        """SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
+        WHERE TABLE_SCHEMA = 'AITown' AND TABLE_NAME = 'behavior_java_buffer'"""
+    )
     result = cursor.fetchone()
     if result:
-        print(f"Table '{table_name}' exists in database '{db_name}'.")
+        print("Table 'behavior_java_buffer' exists in database 'AITown'.")
         return True
     else:
-        print(f"Table '{table_name}' does not exist in database '{db_name}'.")
+        print("Table 'behavior_java_buffer' does not exist in database 'AITown'.")
         return False
 
+# Data operations
 def insert_into_table(connection, requestId, time, npcId, content, isProcessed=False, isBeingProcessed=False):
     cursor = connection.cursor()
-    cursor.execute("USE AITown") 
-    insert_query = """
-    INSERT INTO behavior_java_buffer (requestId, time, npcId, content, isProcessed, isBeingProcessed)
-    VALUES (%s, %s, %s, %s, %s, %s)
-    ON DUPLICATE KEY UPDATE content = VALUES(content), isProcessed = VALUES(isProcessed)
-    """
-    cursor.execute(insert_query, (requestId, time, npcId, content, isProcessed, isBeingProcessed))
+    cursor.execute("USE AITown")
+    cursor.execute(
+        """INSERT INTO behavior_java_buffer (requestId, time, npcId, content, isProcessed, isBeingProcessed)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE content = VALUES(content), isProcessed = VALUES(isProcessed)""",
+        (requestId, time, npcId, content, isProcessed, isBeingProcessed),
+    )
     connection.commit()
     print(f"Data inserted successfully: requestId={requestId}, time={time}, npcId={npcId}, content length={len(content)}, isProcessed={isProcessed}")
 
+
 def delete_entry_in_buffer(connection, time, npcId):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
-    delete_query = "DELETE FROM behavior_java_buffer WHERE time = %s AND npcId = %s"
-    cursor.execute(delete_query, (time, npcId))
-    connection.commit()  # Commit the changes
+    cursor.execute("USE AITown")
+    cursor.execute("DELETE FROM behavior_java_buffer WHERE time = %s AND npcId = %s", (time, npcId))
+    connection.commit()
     print(f"Entry with time={time} and npcId={npcId} has been deleted successfully.")
+
 
 def delete_all_content_in_buffer(connection):
     cursor = connection.cursor()
-    cursor.execute("USE AITown")  # Ensure you're using the correct database
-    delete_query = "DELETE FROM behavior_java_buffer"
-    cursor.execute(delete_query)
-    connection.commit()  # Commit the changes
+    cursor.execute("USE AITown")
+    cursor.execute("DELETE FROM behavior_java_buffer")
+    connection.commit()
     print("All content in the 'behavior_java_buffer' table has been deleted successfully.")
 
+# Job queue operations without Python-level lock or pool
+
 def get_earliest_unprocessed_entry(connection):
-    with lock:  # Acquire the lock
-        cursor = connection.cursor()
-        cursor.execute("USE AITown")  # Use the AITown database
+    """
+    Atomically claim the earliest unprocessed job using
+    SELECT ... FOR UPDATE SKIP LOCKED in a short transaction.
+    """
+    cursor = connection.cursor(dictionary=True)
+    try:
+        # start a transaction
+        connection.start_transaction()
+        cursor.execute("USE AITown")
+        # lock and fetch one unclaimed job
+        cursor.execute(
+            """
+            SELECT requestId, time, npcId, content
+            FROM behavior_java_buffer
+            WHERE isProcessed = FALSE AND isBeingProcessed = FALSE
+            ORDER BY time ASC
+            LIMIT 1
+            FOR UPDATE SKIP LOCKED
+            """
+        )
+        row = cursor.fetchone()
 
-        # Query to get the earliest unprocessed entry with isBeingProcessed = FALSE
-        query = """
-        SELECT requestId, time, npcId, content, isProcessed, isBeingProcessed 
-        FROM behavior_java_buffer
-        WHERE isProcessed = FALSE AND isBeingProcessed = FALSE
-        ORDER BY time ASC 
-        LIMIT 1
-        """
-        cursor.execute(query)
-        result = cursor.fetchone()
+        if not row:
+            connection.commit()
+            print("No unprocessed entries found.")
+            return None
 
-        if result:
-            request_id = result[0]  # Extract requestId
-            time_stamp = result[1]  # Extract time (DATETIME primary key)
-
-            print(f"Earliest unprocessed entry: requestId={request_id}, time={time_stamp}, npcId={result[2]}, content={result[3]}")
-
-            # Update the entry to set isBeingProcessed = TRUE
-            update_query = """
+        # mark as being processed
+        cursor.execute(
+            """
             UPDATE behavior_java_buffer
             SET isBeingProcessed = TRUE
             WHERE requestId = %s AND time = %s
-            """
-            cursor.execute(update_query, (request_id, time_stamp))
-            connection.commit()
+            """,
+            (row['requestId'], row['time']),
+        )
 
-            print(f"Entry with requestId={request_id}, time={time_stamp} marked as being processed.")
-            return result
-        else:
-            print("No unprocessed entries found.")
-            return None
+        connection.commit()
+        print(f"Claimed job: requestId={row['requestId']}, time={row['time']}")
+        return (row['requestId'], row['time'], row['npcId'], row['content'], False, True)
+    except Error as e:
+        connection.rollback()
+        print(f"Error claiming job: {e}")
+        return None
+
 
 def get_unprocessed_entries_of_npc(connection, npcId):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    
-    # Query for all unprocessed entries for the given npcId
-    query_all = """
-    SELECT * FROM behavior_java_buffer 
-    WHERE isProcessed = FALSE AND npcId = %s
-    ORDER BY time ASC
-    """
-    cursor.execute(query_all, (npcId,))
-    all_unprocessed_of_a_npc = cursor.fetchall()
-    
-    # Query for the latest unprocessed entry for the given npcId
-    query_latest = """
-    SELECT * FROM behavior_java_buffer 
-    WHERE isProcessed = FALSE AND npcId = %s
-    ORDER BY time DESC 
-    LIMIT 1
-    """
-    cursor.execute(query_latest, (npcId,))
-    latest_unprocessed_of_a_npc = cursor.fetchone()
-    
-    if all_unprocessed_of_a_npc:
-        print(f"Found {len(all_unprocessed_of_a_npc)} unprocessed entries for npcId={npcId}.")
+    cursor.execute(
+        """
+        SELECT * FROM behavior_java_buffer
+        WHERE isProcessed = FALSE AND npcId = %s
+        ORDER BY time ASC
+        """,
+        (npcId,),
+    )
+    all_unprocessed = cursor.fetchall()
+
+    cursor.execute(
+        """
+        SELECT * FROM behavior_java_buffer
+        WHERE isProcessed = FALSE AND npcId = %s
+        ORDER BY time DESC
+        LIMIT 1
+        """,
+        (npcId,),
+    )
+    latest = cursor.fetchone()
+
+    if all_unprocessed:
+        print(f"Found {len(all_unprocessed)} unprocessed entries for npcId={npcId}.")
     else:
         print(f"No unprocessed entries found for npcId={npcId}.")
-    
-    if latest_unprocessed_of_a_npc:
-        print(f"Latest unprocessed entry for npcId={npcId}: time={latest_unprocessed_of_a_npc[1]}")
+
+    if latest:
+        print(f"Latest unprocessed entry for npcId={npcId}: time={latest[1]}")
     else:
         print(f"No latest unprocessed entry found for npcId={npcId}.")
 
-    return all_unprocessed_of_a_npc, latest_unprocessed_of_a_npc
+    return all_unprocessed, latest
+
 
 def get_all_unprocessed_entries(connection):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    query = """
-    SELECT * FROM behavior_java_buffer 
-    WHERE isProcessed = FALSE
-    ORDER BY time ASC
-    """
-    cursor.execute(query)
+    cursor.execute(
+        """
+        SELECT * FROM behavior_java_buffer
+        WHERE isProcessed = FALSE
+        ORDER BY time ASC
+        """
+    )
     results = cursor.fetchall()
     if results:
         print("Unprocessed entries:")
-        for result in results:
-            print(f"time={result[1]}, npcId={result[2]}, content length={len(result[3])}")
+        for r in results:
+            print(f"time={r[1]}, npcId={r[2]}, content length={len(r[3])}")
         return results
     else:
         print("No unprocessed entries found.")
         return []
 
+
 def mark_entry_as_processed_bynpctime(connection, time, npcId):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    update_query = """
-    UPDATE behavior_java_buffer
-    SET isProcessed = TRUE
-    WHERE time = %s AND npcId = %s
-    """
-    cursor.execute(update_query, (time, npcId))
+    cursor.execute(
+        """
+        UPDATE behavior_java_buffer
+        SET isProcessed = TRUE
+        WHERE time = %s AND npcId = %s
+        """,
+        (time, npcId),
+    )
     connection.commit()
     print(f"Entry with time={time} and npcId={npcId} marked as processed.")
+
 
 def mark_entry_as_processed(connection, requestId):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    update_query = """
-    UPDATE behavior_java_buffer
-    SET isProcessed = TRUE
-    WHERE requestId = %s
-    """
-    cursor.execute(update_query, (requestId,))
+    cursor.execute(
+        """
+        UPDATE behavior_java_buffer
+        SET isProcessed = TRUE
+        WHERE requestId = %s
+        """,
+        (requestId,),
+    )
     connection.commit()
     print(f"Entry with requestId={requestId} marked as processed.")
+
 
 def mark_all_entries_as_processed(connection):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    update_query = """
-    UPDATE behavior_java_buffer
-    SET isProcessed = TRUE
-    """
-    cursor.execute(update_query)
+    cursor.execute("UPDATE behavior_java_buffer SET isProcessed = TRUE")
     connection.commit()
     print("All entries have been marked as processed, keeping 'isBeingProcessed' unchanged.")
+
 
 def mark_entry_as_fullyprocessed(connection, requestId):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    update_query = """
-    UPDATE behavior_java_buffer
-    SET isFullyProcessed = TRUE
-    WHERE requestId = %s
-    """
-    cursor.execute(update_query, (requestId,))
+    cursor.execute(
+        """
+        UPDATE behavior_java_buffer
+        SET isFullyProcessed = TRUE
+        WHERE requestId = %s
+        """,
+        (requestId,),
+    )
     connection.commit()
     print(f"Entry with requestId={requestId} marked as fully processed.")

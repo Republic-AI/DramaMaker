@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import os
 
+# Utility functions
 def check_connection(connection):
     if connection.is_connected():
         print("Connection is still active.")
@@ -42,7 +43,8 @@ def table_exists(connection, db_name='AITown'):
             SELECT TABLE_NAME 
             FROM INFORMATION_SCHEMA.TABLES 
             WHERE TABLE_SCHEMA = '{db_name}' AND TABLE_NAME = '{table_name}'
-        """)
+        """
+        )
         result = cursor.fetchone()
         if result:
             print(f"Table '{table_name}' exists in database '{db_name}'.")
@@ -54,6 +56,7 @@ def table_exists(connection, db_name='AITown'):
         print(f"Failed to check if table exists: {e}")
         return False
 
+# Schema creation
 def create_database(connection):
     db_name = 'AITown'
     try:
@@ -62,18 +65,18 @@ def create_database(connection):
         print(f"Database '{db_name}' checked/created successfully.")
     except Error as e:
         print(f"Failed to create database '{db_name}': {e}")
-        
+
 def create_table(connection):
     try:
         cursor = connection.cursor()
         cursor.execute("USE AITown")
         create_table_query = """
         CREATE TABLE IF NOT EXISTS comment_reply_java_buffer (
-            requestId BIGINT UNSIGNED NOT NULL,  -- Use UNSIGNED for larger positive values
+            requestId BIGINT UNSIGNED NOT NULL,
             time DATETIME NOT NULL,
             npcId INT NOT NULL,
             msgId INT NOT NULL,
-            senderId VARCHAR(255) NOT NULL,  -- Assuming senderId might be alphanumeric
+            senderId VARCHAR(255) NOT NULL,
             content LONGTEXT,
             isProcessed BOOLEAN NOT NULL DEFAULT FALSE,
             sname TEXT,
@@ -87,55 +90,80 @@ def create_table(connection):
     except Error as e:
         print(f"Failed to create table: {e}")
 
-def insert_into_table(connection, requestId, time, npcId, msgId, senderId, content, sname, isProcessed=False, isBeingProcessed=False, privateMsg=True):
+# Data manipulation
+def insert_into_table(connection, requestId, time, npcId, msgId, senderId, content, sname,
+                       isProcessed=False, isBeingProcessed=False, privateMsg=True):
     try:
         cursor = connection.cursor()
-        cursor.execute("USE AITown") 
+        cursor.execute("USE AITown")
         insert_query = """
-        INSERT INTO comment_reply_java_buffer (requestId, time, npcId, msgId, senderId, content, isProcessed, sname, isBeingProcessed, privateMsg)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE content = VALUES(content), isProcessed = VALUES(isProcessed), sname = VALUES(sname)
+        INSERT INTO comment_reply_java_buffer (
+            requestId, time, npcId, msgId, senderId,
+            content, isProcessed, sname, isBeingProcessed, privateMsg
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            content = VALUES(content),
+            isProcessed = VALUES(isProcessed),
+            sname = VALUES(sname)
         """
-        cursor.execute(insert_query, (requestId, time, npcId, msgId, senderId, content, isProcessed, sname, isBeingProcessed, privateMsg))
+        cursor.execute(insert_query, (
+            requestId, time, npcId, msgId, senderId,
+            content, isProcessed, sname, isBeingProcessed, privateMsg
+        ))
         connection.commit()
         print(f"Data inserted successfully: requestId={requestId}, time={time}, npcId={npcId}, msgId={msgId}, senderId={senderId}, sname={sname}, content length={len(content)}, isProcessed={isProcessed}")
     except Error as e:
         print(f"Failed to insert data: {e}")
 
+# Job queue operations
+
 def get_earliest_unprocessed_entry(connection):
+    """
+    Atomically claim the earliest unprocessed entry using
+    FOR UPDATE SKIP LOCKED within a short transaction, returning a tuple.
+    """
     try:
+        # Begin a short transaction
+        connection.start_transaction()
         cursor = connection.cursor()
         cursor.execute("USE AITown")
-        query = """
-        SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname, isBeingProcessed, privateMsg 
-        FROM comment_reply_java_buffer 
-        WHERE isProcessed = FALSE AND isBeingProcessed = FALSE
-        ORDER BY time ASC 
-        LIMIT 1
-        """
-        cursor.execute(query)
-        result = cursor.fetchone()
-        if result:
-            request_id = result[0]  # Extract requestId
-            time_stamp = result[1]
-            print(f"Earliest unprocessed entry: requestId={result[0]}, time={result[1]}, npcId={result[2]}, msgId={result[3]}, senderId={result[4]}, sname={result[7]}, content={result[5]}")
-            # Update the entry to set isBeingProcessed = TRUE
-            update_query = """
+
+        # Select and lock one unprocessed row
+        cursor.execute(
+            """
+            SELECT requestId, time, npcId, msgId, senderId,
+                   content, isProcessed, sname, isBeingProcessed, privateMsg
+            FROM comment_reply_java_buffer
+            WHERE isProcessed = FALSE AND isBeingProcessed = FALSE
+            ORDER BY time ASC
+            LIMIT 1 FOR UPDATE SKIP LOCKED
+            """
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            connection.commit()
+            print("No unprocessed entries found.")
+            return None
+
+        # Extract values
+        request_id, time_stamp = row[0], row[1]
+
+        # Mark row as being processed
+        cursor.execute(
+            """
             UPDATE comment_reply_java_buffer
             SET isBeingProcessed = TRUE
             WHERE requestId = %s AND time = %s
-            """
-            cursor.execute(update_query, (request_id, time_stamp))
-            connection.commit()
+            """,
+            (request_id, time_stamp)
+        )
+        connection.commit()
 
-            print(f"Entry with requestId={request_id}, time={time_stamp} marked as being processed.")
-            
-
-            return result
-        else:
-            print("No unprocessed entries found.")
-            return None
+        print(f"Claimed entry: requestId={request_id}, time={time_stamp}")
+        return row
     except Error as e:
+        connection.rollback()
         print(f"Failed to retrieve earliest unprocessed entry: {e}")
         return None
 
@@ -143,50 +171,58 @@ def mark_entry_as_processed(connection, requestId):
     try:
         cursor = connection.cursor()
         cursor.execute("USE AITown")
-        update_query = """
-        UPDATE comment_reply_java_buffer
-        SET isProcessed = TRUE
-        WHERE requestId = %s
-        """
-        cursor.execute(update_query, (requestId,))
+        cursor.execute(
+            "UPDATE comment_reply_java_buffer SET isProcessed = TRUE WHERE requestId = %s",
+            (requestId,),
+        )
         connection.commit()
         print(f"Entry with requestId={requestId} marked as processed.")
     except Error as e:
         print(f"Failed to mark entry as processed: {e}")
 
+# Deletion
 def delete_entry_in_buffer(connection, requestId):
     try:
         cursor = connection.cursor()
         cursor.execute("USE AITown")
-        delete_query = "DELETE FROM comment_reply_java_buffer WHERE requestId = %s"
-        cursor.execute(delete_query, (requestId,))
+        cursor.execute(
+            "DELETE FROM comment_reply_java_buffer WHERE requestId = %s",
+            (requestId,),
+        )
         connection.commit()
         print(f"Entry with requestId={requestId} has been deleted successfully.")
     except Error as e:
         print(f"Failed to delete entry: {e}")
 
+def delete_all_content_in_buffer(connection):
+    try:
+        cursor = connection.cursor()
+        cursor.execute("USE AITown")
+        cursor.execute("DELETE FROM comment_reply_java_buffer")
+        connection.commit()
+        print("All content in 'comment_reply_java_buffer' table has been deleted successfully.")
+    except Error as e:
+        print(f"Failed to delete content in buffer: {e}")
+
+# Bulk queries
 def mark_all_entries_as_processed(connection):
     cursor = connection.cursor()
     cursor.execute("USE AITown")
-    update_query = """
-    UPDATE comment_reply_java_buffer
-    SET isProcessed = TRUE
-    """
-    cursor.execute(update_query)
+    cursor.execute("UPDATE comment_reply_java_buffer SET isProcessed = TRUE")
     connection.commit()
     print("All entries have been marked as processed, keeping 'isBeingProcessed' unchanged.")
-
 
 def get_unprocessed_entries_of_npc(connection, npcId):
     try:
         cursor = connection.cursor()
         cursor.execute("USE AITown")
-        query = """
-        SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname FROM comment_reply_java_buffer
-        WHERE isProcessed = FALSE AND npcId = %s
-        ORDER BY time ASC
-        """
-        cursor.execute(query, (npcId,))
+        cursor.execute(
+            "SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname"
+            " FROM comment_reply_java_buffer"
+            " WHERE isProcessed = FALSE AND npcId = %s"
+            " ORDER BY time ASC",
+            (npcId,)
+        )
         results = cursor.fetchall()
         if results:
             print(f"Found {len(results)} unprocessed entries for npcId={npcId}.")
@@ -195,26 +231,6 @@ def get_unprocessed_entries_of_npc(connection, npcId):
         return results
     except Error as e:
         print(f"Failed to retrieve unprocessed entries for npcId={npcId}: {e}")
-        return []
-
-def get_all_unprocessed_entries(connection):
-    try:
-        cursor = connection.cursor()
-        cursor.execute("USE AITown")
-        query = """
-        SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname FROM comment_reply_java_buffer 
-        WHERE isProcessed = FALSE
-        ORDER BY time ASC
-        """
-        cursor.execute(query)
-        results = cursor.fetchall()
-        if results:
-            print(f"Unprocessed entries count: {len(results)}.")
-        else:
-            print("No unprocessed entries found.")
-        return results
-    except Error as e:
-        print(f"Failed to retrieve all unprocessed entries: {e}")
         return []
     
 def get_unprocessed_entrie_of_npc(connection, npcId):
@@ -238,20 +254,22 @@ def get_unprocessed_entrie_of_npc(connection, npcId):
         print(f"Failed to retrieve unprocessed entries for npcId={npcId}: {e}")
         return []
 
-def delete_all_content_in_buffer(connection):
+def get_all_unprocessed_entries(connection):
     try:
         cursor = connection.cursor()
         cursor.execute("USE AITown")
-        delete_query = "DELETE FROM comment_reply_java_buffer"
-        cursor.execute(delete_query)
-        connection.commit()
-        print("All content in 'comment_reply_java_buffer' table has been deleted successfully.")
+        cursor.execute(
+            "SELECT requestId, time, npcId, msgId, senderId, content, isProcessed, sname"
+            " FROM comment_reply_java_buffer"
+            " WHERE isProcessed = FALSE"
+            " ORDER BY time ASC"
+        )
+        results = cursor.fetchall()
+        if results:
+            print(f"Unprocessed entries count: {len(results)}.")
+        else:
+            print("No unprocessed entries found.")
+        return results
     except Error as e:
-        print(f"Failed to delete content in buffer: {e}")
-
-# Usage examples:
-# connection = establish_sql_connection()
-# if not database_exists(connection):
-#     create_database(connection)
-# if not table_exists(connection):
-#     create_table(connection)
+        print(f"Failed to retrieve all unprocessed entries: {e}")
+        return []

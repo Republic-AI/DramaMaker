@@ -69,7 +69,7 @@ def get_num_workers():
         npc_count = len(config.get('npcCharacters', []))
         
         # Set num_workers to 2 times the number of NPCs
-        return max(2, npc_count * 5)  # Ensure at least 2 workers
+        return max(2, npc_count * 3)  # Ensure at least 2 workers
     except Exception as e:
         print(f"Error reading char_config.yaml: {e}")
         return 18  # Default fallback value
