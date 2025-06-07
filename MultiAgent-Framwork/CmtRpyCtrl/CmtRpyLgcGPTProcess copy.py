@@ -78,8 +78,12 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     {special_instruction}
 
     Task:
-    - Provide a concise, conversational response in 35 words or fewer.
-    - Do not use emojis or unnecessary comments.
+    - Respond naturally while maintaining awareness of past memories and events
+    - Show character growth and development based on previous interactions
+    - Reference specific details from past memories when relevant
+    - Keep responses concise (35 words or fewer) but meaningful
+    - Ensure your response aligns with your character's personality and previous knowledge
+    - Demonstrate understanding of the context and relationships with other characters
     """
 
     try:
@@ -156,9 +160,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Respond naturally while maintaining awareness of past memories and events
+    - Respond naturally while maintaining awareness of past memories, conversations, and relevant events
     - Show character growth and development based on previous interactions
-    - Reference specific details from past memories when relevant
+    - Reference specific details from past memories and conversations when relevant
     - Keep responses concise (35 words or fewer) but meaningful
     - Ensure your response aligns with your character's personality and previous knowledge
     - Demonstrate understanding of the context and relationships with other characters
