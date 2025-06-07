@@ -158,7 +158,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     Task:
     - Reply naturally as {npc_name} in 35-50 words
     - Focus on the immediate context and question/emotion in the comment
-    - Use Past Memeories: {hisAnn} and Relevent Events might be related to the comment: {relevent_event} and Prior Conversation: {prior_conversation} only when directly relevant
+    - Use provided memeories, events, and conversations only when directly relevant
     - Keep the conversation flowing with questions
     """
     try:
