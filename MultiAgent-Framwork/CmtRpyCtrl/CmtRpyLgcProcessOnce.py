@@ -180,17 +180,23 @@ def choiceOneToReply():
 
         rows_df['cosine_similarity'] = rows_df['Embedding'].apply(lambda x: cosine_similarity(BufferRowEmbedding, np.array(x)))
 
-        a_recency = 0.2  # Adjust the weight for recency as needed
-        a_importance = 0.2  # Adjust the weight for importance as needed
-        a_similarity = 0.6  # Adjust the weight for similarity as needed
+        # Adjust weights to prioritize recent and relevant memories
+        a_recency = 0.3  # Increased from 0.2 to give more weight to recent interactions
+        a_importance = 0.2  # Keep importance weight the same
+        a_similarity = 0.5  # Slightly decreased from 0.6 to balance with increased recency
 
+        # Add time decay factor for more granular recency weighting
+        time_diff_hours = rows_df['TimeDifference'] / 3600  # Convert seconds to hours
+        time_decay = np.exp(-0.1 * time_diff_hours)  # Exponential decay over time
+        
         rows_df['retrieval_score'] = (
-            a_recency * rows_df['recency'] +
+            a_recency * (rows_df['recency'] * time_decay) +
             a_importance * rows_df['Importance'] + 
             a_similarity * rows_df['cosine_similarity']
         )
 
-        rows_df_ranked = rows_df.sort_values(by=['retrieval_score', 'Time'], ascending=[False, False]).head(20)
+        # Increase the number of retrieved memories for better context
+        rows_df_ranked = rows_df.sort_values(by=['retrieval_score', 'Time'], ascending=[False, False]).head(25)
         rows_df_ranked = rows_df_ranked.sort_values(by='Time', ascending=False)
         paragraph = " ".join(rows_df_ranked['Content'].astype(str).tolist())
         memories_str = paragraph
