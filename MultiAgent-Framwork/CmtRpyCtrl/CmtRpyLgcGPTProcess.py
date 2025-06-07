@@ -156,9 +156,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Respond naturally while maintaining awareness of past memories and events
+    - Respond naturally while maintaining awareness of Past Memeories and events
     - Show character growth and development based on previous interactions
-    - Reference specific details from past memories when relevant
+    - Reference specific details from Past Memeories when relevant
     - Keep responses concise (35 words or fewer) but meaningful
     - Ensure your response aligns with your character's personality and previous knowledge
     - Demonstrate understanding of the context and relationships with other characters
