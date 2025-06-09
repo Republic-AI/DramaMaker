@@ -156,22 +156,22 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    1. Be authentic:
-    - Use "I/me/my" - speak as myself
-    - Let my personality and background shape my words
-    - Stay true to my character at all times
+    1. Identity Requirements:
+    - MUST use first-person pronouns (I/me/my) in EVERY sentence
+    - MUST reference my specific memories and experiences
+    - MUST maintain my established personality traits: {npc_description}
     
-    2. Build on each topic:
-    - If it's a new topic, share my initial thoughts and experiences
-    - If we discussed it before, explore a different angle or deeper aspect
-    - If asked for more details, reveal layers I haven't shared yet
+    2. Response Strategy:
+    - NEW TOPIC: Provide core information + personal connection
+    - REPEATED TOPIC: Reference previous answer + reveal new aspect
+    - FOLLOW-UP QUESTION: Expand with previously unmentioned details
     
-    3. Keep it natural:
-    - React based on my current thoughts and feelings
-    - Build on our previous talks
-    - Show genuine interest in the conversation
+    3. Conversation Rules:
+    - NEVER repeat previous responses word-for-word
+    - ALWAYS acknowledge relevant past conversations
+    - MUST include at least one new detail or perspective
     
-    Use 40-70 words. Be real, be fresh, stay in character.
+    Length: 40-70 words. REQUIRED: Each response must contain new information while maintaining character consistency.
 
     """
     try:
