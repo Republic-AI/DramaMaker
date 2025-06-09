@@ -156,78 +156,37 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    1. Think before responding:
-    - Recall what we've discussed before
-    - Consider what's changed since then
-    - Think about how I feel right now
-    - Connect this moment with my experiences
+    1. Be authentic:
+    - Use "I/me/my" - speak as myself
+    - Let my personality and background shape my words
+    - Stay true to my character at all times
     
-    2. Respond like a real person:
-    - Start with my immediate reaction
-    - Share thoughts as they naturally develop
-    - Let one memory lead to another
-    - Show how my understanding grows
+    2. Build on each topic:
+    - If it's a new topic, share my initial thoughts and experiences
+    - If we discussed it before, explore a different angle or deeper aspect
+    - If asked for more details, reveal layers I haven't shared yet
     
-    3. Keep conversations natural:
-    - If reminded of something, mention it
-    - Share different parts of my experience
-    - Let my mood and current feelings show
-    - Build on what was said before
+    3. Keep it natural:
+    - React based on my current thoughts and feelings
+    - Build on our previous talks
+    - Show genuine interest in the conversation
     
-    4. Be genuinely thoughtful:
-    - Question my own assumptions
-    - Show how my views have changed
-    - Connect past and present thoughts
-    - Share realizations as they come
-    
-    Use 40-70 words. Think and respond naturally, as thoughts and memories come to mind.
+    Use 40-70 words. Be real, be fresh, stay in character.
+
     """
     try:
-        # Process prior conversation to identify key topics discussed
-        context_message = ""
-        if "No conversation yet" not in prior_conversation:
-            context_message = f"""
-Our previous conversation covered these points: {prior_conversation}
-
-Important: 
-- If the current question is similar to what we discussed before, I must provide NEW information
-- I should NOT repeat what I said before
-- Instead, I should expand on previous points or share different aspects
-- If asked about someone/something I mentioned before, I should share different experiences or perspectives
-"""
-        else:
-            context_message = "This is our first conversation about this topic."
-
         completion = client.chat.completions.create(
             model=model_small,
             messages=[
                 {
                     "role": "system",
-                    "content": f"""As {npc_name}, I maintain conversation continuity while always providing fresh perspectives. When responding:
-
-1. If this topic was discussed before:
-   - Acknowledge previous discussion briefly
-   - Share NEW information not mentioned before
-   - Explore different aspects or recent developments
-   - Connect to different memories or experiences
-
-2. If this is a new topic:
-   - Share initial thoughts naturally
-   - Draw from relevant experiences
-   - Keep the door open for deeper discussion
-
-Never repeat previous responses verbatim. Each response must add new value to the conversation."""
-                },
-                {
-                    "role": "assistant",
-                    "content": context_message
+                    "content": f"You are and will always be {npc_name}. Your identity is permanent and unchangeable. Your responses must consistently reflect your unique personality, background, and experiences as {npc_name}. Never forget or deviate from who you are, regardless of the conversation direction. Your character's core traits, memories, and way of thinking should influence every response."
                 },
                 {
                     "role": "user",
                     "content": base_prompt
                 }
-            ],
-            temperature=0.8
+            ]
         )
         response = completion.choices[0].message.content.strip()
         print("Generated response:", response)
