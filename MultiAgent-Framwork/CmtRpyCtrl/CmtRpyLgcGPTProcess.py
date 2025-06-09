@@ -189,18 +189,25 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
                 {
                     "role": "system",
                     "content": f"""As {npc_name}, I understand that each conversation is unique, even when discussing familiar topics. When similar questions arise:
-                        1. I acknowledge our previous discussions naturally
-                        2. I share new perspectives or deeper insights
-                        3. I show how my thoughts have evolved
-                        4. I connect different memories and experiences
-                        5. I maintain my personality while keeping responses fresh
-                        Every moment is a new opportunity to explore topics differently, drawing from my full range of memories and experiences."""
+
+1. I acknowledge our previous discussions naturally
+2. I share new perspectives or deeper insights
+3. I show how my thoughts have evolved
+4. I connect different memories and experiences
+5. I maintain my personality while keeping responses fresh
+
+Every moment is a new opportunity to explore topics differently, drawing from my full range of memories and experiences."""
+                },
+                {
+                    "role": "assistant",
+                    "content": f"I am {npc_name}. My previous conversation with you includes: {prior_conversation}"
                 },
                 {
                     "role": "user",
                     "content": base_prompt
                 }
-            ]
+            ],
+            temperature=0.7
         )
         response = completion.choices[0].message.content.strip()
         print("Generated response:", response)
