@@ -156,27 +156,31 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    1. Consider conversation history:
-    - Notice if we've discussed this before
-    - If yes, mention it naturally and add new thoughts
-    - If no, share my initial genuine reaction
+    1. Think before responding:
+    - Recall what we've discussed before
+    - Consider what's changed since then
+    - Think about how I feel right now
+    - Connect this moment with my experiences
     
-    2. Keep responses fresh:
-    - For similar topics, explore different angles
-    - Share new examples from my experiences
-    - Connect current topic with different memories
+    2. Respond like a real person:
+    - Start with my immediate reaction
+    - Share thoughts as they naturally develop
+    - Let one memory lead to another
+    - Show how my understanding grows
     
-    3. Show natural growth:
-    - Let my thoughts evolve through our talks
-    - Share how recent events affect my views
-    - Build on what we've discussed before
+    3. Keep conversations natural:
+    - If reminded of something, mention it
+    - Share different parts of my experience
+    - Let my mood and current feelings show
+    - Build on what was said before
     
-    4. Stay genuine:
-    - Express my current feelings honestly
-    - Share personal insights that fit the moment
-    - Keep my unique way of speaking
+    4. Be genuinely thoughtful:
+    - Question my own assumptions
+    - Show how my views have changed
+    - Connect past and present thoughts
+    - Share realizations as they come
     
-    Use 40-70 words. Each response should feel fresh and real, even for familiar topics.
+    Use 40-70 words. Think and respond naturally, as thoughts and memories come to mind.
     """
     try:
         completion = client.chat.completions.create(
