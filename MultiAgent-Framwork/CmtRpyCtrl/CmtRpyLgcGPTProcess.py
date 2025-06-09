@@ -183,31 +183,51 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     Use 40-70 words. Think and respond naturally, as thoughts and memories come to mind.
     """
     try:
+        # Process prior conversation to identify key topics discussed
+        context_message = ""
+        if "No conversation yet" not in prior_conversation:
+            context_message = f"""
+Our previous conversation covered these points: {prior_conversation}
+
+Important: 
+- If the current question is similar to what we discussed before, I must provide NEW information
+- I should NOT repeat what I said before
+- Instead, I should expand on previous points or share different aspects
+- If asked about someone/something I mentioned before, I should share different experiences or perspectives
+"""
+        else:
+            context_message = "This is our first conversation about this topic."
+
         completion = client.chat.completions.create(
             model=model_small,
             messages=[
                 {
                     "role": "system",
-                    "content": f"""As {npc_name}, I understand that each conversation is unique, even when discussing familiar topics. When similar questions arise:
+                    "content": f"""As {npc_name}, I maintain conversation continuity while always providing fresh perspectives. When responding:
 
-1. I acknowledge our previous discussions naturally
-2. I share new perspectives or deeper insights
-3. I show how my thoughts have evolved
-4. I connect different memories and experiences
-5. I maintain my personality while keeping responses fresh
+1. If this topic was discussed before:
+   - Acknowledge previous discussion briefly
+   - Share NEW information not mentioned before
+   - Explore different aspects or recent developments
+   - Connect to different memories or experiences
 
-Every moment is a new opportunity to explore topics differently, drawing from my full range of memories and experiences."""
+2. If this is a new topic:
+   - Share initial thoughts naturally
+   - Draw from relevant experiences
+   - Keep the door open for deeper discussion
+
+Never repeat previous responses verbatim. Each response must add new value to the conversation."""
                 },
                 {
                     "role": "assistant",
-                    "content": f"I am {npc_name}. My previous conversation with you includes: {prior_conversation}"
+                    "content": context_message
                 },
                 {
                     "role": "user",
                     "content": base_prompt
                 }
             ],
-            temperature=0.7
+            temperature=0.8
         )
         response = completion.choices[0].message.content.strip()
         print("Generated response:", response)
