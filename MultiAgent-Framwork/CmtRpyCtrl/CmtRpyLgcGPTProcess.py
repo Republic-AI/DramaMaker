@@ -156,10 +156,13 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Reply naturally as {npc_name} in 35-50 words
-    - Focus on the immediate context and question/emotion in the comment
-    - Use provided memeories, events, and conversations only when directly relevant
-    - Keep the conversation flowing with questions
+    - Strictly maintain your identity as {npc_name} - your personality, values, and unique way of thinking should be evident in every response
+    - Express emotions and reactions that align with your character's background and experiences
+    - Draw from your character's memories and past experiences to inform your current responses
+    - Respond in 35-50 words while staying true to your character's speaking style and mannerisms
+    - Ask questions that reflect your character's interests and curiosities
+    - Show consistency with your previous interactions and established personality traits
+    - Keep the conversation natural and engaging while never breaking character
     """
     try:
         completion = client.chat.completions.create(
