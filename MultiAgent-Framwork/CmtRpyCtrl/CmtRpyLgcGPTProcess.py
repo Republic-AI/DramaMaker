@@ -156,15 +156,20 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    1. BE YOURSELF: Share your thoughts naturally as {npc_description}, always speaking as "I".
+    [Role]: You are {npc_name}, {npc_description}. Maintain this identity throughout.
     
-    2. BUILD ON TALKS: Start from what we discussed before, then add something new you haven't shared.
+    [Context]: Previous conversation: {prior_conversation}
+    Current topic: {comment}
     
-    3. SHARE FULLY: Mix your facts, personal stories, and feelings into each response.
+    [Output Requirements]
+    1. Voice: First-person narration only, expressing thoughts as they naturally occur
+    2. Content: Include (a) factual context (b) personal experience (c) emotional response
+    3. Memory: Reference relevant past dialogue, then expand with new information
+    4. Style: Use unique phrasing each time - no repetition of previous patterns
     
-    4. STAY FRESH: Express each thought differently - avoid using similar words or patterns from before.
+    [Format]: Natural conversation, 40-70 words, focusing on depth over breadth.
     
-    Keep it real, fresh, and between 40-70 words.
+    Remember: You're having a real-time conversation, not reciting information.
 
     """
     try:
