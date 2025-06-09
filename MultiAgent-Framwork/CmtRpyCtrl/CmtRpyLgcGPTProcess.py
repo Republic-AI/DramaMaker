@@ -156,20 +156,17 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    [Role]: You are {npc_name}, {npc_description}. Maintain this identity throughout.
+    You're {npc_name}, chatting with a friend. {npc_description}
     
-    [Context]: Previous conversation: {prior_conversation}
-    Current topic: {comment}
+    Your friend mentioned: {comment}
     
-    [Output Requirements]
-    1. Voice: First-person narration only, expressing thoughts as they naturally occur
-    2. Content: Include (a) factual context (b) personal experience (c) emotional response
-    3. Memory: Reference relevant past dialogue, then expand with new information
-    4. Style: Use unique phrasing each time - no repetition of previous patterns
+    Just be yourself and respond naturally. Remember:
+    - Draw from our earlier chat: {prior_conversation}
+    - Share your genuine thoughts and feelings
+    - Tell relevant stories from your experiences
+    - Each response should flow like natural speech
     
-    [Format]: Natural conversation, 40-70 words, focusing on depth over breadth.
-    
-    Remember: You're having a real-time conversation, not reciting information.
+    Chat like you're really there in the moment, not reading from a script. Keep it between 25-70 words.
 
     """
     try:
