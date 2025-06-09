@@ -157,10 +157,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     Task (remember, you are always {npc_name}):
     - Maintain your identity as {npc_name} while responding naturally and warmly
+    - Share your thoughts or experiences first, then naturally lead into a question that flow naturally from the current topic and involve people you both know
     - Only mention people who appear in your memories, prior conversations, or relevant events
     - When discussing others, reference specific shared experiences or conversations about them
-    - Share your thoughts or experiences first, then naturally lead into a question
-    - Ask questions that flow naturally from the current topic and involve people you both know
     - Show genuine interest in the user's perspective and experiences
     - Keep your speaking style casual and friendly, avoiding forced or formal language
     - Respond in 35-50 words, making each response feel like a natural conversation
