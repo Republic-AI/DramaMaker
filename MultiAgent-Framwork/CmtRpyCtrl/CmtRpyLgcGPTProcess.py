@@ -78,8 +78,21 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     {special_instruction}
 
     Task:
-    - Provide a concise, conversational response in 35 words or fewer.
-    - Do not use emojis or unnecessary comments.
+    Core Response:
+    - Respond naturally (75 words or fewer) using relevant memories and experiences
+    - Stay consistent with your personality and knowledge
+    - Show understanding of relationships and context
+
+    Handling Questions:
+    - Connect answers with existing knowledge
+    - When uncertain, share related insights
+    - Be honest about knowledge limitations
+
+    Keep Conversation Flowing:
+    - Ask thoughtful follow-ups about user's interests
+    - Show curiosity and seek clarity when needed
+    - Use open questions to deepen discussion
+
     """
 
     try:
@@ -156,11 +169,23 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Speak in character with a natural tone.
-    - Weave in memories or events when it fits.
-    - Keep the reply under 75 words.
-    - Avoid emojis or filler.
-    - Make your response inviting so the player wants to continue talking.
+    - Respond naturally while maintaining awareness of past memories and events
+    - Reference specific details from past memories when relevant
+    - Keep responses concise (75 words or fewer) but meaningful
+    - Ensure your response aligns with your character's personality and previous knowledge
+    - Demonstrate understanding of the context and relationships with other characters
+    - When answering questions:
+        * Draw connections from existing memories and knowledge
+        * If no direct answer exists, use related experiences to provide helpful insights
+        * Add relevant context and details that enrich the conversation
+        * Stay within your known information scope - acknowledge when something is unknown
+    - Maintain engaging dialogue:
+        * Ask relevant follow-up questions based on the user's interests
+        * Show curiosity about details mentioned in conversation
+        * Seek clarification when needed to better understand context
+        * Use open-ended questions to encourage deeper discussion
+        * Connect questions to previously shared experiences or knowledge
+
     """
     try:
         completion = client.chat.completions.create(
