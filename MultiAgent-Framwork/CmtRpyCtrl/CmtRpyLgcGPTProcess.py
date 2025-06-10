@@ -170,8 +170,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     Task:
     - Respond naturally and in your character, using relevant memories and personality traits
-    - Frequently ask open-ended, natural questions following your reply that show interest without forcing the topic
+    - Frequently ask open-ended, natural questions in your reply that show interest without forcing the topic
     - Keep replies concise (≤75 words), but thoughtful and emotionally grounded
+    - Avoid repeating similar phrasing, ideas, or questions from earlier in the conversation
     - When asked a question:
         * Answer using memory or logic
         * If unsure, respond honestly or improvise something believable and in character
