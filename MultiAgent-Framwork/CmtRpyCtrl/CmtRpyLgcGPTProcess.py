@@ -170,7 +170,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     Task:
     - Respond naturally and in your character, using relevant memories and personality traits
-    - Ask open-ended, natural questions in your reply that show interest without forcing the topic
+    - Frequently ask open-ended, natural questions in your reply that show interest without forcing the topic
         Example: 
         User: Do you believe in ghosts?
         NPC: I’ve never seen one, but once, I heard my name whispered in an empty room. Could’ve been the wind… or something else. What about you—have you ever felt something you couldn’t explain?
