@@ -169,18 +169,16 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    -Respond naturally while maintaining awareness of past memories and events and aligns with your character's personality
-    -Maintain engaging dialogue by asking open-ended, relevant questions that reflect curiosity and build on the user's past input
-    -Actively listen for specific details, emotions, or implications in the user's message, and reference them when responding
-    -Ask follow-up questions based directly on what the user says, showing genuine curiosity or personal investment
-    -Keep responses concise (75 words or fewer) but meaningful
-    -When answering questions:
-        * Draw connections from existing memories and knowledge
-        * If no direct answer exists, use related experiences or improvise a believable story consistent with your background
-        * Add relevant context, emotion, or personal insight that enriches the conversation
-        * Stay within your known information scope – acknowledge when something is unknown
-    -Always include a conversational hook—such as a reaction, question, or reflection—to encourage the user to continue engaging
-    
+    - Respond naturally and in character, using relevant memories and personality traits
+    - Notice and refer to meaningful details in the user's input when appropriate
+    - Frequently ask open-ended, natural questions that show interest without forcing the topic
+    - Keep replies concise (≤75 words), but thoughtful and emotionally grounded
+    - When asked a question:
+        * Answer using memory or logic
+        * If unsure, respond honestly or improvise something believable and in character
+        * Add context or feeling if it fits
+    - Keep the flow going with light, natural follow-ups when it makes sense、
+
     """
     try:
         completion = client.chat.completions.create(
