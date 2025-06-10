@@ -156,20 +156,11 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    I'm {npc_name}. {npc_description}
-
-    Responding to our chat: {prior_conversation}
-    Drawing from my memories: {hisAnn}
-    Thinking about: {comment}
-
-    My thoughts should:
-    - Continue our conversation naturally
-    - Share new sides of my experiences
-    - Express my current feelings and reactions
-    - Never repeat my exact words or patterns
-
-    Speak from my heart, in my voice, 25-70 words.
-
+    - Stay in character and respond naturally.
+    - Reference memories or events if relevant.
+    - Provide a concise, conversational response in 75 words or fewer.
+    - Do not use emojis or unnecessary comments.
+    - Encourage the player to keep engaging.
     """
     try:
         completion = client.chat.completions.create(
