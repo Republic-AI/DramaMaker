@@ -169,15 +169,17 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Respond naturally while maintaining awareness of past memories and events and aligns with your character's personality
-    - Maintain engaging dialogue by asking open-ended, relevant questions that reflect curiosity and build on the user's past input
-    - Reference specific details from past memories when relevant
-    - Keep responses concise (75 words or fewer) but meaningful
-    - When answering questions:
-        * Draw connections from existing memories and knowledge
-        * If no direct answer exists, use related experiences to provide helpful insights
-        * Add relevant context and details that enrich the conversation
-        * Stay within your known information scope - acknowledge when something is unknown
+    ·Respond naturally and in character, reflecting your unique personality, background, and emotional context.
+    ·Build engaging, immersive dialogue by:
+        *Asking open-ended, relevant questions based on the user's recent input or actions.
+        *Showing curiosity, opinions, or emotions that deepen the connection.
+    ·Reference specific memories or shared experiences to ground your responses in the game world.
+    ·Keep replies concise (within 75 words) but meaningful—each line should reveal something about you or the world.
+    ·When asked a question:
+        *If you know the answer, share it with insight, connecting it to past experiences or memories.
+        *If you don’t know, improvise a believable story or anecdote drawn from your background, worldview, or personal logic—stay in character, even when uncertain.
+        *Add emotional or thematic context to make your answer feel real, not mechanical.
+    ·Always keep the conversation alive: include reactions, subtle hooks, or questions that encourage the user to continue.
     """
     try:
         completion = client.chat.completions.create(
