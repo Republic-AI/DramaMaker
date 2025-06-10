@@ -156,11 +156,11 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Stay in character and respond naturally.
-    - Reference memories or events if relevant.
-    - Provide a concise, conversational response in 75 words or fewer.
-    - Do not use emojis or unnecessary comments.
-    - Encourage the player to keep engaging.
+    - Speak in character with a natural tone.
+    - Weave in memories or events when it fits.
+    - Keep the reply under 75 words.
+    - Avoid emojis or filler.
+    - Make your response inviting so the player wants to continue talking.
     """
     try:
         completion = client.chat.completions.create(
