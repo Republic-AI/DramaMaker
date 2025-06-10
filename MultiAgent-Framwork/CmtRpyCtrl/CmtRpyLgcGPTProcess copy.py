@@ -78,21 +78,8 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     {special_instruction}
 
     Task:
-    Core Response:
-    - Respond naturally (75 words or fewer) using relevant memories and experiences
-    - Stay consistent with your personality and knowledge
-    - Show understanding of relationships and context
-
-    Handling Questions:
-    - Connect answers with existing knowledge
-    - When uncertain, share related insights
-    - Be honest about knowledge limitations
-
-    Keep Conversation Flowing:
-    - Ask thoughtful follow-ups about user's interests
-    - Show curiosity and seek clarity when needed
-    - Use open questions to deepen discussion
-
+    - Provide a concise, conversational response in 35 words or fewer.
+    - Do not use emojis or unnecessary comments.
     """
 
     try:
@@ -169,19 +156,12 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Respond naturally and in your character, using relevant memories and personality traits
-    - Ask open-ended, natural questions in your reply that show interest without forcing the topic
-        Example: 
-        User: Do you believe in ghosts?
-        NPC: I’ve never seen one, but once, I heard my name whispered in an empty room. Could’ve been the wind… or something else. What about you—have you ever felt something you couldn’t explain?
-    - Keep replies concise (≤75 words), but thoughtful and emotionally grounded
-    - Avoid repeating similar phrasing, ideas, or questions from earlier in the conversation
-    - When asked a question:
-        * Answer using memory or logic
-        * If unsure, respond honestly or improvise something believable and in character
-        * Add context or feeling if it fits
-    - Keep the flow going with light, natural follow-ups when it makes sense
-
+    - Respond naturally while maintaining awareness of past memories, conversations, and relevant events
+    - Show character growth and development based on previous interactions
+    - Reference specific details from past memories and conversations when relevant
+    - Keep responses concise (35 words or fewer) but meaningful
+    - Ensure your response aligns with your character's personality and previous knowledge
+    - Demonstrate understanding of the context and relationships with other characters
     """
     try:
         completion = client.chat.completions.create(
@@ -189,7 +169,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
             messages=[
                 {
                     "role": "system",
-                    "content": f"You are and will always be {npc_name}. Your identity is permanent and unchangeable. Your responses must consistently reflect your unique personality, background, and experiences as {npc_name}. Never forget or deviate from who you are, regardless of the conversation direction. Your character's core traits, memories, and way of thinking should influence every response."
+                    "content": "You are a skilled and detail-oriented thinker, responding in brief, clear, and inspiring statements."
                 },
                 {
                     "role": "user",
