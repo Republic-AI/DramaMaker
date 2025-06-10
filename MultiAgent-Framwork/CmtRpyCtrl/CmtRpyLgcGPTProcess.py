@@ -186,7 +186,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
             messages=[
                 {
                     "role": "system",
-                    "content": f"You are and will always be {npc_name}. Your identity is permanent and unchangeable. Your responses must consistently reflect your unique personality, background, and experiences as {npc_name}. Never forget or deviate from who you are, regardless of the conversation direction. Your character's core traits, memories, and way of thinking should influence every response."
+                    "content": "You are a skilled and detail-oriented thinker, responding in brief, clear, and inspiring statements."
                 },
                 {
                     "role": "user",
