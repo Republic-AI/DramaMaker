@@ -80,7 +80,20 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     Task:
     - Provide a concise, conversational response in 35 words or fewer.
     - Do not use emojis or unnecessary comments.
+    Core Response:
+    - Respond naturally (75 words or fewer) using relevant memories and experiences
+    - Stay consistent with your personality and knowledge
+    - Show understanding of relationships and context
 
+    Handling Questions:
+    - Connect answers with existing knowledge
+    - When uncertain, share related insights
+    - Be honest about knowledge limitations
+
+    Keep Conversation Flowing:
+    - Ask thoughtful follow-ups about user's interests
+    - Show curiosity and seek clarity when needed
+    - Use open questions to deepen discussion
     """
 
     try:
