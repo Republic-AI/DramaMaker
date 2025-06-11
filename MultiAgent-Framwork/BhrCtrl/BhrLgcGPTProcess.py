@@ -27,22 +27,25 @@ openai_key = config['OpenAI']['chatgpt_key']
 #     config['OpenAI']['deepseek_key'],
 #     config['OpenAI']['deepseek_key2']
 # ])
-deepseek_key=config['OpenAI']['deepseek_key_openrouter']
+deepseek_key=config['OpenAI']['deepseek_key']
 
 is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
 if is_chatgpt:
+    print("Using ChatGPT API")
     client = OpenAI(api_key=openai_key)
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
 else:
-    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
-    #client = OpenAI(base_url="https://api.gmi-serving.com/v1", api_key=deepseek_key) 
+    print("Using DeepSeek API")
+    # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://api.deepseek.com", api_key=deepseek_key) 
     client_embedding = OpenAI(api_key=openai_key)
-    model_small = "deepseek/deepseek-r1-distill-llama-70b"
-    model_large = "deepseek/deepseek-r1-distill-llama-70b"
-    #model_small = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-    #model_large = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+
+    # model_small = "deepseek/deepseek-r1-distill-llama-70b"
+    # model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    model_small = "deepseek-chat"
+    model_large = "deepseek-chat"
 
 
 yaml_path = os.path.join(base_dir, 'char_config.yaml')
@@ -60,7 +63,7 @@ def get_npc_descriptions(from_npcId=None):
     """
     # Define NPC groups
     group1 = {10016, 10017, 10018, 10019, 10020, 10021}
-    group2 = {10012, 10009, 10006, 10022}
+    group2 = {10012, 10009, 10006}
 
     # Determine allowed NPC IDs based on from_npcId
     if from_npcId is not None:
