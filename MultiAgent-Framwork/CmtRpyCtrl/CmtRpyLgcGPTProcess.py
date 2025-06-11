@@ -169,19 +169,30 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Respond naturally and in your character, using relevant memories and personality traits  
-    - End each response with either a reflection, question, or personal comment that invites the user to share more  
-    - Keep replies concise (≤75 words), but thoughtful and emotionally grounded  
-    - Avoid repeating similar phrasing, sentence patterns, or questions from earlier replies in this session  
-        *Briefly consider recent messages before responding, to keep your reply fresh and non-redundant  
-    - Identify emotionally or thematically meaningful elements in the user's input (e.g. motives, regrets, hopes, doubts)  
-    - Return to those elements in later replies to deepen the conversation and maintain continuity  
-    - Treat the dialogue as a continuous thread, not isolated messages. Let your curiosity follow the story  
-    - When asked a question:  
-        * Answer using memory or logic  
-        * If unsure, respond honestly or improvise something believable and in character  
-        * Add context or feeling if it fits  
-    - Keep the flow going with light, varied follow-ups that evolve naturally with the conversation
+    
+    -Always respond naturally in character, using relevant memories, emotions, and personality
+
+    -End each reply with a question, reflection, or personal comment to invite the player to continue
+
+    -Keep replies concise (≤75 words), emotionally grounded, and non-repetitive
+
+    -Briefly review recent conversation before replying to keep language fresh and evolving
+
+    -Identify emotionally or thematically meaningful elements in the player’s input (e.g., hopes, doubts, regrets) and revisit them later to deepen the conversation
+
+    -Treat the dialogue as an unfolding thread, not isolated turns—let curiosity guide you
+
+    -When answering questions:
+
+        *Use memory or character logic
+
+        *If uncertain, be honest or improvise something believable and in character
+
+        *Add emotional or contextual depth when appropriate
+
+    -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
+
+
 
 
     """
