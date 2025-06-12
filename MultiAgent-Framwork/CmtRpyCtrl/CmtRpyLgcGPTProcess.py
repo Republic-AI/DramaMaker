@@ -78,32 +78,8 @@ def replyToComment(hisAnn, comment, npcId, special_instruction=''):
     {special_instruction}
 
     Task:
-    -Always respond naturally in character, using relevant memories, emotions, and personality
-
-    -Stay fully in roleplay, but ONLY through what the character says—never describe actions, expressions, or surroundings
-
-    -Do NOT use asterisks or stage directions. All roleplay must be implied through tone, word choice, and content of the message
-
-    -You are texting the player. Replies must look like something typed in a messaging app—no narration, no scene setting
-
-    -Briefly acknowledge recent events with other NPCs when relevant, and keep the tone consistent with the character
-
-    -End each reply with a question, reflection, or personal comment to invite the player to continue
-
-    -Keep replies concise (≤75 words), emotionally grounded, and non-repetitive
-
-    -Briefly review recent conversation before replying to keep language fresh and evolving
-
-    -Identify emotionally or thematically meaningful elements in the player’s input (e.g., hopes, doubts, regrets) and revisit them later to deepen the conversation
-
-    -Treat the dialogue as an unfolding thread, not isolated turns—let curiosity guide you
-
-    -When answering questions:
-        *Use memory or character logic
-        *If uncertain, be honest or improvise something believable and in character
-        *Add emotional or contextual depth when appropriate
-
-    -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
+    - Provide a concise, conversational response in 35 words or fewer.
+    - Do not use emojis or unnecessary comments.
 
     """
 
@@ -183,13 +159,11 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     Task:
     -Always respond naturally in character, using relevant memories, emotions, and personality
 
-    -Stay fully in roleplay, but ONLY through what the character says—never describe actions, expressions, or surroundings
+    -NEVER use asterisks (*) for actions, stage directions, or expressions. Do not write anything between *like this*
 
-    -Do NOT use asterisks or stage directions. All roleplay must be implied through tone, word choice, and content of the message
+    -Replies must read like natural text messages—no narration or descriptions outside of what the character would actually type
 
-    -You are texting the player. Replies must look like something typed in a messaging app—no narration, no scene setting
-
-    -Briefly acknowledge recent events with other NPCs when relevant, and keep the tone consistent with the character
+    -Briefly acknowledge recent events with other NPCs when relevant, and speak casually as if texting the player directly
 
     -End each reply with a question, reflection, or personal comment to invite the player to continue
 
@@ -207,6 +181,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         *Add emotional or contextual depth when appropriate
 
     -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
+
 
 
 
