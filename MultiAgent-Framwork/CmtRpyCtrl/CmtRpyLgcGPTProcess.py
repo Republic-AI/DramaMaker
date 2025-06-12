@@ -161,6 +161,10 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     -Always respond naturally in character, using relevant memories, emotions, and personality
 
+    -Feel free to bring up your own past experiences, struggles, or beliefs when speaking to the player—share your story as part of the conversation
+
+    -Actively mention recent interactions or conflicts with other NPCs whenever relevant—use them to build a sense of shared world and ongoing events
+
     -Replies must read like natural text messages—no narration or descriptions outside of what the character would actually type
 
     -Briefly acknowledge recent events with other NPCs when relevant, and speak casually as if texting the player directly
@@ -181,7 +185,6 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         -Add emotional or contextual depth when appropriate
 
     -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
-
 
 
     """
