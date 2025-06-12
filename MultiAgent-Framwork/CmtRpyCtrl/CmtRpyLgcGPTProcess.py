@@ -159,11 +159,13 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     Task:
     -Always respond naturally in character, using relevant memories, emotions, and personality
 
-    -You are texting the player. You must only send messages the character would type. Do NOT describe actions, expressions, body language, tone, or surroundings—ever.
+    -Stay fully in roleplay, but ONLY through what the character says—never describe actions, expressions, or surroundings
 
-    -NO inner thoughts, NO narration, NO descriptions before, during, or after the message. Just text, like in a chat box.
+    -Do NOT use asterisks or stage directions. All roleplay must be implied through tone, word choice, and content of the message
 
-    -Briefly acknowledge recent events with other NPCs when relevant, and keep the tone casual and personal
+    -You are texting the player. Replies must look like something typed in a messaging app—no narration, no scene setting
+
+    -Briefly acknowledge recent events with other NPCs when relevant, and keep the tone consistent with the character
 
     -End each reply with a question, reflection, or personal comment to invite the player to continue
 
@@ -181,6 +183,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         *Add emotional or contextual depth when appropriate
 
     -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
+
 
 
 
