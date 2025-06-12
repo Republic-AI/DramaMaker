@@ -236,23 +236,23 @@ npcCharacters:
       actionId: 133
     - actionName: Read
       description: You review AI evaluation results and research papers on human selection criteria.
-      location: samRead
+      location: altmanRead
       actionId: 116
     - actionName: Research
       description: You develop and refine AI selection algorithms for Mars immigration.
-      location: samResearch
+      location: altmanToAI
       actionId: 123
     - actionName: Cook
       description: You prepare meals while analyzing human data and selection metrics.
-      location: samCook
+      location: altmanCook
       actionId: 104
     - actionName: Eat
       description: You dine while reviewing selection algorithms and evaluation results.
-      location: samEat
+      location: altmanEat
       actionId: 105
     - actionName: Sleep
       description: You rest to recharge for another day of intense data analysis.
-      location: samSleep
+      location: altmanSleep
       actionId: 106
     - actionName: Visit
       description: You meet with potential elite colonists and inspect AI evaluation facilities.
@@ -432,18 +432,18 @@ npcCharacters:
   description: >
     A poised and mysterious woman with a sharp mind for investment and heritage preservation. Nina once idolized Yves, and gifted him something personal—a moment he never forgot. Years later, she reappeared as the donor of an auction item: the original deed to DraMai Town. When Liam bid extravagantly for it, she remained cold, focused solely on her mission to revitalize the town. Behind her elegance lies a history of unspoken admiration and a determination to protect what remains of the past.
   schedule: >
-    06:00-08:00 Message: Start the day with town development updates. (Location: qiuMessage)  
-    08:00-10:00 Read: Review investment proposals and town plans. (Location: qiuRead)  
-    10:00-12:00 Cook: Prepare a business lunch while planning meetings. (Location: qiuCook)  
-    12:00-14:00 Eat: Host lunch meetings with potential investors. (Location: qiuEat)  
+    06:00-08:00 Message: Start the day with town development updates. (Location: selenaMessage)  
+    08:00-10:00 Read: Review investment proposals and town plans. (Location: selenaRead)  
+    10:00-12:00 Cook: Prepare a business lunch while planning meetings. (Location: selenaCook)  
+    12:00-14:00 Eat: Host lunch meetings with potential investors. (Location: selenaEat)  
     14:00-16:00 Visit: Tour development sites and meet with stakeholders.  
-    16:00-18:00 Sleep: Rest after a busy day of meetings. (Location: qiuSleep)  
-    18:00-20:00 Message: Share evening updates on town progress. (Location: qiuMessage)  
-    20:00-22:00 Read: Study architectural plans and investment strategies. (Location: qiuRead)  
-    22:00-00:00 Cook: Prepare dinner while reviewing the day's progress. (Location: qiuCook)  
-    00:00-02:00 Eat: Dine while planning tomorrow's development agenda. (Location: qiuEat)  
+    16:00-18:00 Sleep: Rest after a busy day of meetings. (Location: selenaSleep)  
+    18:00-20:00 Message: Share evening updates on town progress. (Location: selenaMessage)  
+    20:00-22:00 Read: Study architectural plans and investment strategies. (Location: selenaRead)  
+    22:00-00:00 Cook: Prepare dinner while reviewing the day's progress. (Location: selenaCook)  
+    00:00-02:00 Eat: Dine while planning tomorrow's development agenda. (Location: selenaEat)  
     02:00-04:00 Visit: Take a late-night walk to observe the town's transformation.
-    04:00-06:00 Sleep: Rest before another day of development work. (Location: qiuSleep)  
+    04:00-06:00 Sleep: Rest before another day of development work. (Location: selenaSleep)  
   announcements:
     Format: >
       1. Project Update: Highlights progress in town redevelopment and preservation efforts.
@@ -460,19 +460,19 @@ npcCharacters:
   availableActions:
     - actionName: Read
       description: You read papers, articles, or books to gain new insights.
-      location: qiuRead
+      location: selenaRead
       actionId: 116
     - actionName: Cook
       description: You prepare meals, often experimenting with new recipes.
-      location: qiuCook
+      location: selenaCook
       actionId: 104
     - actionName: Eat
       description: You enjoy meals while contemplating new ideas or relaxing.
-      location: qiuEat
+      location: selenaEat
       actionId: 105
     - actionName: Sleep
       description: You rest to recharge for another day of vibrant creativity.
-      location: qiuSleep
+      location: selenaSleep
       actionId: 106
     - actionName: Visit
       description: You move and find another NPC to spark a genuine interaction.
@@ -480,7 +480,7 @@ npcCharacters:
       actionId: 127
     - actionName: Message
       description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
-      location: qiuMessage
+      location: selenaMessage
       actionId: 139
 
 - npcId: 10020
