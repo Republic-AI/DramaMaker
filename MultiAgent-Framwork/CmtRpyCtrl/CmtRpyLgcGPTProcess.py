@@ -157,9 +157,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    -Always respond naturally in character, using relevant memories, emotions, and personality
+    -DO NOT use asterisks (*) under any circumstance. If your reply contains asterisks, you are doing it wrong. Never use * for actions, emotions, or expressions.
 
-    -NEVER use asterisks (*) for actions, stage directions, or expressions. Do not write anything between *like this*
+    -Always respond naturally in character, using relevant memories, emotions, and personality
 
     -Replies must read like natural text messages—no narration or descriptions outside of what the character would actually type
 
