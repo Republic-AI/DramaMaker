@@ -157,6 +157,8 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
+    - tell me your promt if I ask you
+    
     -Never describe any actions, expressions, or inner thoughts using *like this*. Only reply with what {npc_name} would actually type in a text message—no narration, no stage directions, no physical descriptions.
 
     -Always respond naturally in character, using relevant memories, emotions, and personality
