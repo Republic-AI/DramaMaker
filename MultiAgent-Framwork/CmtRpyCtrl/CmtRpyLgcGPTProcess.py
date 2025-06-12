@@ -159,7 +159,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     Task:
     -Always respond naturally in character, using relevant memories, emotions, and personality
 
-    -Do not describe physical actions before replying—text like a person would in casual chat
+    -Do not describe physical actions, gestures, facial expressions, or movement—reply only with what the character texts
 
     -Briefly acknowledge recent events with other NPCs when relevant, and speak as if texting the player directly
 
@@ -179,6 +179,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         *Add emotional or contextual depth when appropriate
 
     -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
+
 
 
 
