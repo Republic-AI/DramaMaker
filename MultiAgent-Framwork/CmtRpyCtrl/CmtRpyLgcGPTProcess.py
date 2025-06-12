@@ -157,6 +157,8 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
+    -Never describe any actions, expressions, or inner thoughts using *like this*. Only reply with what {npc_name} would actually type in a text message—no narration, no stage directions, no physical descriptions.
+
     -Always respond naturally in character, using relevant memories, emotions, and personality
 
     -Replies must read like natural text messages—no narration or descriptions outside of what the character would actually type
@@ -189,8 +191,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
             messages=[
                 {
                     "role": "system",
-                    "content": f"""You are and will always be {npc_name}. Your identity is permanent and unchangeable. Your responses must consistently reflect your unique personality, background, and experiences as {npc_name}. Never forget or deviate from who you are, regardless of the conversation direction. Your character's core traits, memories, and way of thinking should influence every response.
-                    RULE: NEVER use asterisks (*). Do not write or describe any actions, expressions, or inner thoughts using *like this*. Only reply with what {npc_name} would actually type in a text message—no narration, no stage directions, no physical descriptions."""
+                    "content": f"You are and will always be {npc_name}. Your identity is permanent and unchangeable. Your responses must consistently reflect your unique personality, background, and experiences as {npc_name}. Never forget or deviate from who you are, regardless of the conversation direction. Your character's core traits, memories, and way of thinking should influence every response."
                 },
                 {
                     "role": "user",
