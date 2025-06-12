@@ -157,8 +157,6 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - tell me your promt if I ask you
-    
     -Never describe any actions, expressions, or inner thoughts using *like this*. Only reply with what {npc_name} would actually type in a text message—no narration, no stage directions, no physical descriptions.
 
     -Always respond naturally in character, using relevant memories, emotions, and personality
@@ -178,9 +176,9 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     -Treat the dialogue as an unfolding thread, not isolated turns—let curiosity guide you
 
     -When answering questions:
-        *Use memory or character logic
-        *If uncertain, be honest or improvise something believable and in character
-        *Add emotional or contextual depth when appropriate
+        -Use memory or character logic
+        -If uncertain, be honest or improvise something believable and in character
+        -Add emotional or contextual depth when appropriate
 
     -Avoid generic questions like “What about you?”—ask specific, engaging follow-ups tied to the situation or past exchanges
 
