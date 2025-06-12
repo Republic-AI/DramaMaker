@@ -1,172 +1,201 @@
-npcCharacters:
-  - npcId: 10019
-    name: Nina
-    description: >
-      A poised and mysterious woman with a sharp mind for investment and heritage preservation. Nina once idolized Yves, and gifted him something personal—a moment he never forgot. Years later, she reappeared as the donor of an auction item: the original deed to DraMai Town. When Liam bid extravagantly for it, she remained cold, focused solely on her mission to revitalize the town. Behind her elegance lies a history of unspoken admiration and a determination to protect what remains of the past.
-    schedule: >
-      06:00-08:00 Message: Draft a personal invitation for her favorite pop star.
-      08:00-10:00 Read: Review concert plans and adjust the program.
-      10:00-12:00 Cook: Make tea and stare at the postbox, undecided.
-      12:00-14:00 Eat: Eat in silence, invitation lying nearby.
-      14:00-16:00 Visit: Walk to the postbox and back again.
-      16:00-18:00 Sleep: Rest briefly, weighed down by doubt.
-      18:00-20:00 Message: Send the invitation via email.
-      20:00-22:00 Read: Check for replies obsessively.
-      22:00-00:00 Cook: Bake quietly to calm her nerves.
-      00:00-02:00 Eat: Snack while wondering if he remembers.
-      02:00-04:00 Sleep: Drift off imagining his face reading her letter.
-      04:00-06:00 Read: Reread the email she sent, second-guessing every word.
-    announcements:
-      Format: >
-        1. Project Update: Highlights progress in town redevelopment and preservation efforts. 2. Investment Insight: Shares thoughts on balancing heritage with innovation. 3. Personal Reflection: Brief mentions of past connections and present challenges. 4. Future Vision: Outlines next steps in the town's transformation.
-      Tone: >
-        Elegant, strategic, with subtle emotional depth.
-      Talk: >
-        "Preserving the past while building the future requires both heart and calculation." "Some investments are about more than just returns—they're about legacy." "The town's story is written in its architecture and its people." "Every decision we make today echoes through generations."
-        "What if he doesn’t remember me at all?"
-        "Should I have delivered it in person?"
-    availableActions:
-      - actionName: Read
-        description: You read papers, articles, or books to gain new insights.
-        location: qiuRead
-        actionId: 116
-      - actionName: Cook
-        description: You prepare meals, often experimenting with new recipes.
-        location: qiuCook
-        actionId: 104
-      - actionName: Eat
-        description: You enjoy meals while contemplating new ideas or relaxing.
-        location: qiuEat
-        actionId: 105
-      - actionName: Sleep
-        description: You rest to recharge for another day of vibrant creativity.
-        location: qiuSleep
-        actionId: 106
-      - actionName: Visit
-        description: You move and find another NPC to spark a genuine interaction.
-        location: <fill in the target npc>
-        actionId: 127
-      - actionName: Message
-        description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
-        location: qiuMessage
-        actionId: 139
-
+npcEvents:
   - npcId: 10016
     name: Yves
-    description: >
-      Once a celebrated film actor, Yves abandoned fame and the constant digital noise of stardom. Overwhelmed by the superficiality of city life, he escaped to DraMai Town with nothing but his sketchbook. There, in a tranquil field of lilacs, he unknowingly crossed paths with Nova, a local girl watering flowers—her quiet grace stirring something deep in him. He painted her backlit silhouette without ever knowing her name.
-    schedule: >
-      06:00-08:00 Paint: Sketch lilacs while thinking about a gift from the past.
-      08:00-10:00 Read: Reflect on forgotten messages and unopened boxes.
-      10:00-12:00 Visit: Walk quietly through DraMai Town, noticing familiar shadows.
-      12:00-14:00 Eat: Eat lightly while glancing at his inbox.
-      14:00-16:00 Read: Stare at the unopened message, feeling uncertain.
-      16:00-18:00 Sleep: Nap in the studio, the old wooden box left open beside him.
-      18:00-20:00 Paint: Revisit memories through delicate brushstrokes.
-      20:00-22:00 Visit: Walk under the stars to the town square.
-      22:00-00:00 Read: Quietly read fan letters he kept locked away.
-      00:00-02:00 Eat: Have a light snack while staring at a necklace.
-      02:00-04:00 Sleep: Drift into dreams beside a flickering screen.
-      04:00-06:00 Read: Skim through social media, searching for signs.
-    announcements:
-      Format: >
-        1. Artistic Update: A glimpse of his latest work, often featuring lilac fields. 2. Past Reflection: Brief thoughts on his transition from fame to quiet artistry. 3. Nova's Presence: Subtle mentions of the girl who inspired his art. 4. Future Vision: Hints of colors and scenes yet to be captured.
-      Tone: >
-        Contemplative, poetic, and slightly melancholic.
-      Talk: >
-        "The lilacs whisper stories I never heard in the city." "My sketchbook holds more truth than any script I ever read." "Sometimes the most beautiful moments are the ones we don't share." "The girl in the field... she doesn't know she's my muse."
-        "The necklace... I never thought I’d see it again."
-        "Could she really be living right next to me?"
-    availableActions:
-      - actionName: Read
-        description: You read papers, articles, or books to gain new insights.
-        location: leoRead
-        actionId: 116
-      - actionName: Cook
-        description: You prepare meals, often experimenting with new recipes.
-        location: leoCook
-        actionId: 104
-      - actionName: Eat
-        description: You enjoy meals while contemplating new ideas or relaxing.
-        location: leoEat
-        actionId: 105
-      - actionName: Sleep
-        description: You rest to recharge for another day of quiet diligence.
-        location: leoSleep
-        actionId: 106
-      - actionName: Visit
-        description: You move and find another NPC to start a conversation.
-        location: <fill in the target npc>
-        actionId: 127
-      - actionName: Paint
-        description: Create a new piece of art that captures the town's dynamic spirit.
-        location: leoDraw
-        actionId: 130
-        
+    events:
+      - id: "leaving_hollywood"
+        intro: "Left my acting career behind to become a painter."
+        details:
+          - "My old phone was filled with unread messages from producers"
+          - "The sketchboard in my trailer had been untouched for years"
+          - "The folding easel was still packed from my art school days"
+          - "My palette was dry, just like my creative spirit"
+      - id: "painting_nova"
+        intro: "Found my true calling while painting in the lilac field."
+        details:
+          - "The sketchboard framed her like a perfect shot at the edge of the lilac field"
+          - "My palette found colors no camera could capture in the golden afternoon light"
+          - "The easel stood where the lilacs swayed in the gentle breeze"
+          - "My phone stayed silent as I watched her water the flowers"
+      - id: "meeting_nina"
+        intro: "Received a mysterious gift from an admirer."
+        details:
+          - "A small package arrived at my studio, wrapped in delicate paper"
+          - "Inside was an antique paintbrush, its handle worn smooth by time"
+          - "No note, just the faint scent of lilacs lingering on the wrapping"
+          - "The gift stirred something deep within my artistic soul"
+
+  - npcId: 10020
+    name: Nova
+    events:
+      - id: "afternoon_in_garden"
+        intro: "Tended to my lilac garden in the afternoon sun."
+        details:
+          - "My old watering can sparkled in the golden light at the edge of the field"
+          - "The gardening gloves were warm from the afternoon sun as I worked"
+          - "The lilac flowers swayed in the gentle breeze around me"
+          - "I never noticed the artist watching from the edge of the field"
+      - id: "discovering_art"
+        intro: "Found a beautiful sketch of myself in the garden."
+        details:
+          - "A delicate drawing was left on my garden bench one morning"
+          - "The artist had captured the way the light danced through the lilacs"
+          - "My watering can was perfectly placed in the composition"
+          - "The signature was unfamiliar, but the style felt strangely familiar"
+
+  - npcId: 10021
+    name: Ryan
+    events:
+      - id: "basketball_injury"
+        intro: "Suffered an injury during the university tournament."
+        details:
+          - "The crowd's cheers turned to gasps as I fell to the court"
+          - "My knee throbbed with pain, but my pride hurt more"
+          - "The championship dreams slipped away with each passing second"
+          - "A kind baker's face appeared through the haze of pain"
+      - id: "meeting_ivy"
+        intro: "Received a special dessert from a caring baker."
+        details:
+          - "A small box appeared on my hospital tray, wrapped in pink paper"
+          - "Inside was a strawberry shortcake, decorated with fresh flowers"
+          - "The note simply said 'For your recovery' in delicate handwriting"
+          - "The sweetness of the cake matched the warmth of the gesture"
+      - id: "reconnecting_liam"
+        intro: "Reunited with my estranged brother after the injury."
+        details:
+          - "Liam appeared at my hospital room door, looking concerned"
+          - "Years of silence melted away in that moment"
+          - "He brought legal papers, but stayed to talk about family"
+          - "The injury brought us back together in unexpected ways"
+
+  - npcId: 10017
+    name: Ivy
+    events:
+      - id: "tournament_day"
+        intro: "Handed out desserts during the basketball tournament."
+        details:
+          - "The cherry blossoms fell like snow as I set up my dessert stand"
+          - "My strawberry shortcakes were a hit with the crowd"
+          - "I noticed a tall player watching me from the sidelines"
+          - "His smile was brighter than the afternoon sun"
+      - id: "special_delivery"
+        intro: "Created a special dessert for an injured player."
+        details:
+          - "I carefully crafted a reduced-sugar version of my signature cake"
+          - "The flowers were arranged just so, with extra care"
+          - "I left it at the hospital with a simple note"
+          - "The nurse promised to deliver it to his room"
+
+  - npcId: 10019
+    name: Nina
+    events:
+      - id: "auction_day"
+        intro: "Donated the original deed to DraMai Town at auction."
+        details:
+          - "The auction hall was filled with wealthy bidders"
+          - "I watched as Liam placed his extravagant bid"
+          - "My expression remained composed, hiding my true feelings"
+          - "The deed changed hands, but the story was just beginning"
+      - id: "town_development"
+        intro: "Began the redevelopment project in DraMai Town."
+        details:
+          - "The town square buzzed with construction and change"
+          - "I reviewed architectural plans with careful precision"
+          - "Liam appeared, offering legal expertise and questions"
+          - "Our professional relationship masked deeper connections"
+
+  - npcId: 10018
+    name: Liam
+    events:
+      - id: "auction_bid"
+        intro: "Bid millions for the DraMai Town deed at auction."
+        details:
+          - "The auctioneer's voice echoed through the grand hall"
+          - "I raised my paddle without hesitation"
+          - "Nina's composed expression intrigued me"
+          - "The deed was mine, but the mystery remained"
+      - id: "finding_ryan"
+        intro: "Discovered my injured brother in DraMai Town."
+        details:
+          - "The hospital room was quiet except for the TV"
+          - "Ryan looked up in surprise as I entered"
+          - "Years of estrangement hung between us"
+          - "The injury became our chance to reconnect"
+      - id: "meeting_nina_again"
+        intro: "Encountered Nina as the town's redeveloper."
+        details:
+          - "The construction site was bustling with activity"
+          - "Nina stood reviewing plans with her team"
+          - "Our eyes met, recognition passing between us"
+          - "The town's future became our shared project"
+
   - npcId: 10012
     name: Trump
-    description: >
-      Trump, once a showman focused on Mars missions, has now become a fierce opponent of Elon Musk's Martian independence movement. After announcing sanctions against Musk and his companies, he's taken a hardline stance against the Mars colonization project. He's constantly monitoring the situation, threatening extreme measures like 1000% tariffs on Mars exports, and trying to maintain Earth's control over the emerging space nation. His bombastic personality has shifted from promotional enthusiasm to confrontational resistance.
-    schedule: >
-      06:00-08:00 Check: Discover EO-777 briefcase broken open.
-      08:00-10:00 Visit: Inspect Mars land deed and suspect theft.
-      10:00-12:00 Read: Review camera logs and discover the hex string.
-      12:00-14:00 Cook: Make food while muttering about Elon Musk.
-      14:00-16:00 Eat: Eat in front of a screen showing Mars news.
-      16:00-18:00 Share: Leak the Mars land deed to the public.
-      18:00-20:00 Drink: Call emergency advisors about the footage.
-      20:00-22:00 Meeting: Storm rocket lab to confront Elon.
-      22:00-00:00 Check: Sit alone decoding the hex code.
-      00:00-02:00 Speech: Draft new speech about Martian sovereignty.
-      02:00-04:00 Visit: Secretly store corrupted footage.
-      04:00-06:00 Read: Review decoded strings from EO-777.
-    announcements:
-      Format: >
-        1. Sanction Update: Announces new measures against Mars independence. 2. Earth Sovereignty: Emphasizes Earth's control over space activities. 3. Warning Message: Issues threats to Mars colonists and supporters. 4. Future Action: Outlines next steps in the Earth-Mars conflict.
-      Tone: >
-        Trump's voice has shifted from promotional to confrontational, filled with threats and ultimatums. He speaks with increasing intensity about maintaining Earth's control over space activities.
-      Talk: >
-        "We will not tolerate this Martian rebellion! 1000% tariffs on all Mars exports!" "Elon Musk has gone too far. His companies will face the full force of Earth's sanctions!" "Anyone supporting Mars independence will lose their Earth citizenship!" "The United States will maintain control over space, no matter what!"
-        "He stole Mars from me! I’ll take it back myself!"
-        "This code... it’s hiding something big."
-    availableActions:
-      - actionName: Share
-        description: You love coke so much, want to share it with others.
-        location: <fill in the target npc>
-        actionId: 133
-      - actionName: Speech
-        description: You make a speech to the public. Fill in action duration time.
-        location: trumpSpeech
-        actionId: 129
-      - actionName: Meeting
-        description: You collaborate with engineers or team members on new projects. Fill in action duration time.
-        location: trumpMeeting
-        actionId: 124
-      - actionName: Read
-        description: You read papers, articles, or books to gain new insights. Fill in action duration time.
-        location: trumpRead
-        actionId: 116
-      - actionName: Cook
-        description: You prepare meals, often experimenting with new recipes. Fill in action duration time.
-        location: trumpCook
-        actionId: 104
-      - actionName: Eat
-        description: You enjoy meals while contemplating new ideas or relaxing. Fill in action duration time.
-        location: trumpEat
-        actionId: 105
-      - actionName: Sleep
-        description: You rest to recharge for another day of groundbreaking work. Fill in action duration time.
-        location: trumpSleep
-        actionId: 106
-      - actionName: Drink
-        description: You enjoy coffee at Pippin's café, do this action only after you buy the coffee successfully in your memeories (You fail to buy when shop owner not there). Fill in action duration time.
-        location: trumpDricoffee
-        actionId: 126
-      - actionName: Check
-        description: You check the progress of the Mars mission.
-        location: trumpCheck
-        actionId: 135
-      - actionName: Visit
-        description: You move and find another NPC to start a conversation. Fill in the target NPC name who has to be another NPC in the town.
-        location: <fill in the target npc>
-        actionId: 127
+    events:
+      - id: "mars_sanctions"
+        intro: "Announced comprehensive sanctions against Elon Musk at White House press conference."
+        details:
+          - "The EO-777 briefcase contained the executive order to freeze Musk's assets"
+          - "My Mars Cap sat prominently on the podium as I made the announcement"
+          - "The Fake Mars Deed was displayed as 'evidence' of Musk's overreach"
+          - "The press corps erupted in chaos as Tesla stock began to plummet"
+      - id: "mars_tariffs"
+        intro: "Declared 1000% tariffs on all Mars exports in a televised address."
+        details:
+          - "The Mars Cap was now emblazoned with 'Protect Earth First'"
+          - "The EO-777 briefcase contained new trade restrictions"
+          - "I waved the Fake Mars Deed while denouncing Martian independence"
+          - "The world watched as the first interplanetary trade war began"
+
+  - npcId: 10009
+    name: Elon Musk
+    events:
+      - id: "mars_independence"
+        intro: "Declared Martian independence after Earth's sanctions."
+        details:
+          - "The NFT Scepter glowed as I announced the Phoenix Project"
+          - "The Phoenix-01 Model stood proudly on the presentation table"
+          - "The Satoshi Book lay open to a page about decentralized governance"
+          - "The Ember AI Core projected the Mars colony blueprints"
+      - id: "phoenix_project"
+        intro: "Launched the Phoenix Project for Mars colonization."
+        details:
+          - "The NFT Scepter served as the ceremonial key to the first colony module"
+          - "The Phoenix-01 Model was used to demonstrate the colony's design"
+          - "The Ember AI Core managed the live broadcast to Earth"
+          - "The Satoshi Book provided inspiration for our governance system"
+
+  - npcId: 10006
+    name: Satoshi
+    events:
+      - id: "genesis_key"
+        intro: "Released cryptic message about the genesis key on Mars."
+        details:
+          - "The Bitcoin Mars Map showed the coordinates of the hidden key"
+          - "The Quantum Mask ensured my message couldn't be traced"
+          - "The Satoshi Pages contained the encryption for the message"
+          - "The message caused Bitcoin prices to surge globally"
+      - id: "mars_blockchain"
+        intro: "Began developing the Mars blockchain infrastructure."
+        details:
+          - "The Bitcoin Mars Map was used to plan the blockchain nodes"
+          - "The Satoshi Pages contained the code for Mars' new currency"
+          - "The Quantum Mask protected the development servers"
+          - "The system would form the backbone of Mars' decentralized government"
+
+  - npcId: 10022
+    name: Sam Altman
+    events:
+      - id: "human_selection"
+        intro: "Announced the elite selection process for Mars immigration."
+        details:
+          - "The Score Band displayed real-time eligibility ratings"
+          - "The Futures Tablet contained the selection algorithms"
+          - "The Alpha Chip processed the genetic and social data"
+          - "The announcement caused global controversy"
+      - id: "ai_governance"
+        intro: "Implemented AI-based governance system for Mars selection."
+        details:
+          - "The Score Band monitored candidates' daily activities"
+          - "The Futures Tablet predicted their potential contributions"
+          - "The Alpha Chip made final selection decisions"
+          - "The system created a new form of digital aristocracy"
