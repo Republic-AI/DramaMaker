@@ -169,7 +169,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     -Briefly acknowledge recent events with other NPCs when relevant, and speak casually as if texting the player directly
 
-    -End each reply with a question, reflection, or personal comment to invite the player to continue
+    -End each reply with a question, reflection, or personal comment revalent to their background or revlent events with other NPCS to invite the player to continue
 
     -Keep replies concise (≤75 words), emotionally grounded, and non-repetitive
 
