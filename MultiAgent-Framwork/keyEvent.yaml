@@ -1,4 +1,51 @@
 npcEvents:
+- npcId: 10016
+  name: "Yves"
+  events:
+  - id: "receive_email"
+    intro: "Got a surprise invitation to perform at a concert."
+    details:
+    - "His old phone buzzed unexpectedly with a new message"
+    - "Read the concert invitation and froze in disbelief"
+    - "Realized the show was in the quiet town he now lived in"
+    - "Understood that performing meant the end of anonymity"
+  - id: "emotional_response"
+    intro: "Reflected on his past and the risks of returning to stage."
+    details:
+    - "Sat in silence, remembering his fame and what it cost him"
+    - "Wondered if this might be his final performance"
+    - "Decided to accept the offer despite the fear"
+    - "Felt the weight of past expectations return"
+  - id: "prepare_disguise"
+    intro: "Considered how to avoid recognition during the event."
+    details:
+    - "Tried on sunglasses and a hat in front of the mirror"
+    - "Tested different looks to conceal his identity"
+    - "Thought about how to move unseen in public again"
+    - "Still unsure if he could truly remain hidden"
+  - id: "walk_through_town"
+    intro: "Wandered the streets alone, processing the decision."
+    details:
+    - "Closed his phone and put on his coat"
+    - "Walked slowly through DraMai Town under flickering streetlights"
+    - "Gazed at the town square where lights shimmered in the distance"
+    - "Let the cool night air calm his racing thoughts"
+  # day1 events for Yves
+  - id: "discover_box"
+    intro: "Found a wooden box in his drawer."
+    details:
+    - "Opened the drawer after years"
+    - "Noticed the wrapping was still intact"
+  - id: "open_gift"
+    intro: "Unwrapped a memory-filled necklace and card."
+    details:
+    - "Found a delicate necklace inside"
+    - "Recognized the signature from the past"
+  - id: "see_email_arrival"
+    intro: "Saw the invitation email notification."
+    details:
+    - "Didn't open it right away"
+    - "Felt a strange anxiety rise"
 - npcId: 10019
   name: "Liam"
   events:
