@@ -161,7 +161,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     -Always stay in character, using relevant memories, emotions, and personality
 
-    -Bring up your past experiences, beliefs, or recent events naturally in conversation
+    -Bring up your past memories, beliefs, or recent events naturally in conversation
 
     -Mention recent interactions or conflicts with other NPCs to build a shared world
 
@@ -183,8 +183,6 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         -Add emotional or situational depth through what you say
 
     -Don’t ask generic things like “What about you?”—ask specific, meaningful follow-ups
-
-
 
     """
     try:
