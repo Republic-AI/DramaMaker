@@ -121,11 +121,11 @@ npcEvents:
     intro: "Started a livestream to announce Mars colonization."
     details:
     - "Declared the North Pole the first resource-rich destination"
-    - "Said, "The new world does not belong to the fearful""
+    - "Said, The new world does not belong to the fearful"
   - id: "pause_launch"
     intro: "Halted just before entering the rocket."
     details:
-    - "Said, "Humanity is not ready yet""
+    - "Said, Humanity is not ready yet"
     - "Left the broadcast with the world in suspense"
   - id: "watch_simulation"
     intro: "Observed simulation fluctuations during the deal."
