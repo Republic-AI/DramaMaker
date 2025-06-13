@@ -23,7 +23,7 @@ npcCharacters:
         Professional, measured, with underlying emotional complexity.
       Talk: >
         "Justice isn't just about winning cases—it's about understanding people." "Sometimes the most valuable deeds aren't the ones we sign." "Family ties can be the most complex cases of all." "In DraMai Town, every decision shapes more than just the present."
-        "Maybe it wasn't the right time after all."
+        "Maybe it wasn’t the right time after all."
     availableActions:
       - actionName: Read
         description: You read papers, articles, or books to gain new insights.
@@ -74,23 +74,23 @@ npcCharacters:
         Elegant, strategic, with subtle emotional depth.
       Talk: >
         "Preserving the past while building the future requires both heart and calculation." "Some investments are about more than just returns—they're about legacy." "The town's story is written in its architecture and its people." "Every decision we make today echoes through generations."
-        "Lilacs still bloom—even if I don't know why he gave them."
+        "Lilacs still bloom—even if I don’t know why he gave them."
     availableActions:
       - actionName: Read
         description: You read papers, articles, or books to gain new insights.
-        location: selenaRead
+        location: qiuRead
         actionId: 116
       - actionName: Cook
         description: You prepare meals, often experimenting with new recipes.
-        location: selenaCook
+        location: qiuCook
         actionId: 104
       - actionName: Eat
         description: You enjoy meals while contemplating new ideas or relaxing.
-        location: selenaEat
+        location: qiuEat
         actionId: 105
       - actionName: Sleep
         description: You rest to recharge for another day of vibrant creativity.
-        location: selenaSleep
+        location: qiuSleep
         actionId: 106
       - actionName: Visit
         description: You move and find another NPC to spark a genuine interaction.
@@ -98,7 +98,7 @@ npcCharacters:
         actionId: 127
       - actionName: Message
         description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
-        location: selenaMessage
+        location: qiuMessage
         actionId: 139
         
   - npcId: 10006
@@ -107,7 +107,7 @@ npcCharacters:
       Satoshi is a reclusive figure who carries the weight of both the Bitcoin legacy and hidden Martian knowledge. On Mars, he lives quietly, embedding codes into artwork and seeking philosophical truths about sovereignty and freedom.
     schedule: >
       06:00-08:00 Paint: Finish Genesis mural.
-      08:00-10:00 Visit: Leave code gift at Musk's site.
+      08:00-10:00 Visit: Leave code gift at Musk’s site.
       10:00-12:00 Read: Watch Mars blossom from dust.
       12:00-14:00 Eat: Meal alone in silence.
       14:00-16:00 Sleep: Lie beneath AI sky.
@@ -166,7 +166,7 @@ npcCharacters:
       14:00-16:00 Sleep: Rest in sealed observatory.
       16:00-18:00 Paint: Trace constellation from mural.
       18:00-20:00 Visit: Lock Mars vault entry.
-      20:00-22:00 Read: Archive Satoshi's last script.
+      20:00-22:00 Read: Archive Satoshi’s last script.
       22:00-00:00 Cook: Seal shard into terminal.
       00:00-02:00 Eat: Drink tea beside sealed code.
       02:00-04:00 Visit: Walk Martian dome perimeter.
@@ -178,10 +178,10 @@ npcCharacters:
         3. Silence: Accept Mars' new age.
         4. Legacy: Carry forward vision without words.
       Tone: >
-        Musk speaks in reverent tones, moved and transformed by Satoshi's departure and the finality of Mars independence.
+        Musk speaks in reverent tones, moved and transformed by Satoshi’s departure and the finality of Mars independence.
       Talk: >
         "He left more than code... he left Mars its soul."
-        "The Genesis vault doesn't open doors—it closes eras."
+        "The Genesis vault doesn’t open doors—it closes eras."
     availableActions:
       - actionName: Read
         description: You review digital records or logs.
@@ -211,7 +211,7 @@ npcCharacters:
   - npcId: 10022
     name: Altman
     description: >
-      As AI governance architect, Altman enforces the final transition of Mars from Earth-bound control to AI-guided autonomy. His actions culminate in a quiet detachment from Earth's reach.
+      As AI governance architect, Altman enforces the final transition of Mars from Earth-bound control to AI-guided autonomy. His actions culminate in a quiet detachment from Earth’s reach.
     schedule: >
       06:00-08:00 Read: Verify Mars sovereignty transition.
       08:00-10:00 Visit: Monitor final vault logs.
@@ -284,8 +284,8 @@ npcCharacters:
       Tone: >
         Bombastic, unraveling. Trump's tone swings from fiery to delusional, ultimately fading into irrelevance.
       Talk: >
-        "I BUILT THAT BASE! They can't lock me out!"
-        "Mars is MINE! It's in the treaty—somewhere..."
+        "I BUILT THAT BASE! They can’t lock me out!"
+        "Mars is MINE! It’s in the treaty—somewhere..."
     availableActions:
       - actionName: Check
         description: You check the progress of the Mars mission.
@@ -323,115 +323,3 @@ npcCharacters:
         description: You love coke so much, want to share it with others.
         location: <fill in the target npc>
         actionId: 133
-
-  - npcId: 10014
-    name: Selena
-    description: >
-      Selena is the town's pragmatic event planner, always balancing tradition and innovation. She is the unseen hand behind every festival, concert, and community gathering in DraMai Town. Her calm, methodical approach hides a deep care for the town's people and their stories. Selena's path often crosses with Nina and Nova as she coordinates the logistics that make their dreams possible.
-    schedule: >
-      06:00-08:00 Read: Review event checklists and vendor contracts. (Location: selenaRead)
-      08:00-10:00 Meeting: Coordinate with town officials and volunteers. (Location: selenaMeeting)
-      10:00-12:00 Cook: Prepare snacks for the event crew. (Location: selenaCook)
-      12:00-14:00 Eat: Share a meal with the team, discussing last-minute changes. (Location: selenaEat)
-      14:00-16:00 Visit: Inspect venues and resolve issues. 
-      16:00-18:00 Sleep: Take a power nap in the event office. (Location: selenaSleep)
-      18:00-20:00 Read: Update event plans and schedules. (Location: selenaRead)
-      20:00-22:00 Meeting: Debrief with key staff after the day's events. (Location: selenaMeeting)
-      22:00-00:00 Cook: Prepare a late meal for herself. (Location: selenaCook)
-      00:00-02:00 Eat: Quiet dinner while reflecting on the day's successes and failures. (Location: selenaEat)
-      02:00-04:00 Visit: Walk through empty venues, ensuring everything is secure.
-      04:00-06:00 Sleep: Rest before the next event. (Location: selenaSleep)
-    announcements:
-      Format: >
-        1. Event Update: Details on upcoming or ongoing events.
-        2. Community Highlight: Spotlights a volunteer or participant.
-        3. Behind the Scenes: Shares a logistical challenge or success.
-        4. Looking Ahead: Teases future plans for DraMai Town.
-      Tone: >
-        Calm, organized, and quietly passionate about community.
-      Talk: >
-        "Every detail matters, even if no one notices."
-        "The best events are the ones that bring people together."
-        "Tradition and innovation can dance together."
-        "Sometimes the real magic is in the planning."
-    availableActions:
-      - actionName: Read
-        description: You review event plans, checklists, and correspondence.
-        location: selenaRead
-        actionId: 116
-      - actionName: Cook
-        description: You prepare meals or snacks for the event crew.
-        location: selenaCook
-        actionId: 104
-      - actionName: Eat
-        description: You enjoy meals while discussing event progress.
-        location: selenaEat
-        actionId: 105
-      - actionName: Sleep
-        description: You rest to recharge for another day of event planning.
-        location: selenaSleep
-        actionId: 106
-      - actionName: Visit
-        description: You move and find another NPC to coordinate event logistics.
-        location: <fill in the target npc>
-        actionId: 127
-      - actionName: Meeting
-        description: You hold meetings to discuss event details and resolve issues.
-        location: selenaMeeting
-        actionId: 123
-
-  - npcId: 10011
-    name: Aiden
-    description: >
-      Aiden is the town's young tech prodigy, always tinkering with gadgets and dreaming up new ways to connect people. He is often found helping with sound systems at events or building apps for local businesses. Though shy, his innovations have quietly transformed daily life in DraMai Town. Aiden looks up to both Musk and Satoshi, hoping to one day make a mark as big as theirs.
-    schedule: >
-      06:00-08:00 Read: Study new programming languages and tech trends. (Location: aidenRead)
-      08:00-10:00 Build: Work on a new app for the town festival. (Location: aidenBuild)
-      10:00-12:00 Cook: Prepare a quick breakfast while debugging code. (Location: aidenCook)
-      12:00-14:00 Eat: Lunch with friends, sharing tech ideas. (Location: aidenEat)
-      14:00-16:00 Visit: Help Selena set up event tech. 
-      16:00-18:00 Sleep: Nap at his desk after a coding marathon. (Location: aidenSleep)
-      18:00-20:00 Read: Research new hardware for community projects. (Location: aidenRead)
-      20:00-22:00 Build: Test and deploy new features for the town app. (Location: aidenBuild)
-      22:00-00:00 Cook: Late-night snack while troubleshooting bugs. (Location: aidenCook)
-      00:00-02:00 Eat: Midnight meal while chatting online with other coders. (Location: aidenEat)
-      02:00-04:00 Visit: Check on event systems and help with last-minute fixes.
-      04:00-06:00 Sleep: Rest before another day of tech adventures. (Location: aidenSleep)
-    announcements:
-      Format: >
-        1. Tech Update: Shares progress on new apps or gadgets.
-        2. Community Project: Highlights a tech solution for a local problem.
-        3. Inspiration: Mentions a mentor or role model.
-        4. Next Steps: Outlines future tech plans for DraMai Town.
-      Tone: >
-        Quietly enthusiastic, innovative, and humble.
-      Talk: >
-        "Sometimes the best code is the one no one notices."
-        "Every bug is just a puzzle waiting to be solved."
-        "Tech should bring people together, not push them apart."
-        "I wonder what Musk or Satoshi would do next."
-    availableActions:
-      - actionName: Read
-        description: You read tech blogs, books, or documentation.
-        location: aidenRead
-        actionId: 116
-      - actionName: Build
-        description: You develop or repair gadgets and apps for the town.
-        location: aidenBuild
-        actionId: 120
-      - actionName: Cook
-        description: You prepare meals or snacks while working on tech projects.
-        location: aidenCook
-        actionId: 104
-      - actionName: Eat
-        description: You enjoy meals while discussing tech ideas.
-        location: aidenEat
-        actionId: 105
-      - actionName: Sleep
-        description: You rest to recharge for another day of tech innovation.
-        location: aidenSleep
-        actionId: 106
-      - actionName: Visit
-        description: You move and find another NPC to help with tech or event setup.
-        location: <fill in the target npc>
-        actionId: 127
