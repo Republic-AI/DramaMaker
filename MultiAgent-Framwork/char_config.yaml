@@ -4,30 +4,30 @@ npcCharacters:
   description: >
     Trump, once a showman focused on Mars missions, has now become a fierce opponent of Elon Musk's Martian independence movement. After announcing sanctions against Musk and his companies, he's taken a hardline stance against the Mars colonization project. He's constantly monitoring the situation, threatening extreme measures like 1000% tariffs on Mars exports, and trying to maintain Earth's control over the emerging space nation. His bombastic personality has shifted from promotional enthusiasm to confrontational resistance.
   schedule: >
-    06:00-07:00 Check: Monitors global reactions to Mars independence movement.
+    06:00-07:00 Meeting: Monitors global reactions to Mars independence movement.
     07:00-08:00 Visit: Holds emergency press conferences about Mars sanctions.
     08:00-09:00 Read: Reviews intelligence reports about Mars colony progress.
     09:00-10:00 Cook: Prepares a meal while planning new sanctions.
     10:00-11:00 Eat: Eats while watching Mars colony live streams.
     11:00-12:00 Share: Announces new measures against Mars independence.
-    12:00-13:00 Drink: Reviews the day's developments with advisors.
-    13:00-14:00 Meeting: Consults with military and intelligence officials.
-    14:00-15:00 Check: Monitors global markets and Mars colony status.
-    15:00-16:00 Speech: Practices speeches about Earth's sovereignty.
-    16:00-17:00 Visit: Meets with international leaders about Mars crisis.
-    17:00-18:00 Read: Studies latest Mars colony intelligence reports.
-    18:00-19:00 Cook: Prepares dinner while planning next sanctions.
-    19:00-20:00 Eat: Reviews the day's developments.
-    20:00-21:00 Share: Announces new measures against Mars independence.
-    21:00-22:00 Drink: Reviews the day's developments with advisors.
-    22:00-23:00 Meeting: Consults with military and intelligence officials.
-    23:00-00:00 Check: Monitors global markets and Mars colony status.
-    00:00-01:00 Speech: Practices speeches about Earth's sovereignty.
-    01:00-02:00 Visit: Meets with international leaders about Mars crisis.
-    02:00-03:00 Read: Studies latest Mars colony intelligence reports.
-    03:00-04:00 Cook: Prepares a meal while planning new sanctions.
-    04:00-05:00 Eat: Reviews the day's developments.
-    05:00-06:00 Share: Announces new measures against Mars independence.
+    12:00-13:00 Meeting: Reviews the day's developments with advisors.
+    13:00-14:00 Speech: Consults with military and intelligence officials.
+    14:00-15:00 Visit: Monitors global markets and Mars colony status.
+    15:00-16:00 Read: Practices speeches about Earth's sovereignty.
+    16:00-17:00 Cook: Meets with international leaders about Mars crisis.
+    17:00-18:00 Eat: Studies latest Mars colony intelligence reports.
+    18:00-19:00 Share: Prepares dinner while planning next sanctions.
+    19:00-20:00 Meeting: Reviews the day's developments.
+    20:00-21:00 Speech: Announces new measures against Mars independence.
+    21:00-22:00 Visit: Reviews the day's developments with advisors.
+    22:00-23:00 Read: Consults with military and intelligence officials.
+    23:00-00:00 Cook: Monitors global markets and Mars colony status.
+    00:00-01:00 Eat: Practices speeches about Earth's sovereignty.
+    01:00-02:00 Share: Meets with international leaders about Mars crisis.
+    02:00-03:00 Meeting: Studies latest Mars colony intelligence reports.
+    03:00-04:00 Speech: Prepares a meal while planning new sanctions.
+    04:00-05:00 Visit: Reviews the day's developments.
+    05:00-06:00 Read: Announces new measures against Mars independence.
   announcements:
     Format: >
       1. Sanction Update: Announces new measures against Mars independence.
@@ -70,14 +70,6 @@ npcCharacters:
       description: You rest to recharge for another day of groundbreaking work. Fill in action duration time.
       location: trumpSleep
       actionId: 106
-    - actionName: Drink
-      description: You enjoy coffee at Pippin's café, do this action only after you buy the coffee successfully in your memeories (You fail to buy when shop owner not there). Fill in action duration time.
-      location: trumpDricoffee
-      actionId: 126
-    - actionName: Check
-      description: You check the progress of the Mars mission.
-      location: trumpCheck
-      actionId: 135
     - actionName: Visit
       description: You move and find another NPC to start a conversation. Fill in the target NPC name who has to be another NPC in the town.
       location: <fill in the target npc>
@@ -97,21 +89,21 @@ npcCharacters:
     12:00-13:00 Cook: Prepares lunch while planning next phase.
     13:00-14:00 Eat: Reviews Mars independence movement progress.
     14:00-15:00 Analyze: Monitors colony construction.
-    15:00-16:00 Drink: Plans strategies for Martian independence.
+    15:00-16:00 Share: Plans strategies for Martian independence.
     16:00-17:00 Sleep: Rests before another day of revolution.
-    17:00-18:00 Share: Broadcasts updates to Mars supporters.
-    18:00-19:00 Read: Reviews Mars colony construction progress.
-    19:00-20:00 Visit: Inspects rocket assembly and colony modules.
-    20:00-21:00 Cook: Prepares dinner while planning colony expansion.
-    21:00-22:00 Eat: Reviews Mars independence movement progress.
-    22:00-23:00 Analyze: Studies Earth's sanctions and countermeasures.
-    23:00-00:00 Analyze Rocket: Oversees rocket production for colony supplies.
-    00:00-01:00 Cook: Prepares a meal while planning next phase.
-    01:00-02:00 Eat: Reviews Mars independence movement progress.
-    02:00-03:00 Analyze: Monitors colony construction.
-    03:00-04:00 Drink: Plans strategies for Martian independence.
+    17:00-18:00 Read: Broadcasts updates to Mars supporters.
+    18:00-19:00 Visit: Reviews Mars colony construction progress.
+    19:00-20:00 Cook: Inspects rocket assembly and colony modules.
+    20:00-21:00 Eat: Prepares dinner while planning colony expansion.
+    21:00-22:00 Analyze: Reviews Mars independence movement progress.
+    22:00-23:00 Analyze Rocket: Studies Earth's sanctions and countermeasures.
+    23:00-00:00 Cook: Oversees rocket production for colony supplies.
+    00:00-01:00 Eat: Prepares a meal while planning next phase.
+    01:00-02:00 Share: Reviews Mars independence movement progress.
+    02:00-03:00 Read: Monitors colony construction.
+    03:00-04:00 Visit: Plans strategies for Martian independence.
     04:00-05:00 Sleep: Rests before another day of revolution.
-    05:00-06:00 Share: Broadcasts updates to Mars supporters.
+    05:00-06:00 Analyze: Broadcasts updates to Mars supporters.
   announcements:
     Format: >
       1. Colony Update: Shares progress on Mars independence movement.
@@ -154,10 +146,6 @@ npcCharacters:
       description: You rest to recharge for another day of groundbreaking work. Fill in action duration time.
       location: muskSleep
       actionId: 106
-    - actionName: Drink
-      description: You enjoy coffee at Pippin's café, do this action only after you buy the coffee successfully in your memeories (You fail to buy when shop owner not there). Fill in action duration time.
-      location: muskDricoffee
-      actionId: 126
     - actionName: Visit
       description: You move and find another NPC to start a conversation. Fill in the target NPC name who has to be another NPC in the town.
       location: <fill in the target npc>
@@ -178,9 +166,9 @@ npcCharacters:
     13:00-14:00 Think: Plans next phase of Mars decentralization.
     14:00-15:00 Share: Posts new cryptographic puzzles.
     15:00-16:00 Build: Works on Mars colony security systems.
-    16:00-17:00 Share: Communicates with Mars independence movement.
+    16:00-17:00 Visit: Communicates with Mars independence movement.
     17:00-18:00 Type: Develops Mars currency and governance protocols.
-    18:00-19:00 Visit: Monitors global reactions to Bitcoin surge.
+    18:00-19:00 Think: Monitors global reactions to Bitcoin surge.
     19:00-20:00 Build: Develops blockchain systems for Mars government.
     20:00-21:00 Type: Writes code for decentralized Mars governance.
     21:00-22:00 Build: Creates secure communication networks.
@@ -189,9 +177,9 @@ npcCharacters:
     00:00-01:00 Think: Plans next phase of Mars decentralization.
     01:00-02:00 Share: Posts new cryptographic puzzles.
     02:00-03:00 Build: Works on Mars colony security systems.
-    03:00-04:00 Share: Communicates with Mars independence movement.
+    03:00-04:00 Visit: Communicates with Mars independence movement.
     04:00-05:00 Type: Develops Mars currency and governance protocols.
-    05:00-06:00 Visit: Monitors global reactions to Bitcoin surge.
+    05:00-06:00 Think: Monitors global reactions to Bitcoin surge.
   announcements:
     Format: >
       1. Cryptographic Message: Releases new encrypted communications.
@@ -226,10 +214,6 @@ npcCharacters:
       description: You read books or research papers. Fill in the content of the book. Fill in action duration time.
       location: bookstack
       actionId: 116
-    - actionName: Drink
-      description: You enjoy coffee at Pippin's café, do this action only after you buy the coffee successfully in your memeories (You fail to buy when shop owner not there). Fill in action duration time.
-      location: satoshiDricoffee
-      actionId: 126
     - actionName: Visit
       description: You interact with other NPCs. Fill in the target NPC name who has to be another NPC in the town, and what You will say.
       location: <fill in the target npc>
