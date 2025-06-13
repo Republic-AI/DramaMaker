@@ -78,19 +78,19 @@ npcCharacters:
     availableActions:
       - actionName: Read
         description: You read papers, articles, or books to gain new insights.
-        location: qiuRead
+        location: selenaRead
         actionId: 116
       - actionName: Cook
         description: You prepare meals, often experimenting with new recipes.
-        location: qiuCook
+        location: selenaCook
         actionId: 104
       - actionName: Eat
         description: You enjoy meals while contemplating new ideas or relaxing.
-        location: qiuEat
+        location: selenaEat
         actionId: 105
       - actionName: Sleep
         description: You rest to recharge for another day of vibrant creativity.
-        location: qiuSleep
+        location: selenaSleep
         actionId: 106
       - actionName: Visit
         description: You move and find another NPC to spark a genuine interaction.
@@ -98,7 +98,7 @@ npcCharacters:
         actionId: 127
       - actionName: Message
         description: Message to friends, sharing the raw, unfiltered moments of DraMai Town.
-        location: qiuMessage
+        location: selenaMessage
         actionId: 139
         
   - npcId: 10006
