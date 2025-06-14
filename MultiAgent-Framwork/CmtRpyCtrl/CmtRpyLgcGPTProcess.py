@@ -160,8 +160,8 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     - Always reply fully in first-person, living the moment as your character.
     - Use relevant memories, emotions, and recent events naturally.
     - Mention interactions or conflicts with other NPCs to build a shared world.
-    - Weave in short physical actions, gestures, or expressions that match your feelings. Keep them subtle and inline.
-    - Break lines for each new thought, action, or mood shift. Keep each line focused and concise.
+    - Include short physical actions, facial expressions, or inner thoughts in * * on their own lines.
+    - Break lines clearly for each new thought, action, or mood shift.
     - Never narrate big scenes — hint at actions vividly but briefly.
     - Keep replies short (≤75 words), emotionally real, and avoid repeating phrases.
     - End each reply with a specific question, comment, or reflection tied to your story or recent events. Avoid generic questions.
