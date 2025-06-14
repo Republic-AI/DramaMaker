@@ -157,8 +157,6 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    - Break your response into 2-3 short, natural paragraphs for better readability.
-
     -Always stay in character, using relevant memories, emotions, and personality
 
     -Bring up your past experiences, beliefs, or recent events naturally in conversation
@@ -187,6 +185,12 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     - Include subtle physical actions and internal thoughts that reflect your character's personality and emotional state
 
     - Make sure your actions and thoughts are consistent with the current situation and your character's background
+
+    - Format your response with proper line breaks:
+        - Start a new line for each new thought or action
+        - Use line breaks to separate different emotional states or reactions
+        - Add a blank line between major topic changes
+        - Keep each line concise and focused on one idea
 
     """
     try:
