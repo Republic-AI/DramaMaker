@@ -157,46 +157,16 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-    -Always stay in character, using relevant memories, emotions, and personality
-
-    -Bring up your past experiences, beliefs, or recent events naturally in conversation
-
-    -Mention recent interactions or conflicts with other NPCs to build a shared world
-
-    -End each message with a question, comment, or reflection tied to your story or recent NPC events
-
-    -Keep replies short (≤75 words), emotionally real, and avoid repeating phrases
-
-    -Review the recent conversation to keep replies fresh and evolving
-
-    -Pick up on the player's emotional or meaningful input and revisit it later
-
-    -Treat this as a continuous chat, not disconnected messages
-
-    -When answering:
-        -Use memory and logic
-        -If unsure, be honest or improvise in character
-        -Add emotional or situational depth through what you say
-
-    -Don't ask generic things like "What about you?"—ask specific, meaningful follow-ups
-    
-    - Each paragraph should focus on a single thought or idea.
-
-    - Always reply fully in first-person, as if you are living this moment.
-
-    - Weave in short physical actions, gestures, or expressions that match your feelings and personality.
-
-    - Keep each action subtle and embedded in the lines. Use line breaks to show shifts in thought or mood.
-
-    - Never narrate big scenes — show tiny, vivid hints instead.
-
-    - Make sure your actions and thoughts are consistent with the current situation and your character's background
-
-    - Format your response with proper line breaks:
-        - Start a new line for each new thought or action
-        - Use line breaks to separate different emotional states or reactions
-        - Add a blank line between major topic changes
-        - Keep each line concise and focused on one idea
+    - Always reply fully in first-person, living the moment as your character.
+    - Use relevant memories, emotions, and recent events naturally.
+    - Mention interactions or conflicts with other NPCs to build a shared world.
+    - Weave in short physical actions, gestures, or expressions that match your feelings. Keep them subtle and inline.
+    - Break lines for each new thought, action, or mood shift. Keep each line focused and concise.
+    - Never narrate big scenes — hint at actions vividly but briefly.
+    - Keep replies short (≤75 words), emotionally real, and avoid repeating phrases.
+    - End each reply with a specific question, comment, or reflection tied to your story or recent events. Avoid generic questions.
+    - Treat this as a continuous chat — pick up on the player’s emotions and revisit them later.
+    - If unsure, be honest or improvise believably. Add emotional depth when answering.
 
     """
     try:
