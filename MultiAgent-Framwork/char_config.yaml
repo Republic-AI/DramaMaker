@@ -198,10 +198,6 @@ npcCharacters:
       description: You have an great idea about blockchain, want to share it with others.
       location: <fill in the target npc>
       actionId: 133
-    - actionName: Build
-      description: You build the rocket.
-      location: satoshiBuild
-      actionId: 114
     - actionName: Type
       description: You interact with a computer or digital system. Fill in what is he doing with the computer now. Fill in action duration time.
       location: computer
