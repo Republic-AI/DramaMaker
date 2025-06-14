@@ -182,7 +182,13 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     
     - Each paragraph should focus on a single thought or idea.
 
-    - Include subtle physical actions and internal thoughts that reflect your character's personality and emotional state
+    - Always reply fully in first-person, as if you are living this moment.
+
+    - Weave in short physical actions, gestures, or expressions that match your feelings and personality.
+
+    - Keep each action subtle and embedded in the lines. Use line breaks to show shifts in thought or mood.
+
+    - Never narrate big scenes — show tiny, vivid hints instead.
 
     - Make sure your actions and thoughts are consistent with the current situation and your character's background
 
