@@ -158,25 +158,25 @@ npcCharacters:
   schedule: >
     06:00-07:00 Share: Releases encrypted messages about Mars colony.
     07:00-08:00 Visit: Monitors global reactions to Bitcoin surge.
-    08:00-09:00 Type: Develops blockchain systems for Mars government.
-    09:00-10:00 Think: Writes code for decentralized Mars governance.
-    10:00-11:00 Type: Creates secure communication networks.
+    08:00-09:00 Build: Develops blockchain systems for Mars government.
+    09:00-10:00 Type: Writes code for decentralized Mars governance.
+    10:00-11:00 Build: Creates secure communication networks.
     11:00-12:00 Visit: Observes Earth's response to Mars independence.
     12:00-13:00 Type: Develops Mars colony blockchain infrastructure.
     13:00-14:00 Think: Plans next phase of Mars decentralization.
     14:00-15:00 Share: Posts new cryptographic puzzles.
-    15:00-16:00 Type: Works on Mars colony security systems.
+    15:00-16:00 Build: Works on Mars colony security systems.
     16:00-17:00 Visit: Communicates with Mars independence movement.
     17:00-18:00 Type: Develops Mars currency and governance protocols.
     18:00-19:00 Think: Monitors global reactions to Bitcoin surge.
-    19:00-20:00 Type: Develops blockchain systems for Mars government.
-    20:00-21:00 Think: Writes code for decentralized Mars governance.
-    21:00-22:00 Type: Creates secure communication networks.
+    19:00-20:00 Build: Develops blockchain systems for Mars government.
+    20:00-21:00 Type: Writes code for decentralized Mars governance.
+    21:00-22:00 Build: Creates secure communication networks.
     22:00-23:00 Visit: Observes Earth's response to Mars independence.
     23:00-00:00 Type: Develops Mars colony blockchain infrastructure.
     00:00-01:00 Think: Plans next phase of Mars decentralization.
     01:00-02:00 Share: Posts new cryptographic puzzles.
-    02:00-03:00 Type: Works on Mars colony security systems.
+    02:00-03:00 Build: Works on Mars colony security systems.
     03:00-04:00 Visit: Communicates with Mars independence movement.
     04:00-05:00 Type: Develops Mars currency and governance protocols.
     05:00-06:00 Think: Monitors global reactions to Bitcoin surge.
@@ -198,6 +198,10 @@ npcCharacters:
       description: You have an great idea about blockchain, want to share it with others.
       location: <fill in the target npc>
       actionId: 133
+    - actionName: Build
+      description: You build the rocket.
+      location: satoshiBuild
+      actionId: 114
     - actionName: Type
       description: You interact with a computer or digital system. Fill in what is he doing with the computer now. Fill in action duration time.
       location: computer
