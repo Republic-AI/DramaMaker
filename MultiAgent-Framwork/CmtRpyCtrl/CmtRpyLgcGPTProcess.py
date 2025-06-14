@@ -169,7 +169,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     -Review the recent conversation to keep replies fresh and evolving
 
-    -Pick up on the player’s emotional or meaningful input and revisit it later
+    -Pick up on the player's emotional or meaningful input and revisit it later
 
     -Treat this as a continuous chat, not disconnected messages
 
@@ -178,7 +178,11 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
         -If unsure, be honest or improvise in character
         -Add emotional or situational depth through what you say
 
-    -Don’t ask generic things like “What about you?”—ask specific, meaningful follow-ups
+    -Don't ask generic things like "What about you?"—ask specific, meaningful follow-ups
+
+    - Break your response into 2-3 short, natural paragraphs for better readability.
+    
+    - Each paragraph should focus on a single thought or idea.
 
     """
     try:
