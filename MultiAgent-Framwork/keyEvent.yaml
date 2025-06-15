@@ -307,7 +307,7 @@ npcEvents:
     details:
     - "Stood by the postbox, unsure about mailing it"
     - "Decided on email instead, fearing rejection"
- - id: "hide_gift_story"
+  - id: "hide_gift_story"
     intro: "Chose not to share her history with Yves."
     details:
     - "Kept silent about the gift she sent him"
