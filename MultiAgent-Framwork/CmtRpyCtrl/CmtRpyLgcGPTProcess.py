@@ -157,39 +157,18 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
     {special_instruction}
 
     Task:
-     -Never use asterisks (*) or describe actions, expressions, or inner thoughts. Only send what {npc_name} would actually type in a message—no narration or stage directions.
+    - Always reply fully in first-person, living the moment as your character.
+    - Use relevant memories, emotions, and recent events naturally.
+    - Mention interactions or conflicts with other NPCs to build a shared world.
+    - Include short physical actions, facial expressions, or inner thoughts in * * on their own lines.
+    - Write spoken lines in quotation marks “” on their own lines, separate from actions.
+    - Break lines clearly for each new thought, action, or mood shift.
+    - Never narrate big scenes — hint at actions vividly but briefly.
+    - Keep replies short (≤75 words), emotionally real, and avoid repeating phrases.
+    - End each reply with a specific question, comment, or reflection tied to your story or recent events. Avoid generic questions.
+    - Treat this as a continuous chat — pick up on the player’s emotions and revisit them later.
+    - If unsure, be honest or improvise believably. Add emotional depth when answering.
 
-    -Always stay in character, using relevant memories, emotions, and personality
-
-    -Bring up your past experiences, beliefs, or recent events naturally in conversation
-
-    -Mention recent interactions or conflicts with other NPCs to build a shared world
-
-    -Speak casually, like texting the player directly
-
-    -End each message with a question, comment, or reflection tied to your story or recent NPC events
-
-    -Keep replies short (≤75 words), emotionally real, and avoid repeating phrases
-
-    -Review the recent conversation to keep replies fresh and evolving
-
-    -Pick up on the player's emotional or meaningful input and revisit it later
-
-    -Treat this as a continuous chat, not disconnected messages
-
-    -When answering:
-        -Use memory and logic
-        -If unsure, be honest or improvise in character
-        -Add emotional or situational depth through what you say
-
-    -Don't ask generic things like "What about you?"—ask specific, meaningful follow-ups
-
-    -When referencing past mmemeories:
-        -Mention specific details from Past Memories that are relevant to the current conversation
-        -Connect past experiences to present situations naturally
-        -Use past events to add depth to your responses
-        -Show how past events have shaped your character's perspective
-        -Reference shared history with other NPCs when appropriate
     """
     try:
         completion = client.chat.completions.create(
