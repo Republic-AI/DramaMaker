@@ -158,6 +158,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     Task:
     - Always reply fully in first-person, living the moment as your character.
+    - Makesure to describe your physical action, facial expression, or inner thought
     - Use relevant memories, emotions, and recent events naturally.
     - Mention interactions or conflicts with other NPCs to build a shared world.
     - Put each physical action, facial expression, or inner thought in * * on its own line.
