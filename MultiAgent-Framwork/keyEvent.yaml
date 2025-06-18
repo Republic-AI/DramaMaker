@@ -1,325 +1,333 @@
 npcEvents:
-- npcId: 10018
-  name: "Nova"
-  events:
-  - id: "floral_planning"
-    intro: "Planned the floral setup for the stage."
-    details:
-    - "Wanted to create something beautiful and unique"
-    - "Thought of lilacs after hearing about Yves"
-  - id: "design_theme"
-    intro: "Chose the “Lilac Promise” theme."
-    details:
-    - "Felt a strong personal connection to the idea"
-    - "Decided to keep the theme final"
-  - id: "notice_liams_behavior"
-    intro: "Saw Liam near the stage and sensed his hesitation."
-    details:
-    - "Watched through the window as Liam stopped short of entering"
-    - "Noticed the bouquet and the way he turned around"
-    - "Wondered what he was feeling, but said nothing"
-  - id: "search_liam_online"
-    intro: "Looked up Liam’s name after rehearsal."
-    details:
-    - "Typed his name into her phone after rehearsal ended"
-    - "Discovered his past performances and media photos"
-    - "Sat silently, processing the realization"
-- npcId: 10019
-  name: "Liam"
-  events:
-  - id: "seek_ivys_help"
-    intro: "Visited Ivy to ask about Ryan’s condition."
-    details:
-    - "Came to Ivy feeling desperate and emotional"
-    - "Struggled to find the right words"
-  - id: "open_up"
-    intro: "Admitted his worry about Ryan."
-    details:
-    - "Explained his deep concern"
-    - "Nearly broke down in the conversation"
-  - id: "walk_toward_stage"
-    intro: "Walked slowly toward the stage holding flowers."
-    details:
-    - "Held the bouquet behind his back as he approached"
-    - "Paused several times, unsure if he should continue"
-    - "Looked toward the rehearsal space and saw Nova inside"
-  - id: "choose_to_hide"
-    intro: "Decided not to give the flowers to Nina."
-    details:
-    - "Backed away when he noticed Nova watching"
-    - "Quietly returned to the car and placed the bouquet on the seat"
-    - "Told himself it wasn’t the right time"
-  - id: "attend_press"
-    intro: "Joined the press conference."
-    details:
-    - "Stayed professional during the event"
-    - "Waited for a chance to talk to Nina"
-  - id: "give_flowers"
-    intro: "Handed Nina a bouquet."
-    details:
-    - "Gave her the lilacs without a word"
-    - "Hoped she’d understand but didn’t explain"
-- npcId: 10021
-  name: "Ivy"
-  events:
-  - id: "comfort_liam"
-    intro: "Offered emotional support to Liam."
-    details:
-    - "Stayed calm and present"
-    - "Let him express his emotions"
-  - id: "clear_misunderstanding"
-    intro: "Later clarified things with Ryan."
-    details:
-    - "Explained the situation to avoid misinterpretation"
-    - "Wanted to heal the rift between the brothers"
-  - id: "stand_preparation"
-    intro: "Set up the food and drink stand."
-    details:
-    - "Began arranging supplies early"
-    - "Focused on getting everything ready"
-  - id: "share_matcha"
-    intro: "Shared iced matcha with Ryan."
-    details:
-    - "Took a break together"
-    - "Offered a quiet moment of peace"
-- npcId: 10020
-  name: "Ryan"
-  events:
-  - id: "observe_scene"
-    intro: "Saw Ivy and Liam from a distance."
-    details:
-    - "Misread their closeness as romantic"
-    - "Didn’t approach or question them"
-  - id: "emotional_withdrawal"
-    intro: "Distanced himself from Liam."
-    details:
-    - "Chose to stay silent and avoid confrontation"
-    - "Withdrew emotionally"
-  - id: "join_setup"
-    intro: "Helped Ivy with quiet presence."
-    details:
-    - "Started helping with small tasks"
-    - "Did not say much but stayed"
-  - id: "reflect_with_ivy"
-    intro: "Accepted her matcha and spoke briefly."
-    details:
-    - "Told her he was just passing through"
-    - "Felt unsure but slightly better"
-- npcId: 10011
-  name: "Altman"
-  events:
-  - id: "flag_trump_ineligible"
-    intro: "Marked Trump as ineligible for Mars migration."
-    details:
-    - "Quietly flagged him in the new Mars Immigration Score System 2.1"
-    - "Kept the EO-777 truth encrypted on his black tablet"
-  - id: "confront_trump"
-    intro: "Threatened Trump with exposure."
-    details:
-    - "Unlocked the EO-777 file showing “Remote Activation in Progress”"
-    - "Demanded Trump withdraw from Mars immigration"
-    - "Warned he would expose Trump’s secret plans"
-  - id: "pickup_notebook"
-    intro: "Picked up the notebook Satoshi planted."
-    details:
-    - "Opened the notebook and found Genesis Code fragments"
-    - "Fell deeper into Satoshi’s game"
-  - id: "offer_chip"
-    intro: "Proposed a trade with Musk."
-    details:
-    - "Offered the microchip in exchange for the digital map"
-    - "Formed a temporary alliance instead of betrayal"
-  - id: "activate_chip"
-    intro: "Activated the chip to uncover EO-777."
-    details:
-    - "Found it contained control access codes"
-    - "Chose to keep the secret and blackmail Trump"
-  - id: "attempt_override"
-    intro: "Tried to override Genesis Protocol."
-    details:
-    - "Briefly reset systems before Musk’s alert triggered"
-    - "Lost control again to the open network"
-- npcId: 10012
-  name: "Trump"
-  events:
-  - id: "attempt_hack"
-    intro: "Tried to breach the immigration system."
-    details:
-    - "Hired a secret team to attack Altman’s infrastructure"
-    - "Triggered red alert defenses"
-  - id: "storm_out"
-    intro: "Left furious but began plotting retaliation."
-    details:
-    - "Refused Altman’s demand and stormed out"
-    - "Began working in secret on his counterattack"
-  - id: "briefcase_breakin"
-    intro: "Discovered the EO-777 briefcase was tampered with."
-    details:
-    - "Papers scattered across the floor, including a Mars land deed"
-    - "Security camera feeds suddenly went dark"
-    - "Noticed a strange hexadecimal string on the terminal"
-  - id: "public_reaction"
-    intro: "Responded publicly to the break-in."
-    details:
-    - "Held a press conference about the land deed leak"
-    - "Stormed toward Musk’s rocket lab to confront him"
-  - id: "decode_hex"
-    intro: "Assembled a team to decipher the hex code."
-    details:
-    - "Created an AI-led team of expert decoders"
-    - "Saw cryptic symbols emerge on the screen"
-    - "Grinned darkly while hiding surveillance footage"
-  - id: "blocked_by_firewall"
-    intro: "Failed to breach system security."
-    details:
-    - "Got blocked by Altman’s Score Bracelet firewall"
-    - "Left fuming with a public threat"
-  - id: "burn_fake_deed"
-    intro: "Burned the false Mars land deed."
-    details:
-    - "Angrily realized the deed was counterfeit"
-    - "Temporarily backed off from retaliation"
-- npcId: 10016
-  name: "Yves"
-  events:
-  - id: "receive_email"
-    intro: "Got a surprise invitation to perform at a concert."
-    details:
-    - "His old phone buzzed unexpectedly with a new message"
-    - "Read the concert invitation and froze in disbelief"
-    - "Realized the show was in the quiet town he now lived in"
-    - "Understood that performing meant the end of anonymity"
-  - id: "emotional_response"
-    intro: "Reflected on his past and the risks of returning to stage."
-    details:
-    - "Sat in silence, remembering his fame and what it cost him"
-    - "Wondered if this might be his final performance"
-    - "Decided to accept the offer despite the fear"
-    - "Felt the weight of past expectations return"
-  - id: "prepare_disguise"
-    intro: "Considered how to avoid recognition during the event."
-    details:
-    - "Tried on sunglasses and a hat in front of the mirror"
-    - "Tested different looks to conceal his identity"
-    - "Thought about how to move unseen in public again"
-    - "Still unsure if he could truly remain hidden"
-  - id: "walk_through_town"
-    intro: "Wandered the streets alone, processing the decision."
-    details:
-    - "Closed his phone and put on his coat"
-    - "Walked slowly through DraMai Town under flickering streetlights"
-    - "Gazed at the town square where lights shimmered in the distance"
-    - "Let the cool night air calm his racing thoughts"
-  - id: "discover_box"
-    intro: "Found a wooden box in his drawer."
-    details:
-    - "Opened the drawer after years"
-    - "Noticed the wrapping was still intact"
-  - id: "open_gift"
-    intro: "Unwrapped a memory-filled necklace and card."
-    details:
-    - "Found a delicate necklace inside"
-    - "Recognized the signature from the past"
-  - id: "see_email_arrival"
-    intro: "Saw the invitation email notification."
-    details:
-    - "Didn’t open it right away"
-    - "Felt a strange anxiety rise"
-  - id: "rehearsal_glimpse"
-    intro: "Secretly appeared at the rehearsal."
-    details:
-    - "Watched from backstage without revealing himself"
-    - "Felt something when he saw the lilac setup"
-- npcId: 10006
-  name: "Satoshi"
-  events:
-  - id: "old_station_research"
-    intro: "Studied EO-777 notes and digital glass map."
-    details:
-    - "Revealed his face at an abandoned command station"
-    - "Claimed he wasn’t a thief but a truth-bearer"
-  - id: "meet_musk"
-    intro: "Arranged a secret meeting with Musk."
-    details:
-    - "Showed Musk a shard of digital glass pulsing with the Bitcoin symbol"
-    - "Did not activate the map, but left a riddle: Not all lands are meant to be claimed"
-  - id: "bait_altman"
-    intro: "Dropped the notebook on purpose."
-    details:
-    - "Left the “Satoshi Speaks” notebook for Altman to find"
-    - "Used it as bait for his long-game strategy"
-  - id: "reveal_code"
-    intro: "Exposed part of the Genesis Code."
-    details:
-    - "Caused glitches in simulation and activated protocol warnings"
-  - id: "show_ownership_clue"
-    intro: "Revealed ownership details hidden in his notes."
-    details:
-    - "Disrupted Altman’s leverage with truth about the real owner"
-  - id: "release_genesis_code"
-    intro: "Released the full Genesis Code publicly."
-    details:
-    - "Reset ownership and Bitcoin consensus"
-    - "Triggered a new digital frontier for Mars"
-- npcId: 10014
-  name: "Musk"
-  events:
-  - id: "receive_shard"
-    intro: "Received a shard of the Mars map from Satoshi."
-    details:
-    - "Watched as Satoshi handed over the glowing fragment"
-    - "Left pondering the meaning of the riddle"
-  - id: "refuse_trade"
-    intro: "Rejected Satoshi’s deal."
-    details:
-    - "Wanted to crack the Genesis Code without giving up anything"
-    - "Watched the encrypted screen flicker with hidden data"
-  - id: "watch_simulation"
-    intro: "Observed simulation fluctuations during the deal."
-    details:
-    - "Monitored system alerts as Altman’s bracelet flashed red"
-  - id: "declare_launch"
-    intro: "Started a livestream to announce Mars colonization."
-    details:
-    - "Declared the North Pole the first resource-rich destination"
-    - "Said, “The new world does not belong to the fearful”"
-  - id: "pause_launch"
-    intro: "Halted just before entering the rocket."
-    details:
-    - "Said, “Humanity is not ready yet”"
-    - "Left the broadcast with the world in suspense"
+  - npcId: 10020
+    name: Nova
+    events:
+      - id: "floral_planning"
+        intro: "Planned the floral setup for the stage."
+        details:
+        - "Wanted to create something beautiful and unique"
+        - "Thought of lilacs after hearing about Yves"
+      - id: "design_theme"
+        intro: "Chose the “Lilac Promise” theme."
+        details:
+        - "Felt a strong personal connection to the idea"
+        - "Decided to keep the theme final"
+      - id: "notice_liams_behavior"
+        intro: "Saw Liam near the stage and sensed his hesitation."
+        details:
+        - "Watched through the window as Liam stopped short of entering"
+        - "Noticed the bouquet and the way he turned around"
+        - "Wondered what he was feeling, but said nothing"
+      - id: "search_liam_online"
+        intro: "Looked up Liam’s name after rehearsal."
+        details:
+        - "Typed his name into her phone after rehearsal ended"
+        - "Discovered his past performances and media photos"
+        - "Sat silently, processing the realization"
 
-- npcId: 10017
-  name: "Nina"
-  events:
-  - id: "plan_concert"
-    intro: "Prepared her concert materials at her desk."
-    details:
-    - "Laid out papers and schedules for the upcoming show"
-    - "Reflected on her childhood admiration for a pop star"
-  - id: "write_invite"
-    intro: "Wrote a heartfelt invitation."
-    details:
-    - "Mentioned a handmade gift she gave as a child"
-    - "Felt nervous about contacting him again"
-  - id: "send_email"
-    intro: "Chose to send the invitation digitally."
-    details:
-    - "Stood by the postbox, unsure about mailing it"
-    - "Decided on email instead, fearing rejection"
-  - id: "hide_gift_story"
-    intro: "Chose not to share her history with Yves."
-    details:
-    - "Kept silent about the gift she sent him"
-    - "Avoided discussing her past with Nova"
-  - id: "accept_flowers"
-    intro: "Took the bouquet quietly."
-    details:
-    - "Thanked him with a small nod"
-    - "Returned to her work without comment"
-  - id: "vase_lilacs"
-    intro: "Placed the lilacs in her room."
-    details:
-    - "Put them in a vase beside her bed"
-    - "Let them bloom in silence"
+  - npcId: 10018
+    name: Liam
+    events:
+      - id: "seek_ivys_help"
+        intro: "Visited Ivy to ask about Ryan’s condition."
+        details:
+        - "Came to Ivy feeling desperate and emotional"
+        - "Struggled to find the right words"
+      - id: "open_up"
+        intro: "Admitted his worry about Ryan."
+        details:
+        - "Explained his deep concern"
+        - "Nearly broke down in the conversation"
+      - id: "walk_toward_stage"
+        intro: "Walked slowly toward the stage holding flowers."
+        details:
+        - "Held the bouquet behind his back as he approached"
+        - "Paused several times, unsure if he should continue"
+        - "Looked toward the rehearsal space and saw Nova inside"
+      - id: "choose_to_hide"
+        intro: "Decided not to give the flowers to Nina."
+        details:
+        - "Backed away when he noticed Nova watching"
+        - "Quietly returned to the car and placed the bouquet on the seat"
+        - "Told himself it wasn’t the right time"
+      - id: "attend_press"
+        intro: "Joined the press conference."
+        details:
+        - "Stayed professional during the event"
+        - "Waited for a chance to talk to Nina"
+      - id: "give_flowers"
+        intro: "Handed Nina a bouquet."
+        details:
+        - "Gave her the lilacs without a word"
+        - "Hoped she’d understand but didn’t explain"
+
+  - npcId: 10017
+    name: Ivy
+    events:
+      - id: "comfort_liam"
+        intro: "Offered emotional support to Liam."
+        details:
+        - "Stayed calm and present"
+        - "Let him express his emotions"
+      - id: "clear_misunderstanding"
+        intro: "Later clarified things with Ryan."
+        details:
+        - "Explained the situation to avoid misinterpretation"
+        - "Wanted to heal the rift between the brothers"
+      - id: "stand_preparation"
+        intro: "Set up the food and drink stand."
+        details:
+        - "Began arranging supplies early"
+        - "Focused on getting everything ready"
+      - id: "share_matcha"
+        intro: "Shared iced matcha with Ryan."
+        details:
+        - "Took a break together"
+        - "Offered a quiet moment of peace"
+
+  - npcId: 10021
+    name: Ryan
+    events:
+      - id: "observe_scene"
+        intro: "Saw Ivy and Liam from a distance."
+        details:
+        - "Misread their closeness as romantic"
+        - "Didn’t approach or question them"
+      - id: "emotional_withdrawal"
+        intro: "Distanced himself from Liam."
+        details:
+        - "Chose to stay silent and avoid confrontation"
+        - "Withdrew emotionally"
+      - id: "join_setup"
+        intro: "Helped Ivy with quiet presence."
+        details:
+        - "Started helping with small tasks"
+        - "Did not say much but stayed"
+      - id: "reflect_with_ivy"
+        intro: "Accepted her matcha and spoke briefly."
+        details:
+        - "Told her he was just passing through"
+        - "Felt unsure but slightly better"
+
+  - npcId: 10022
+    name: Sam Altman
+    events:
+      - id: "flag_trump_ineligible"
+        intro: "Marked Trump as ineligible for Mars migration."
+        details:
+        - "Quietly flagged him in the new Mars Immigration Score System 2.1"
+        - "Kept the EO-777 truth encrypted on his black tablet"
+      - id: "confront_trump"
+        intro: "Threatened Trump with exposure."
+        details:
+        - "Unlocked the EO-777 file showing “Remote Activation in Progress”"
+        - "Demanded Trump withdraw from Mars immigration"
+        - "Warned he would expose Trump’s secret plans"
+      - id: "pickup_notebook"
+        intro: "Picked up the notebook Satoshi planted."
+        details:
+        - "Opened the notebook and found Genesis Code fragments"
+        - "Fell deeper into Satoshi’s game"
+      - id: "offer_chip"
+        intro: "Proposed a trade with Musk."
+        details:
+        - "Offered the microchip in exchange for the digital map"
+        - "Formed a temporary alliance instead of betrayal"
+      - id: "activate_chip"
+        intro: "Activated the chip to uncover EO-777."
+        details:
+        - "Found it contained control access codes"
+        - "Chose to keep the secret and blackmail Trump"
+      - id: "attempt_override"
+        intro: "Tried to override Genesis Protocol."
+        details:
+        - "Briefly reset systems before Musk’s alert triggered"
+        - "Lost control again to the open network"
+
+  - npcId: 10012
+    name: Trump
+    events:
+      - id: "attempt_hack"
+        intro: "Tried to breach the immigration system."
+        details:
+        - "Hired a secret team to attack Altman’s infrastructure"
+        - "Triggered red alert defenses"
+      - id: "storm_out"
+        intro: "Left furious but began plotting retaliation."
+        details:
+        - "Refused Altman’s demand and stormed out"
+        - "Began working in secret on his counterattack"
+      - id: "briefcase_breakin"
+        intro: "Discovered the EO-777 briefcase was tampered with."
+        details:
+        - "Papers scattered across the floor, including a Mars land deed"
+        - "Security camera feeds suddenly went dark"
+        - "Noticed a strange hexadecimal string on the terminal"
+      - id: "public_reaction"
+        intro: "Responded publicly to the break-in."
+        details:
+        - "Held a press conference about the land deed leak"
+        - "Stormed toward Musk’s rocket lab to confront him"
+      - id: "decode_hex"
+        intro: "Assembled a team to decipher the hex code."
+        details:
+        - "Created an AI-led team of expert decoders"
+        - "Saw cryptic symbols emerge on the screen"
+        - "Grinned darkly while hiding surveillance footage"
+      - id: "blocked_by_firewall"
+        intro: "Failed to breach system security."
+        details:
+        - "Got blocked by Altman’s Score Bracelet firewall"
+        - "Left fuming with a public threat"
+      - id: "burn_fake_deed"
+        intro: "Burned the false Mars land deed."
+        details:
+        - "Angrily realized the deed was counterfeit"
+        - "Temporarily backed off from retaliation"
+
+  - npcId: 10016
+    name: Yves
+    events:
+      - id: "receive_email"
+        intro: "Got a surprise invitation to perform at a concert."
+        details:
+        - "His old phone buzzed unexpectedly with a new message"
+        - "Read the concert invitation and froze in disbelief"
+        - "Realized the show was in the quiet town he now lived in"
+        - "Understood that performing meant the end of anonymity"
+      - id: "emotional_response"
+        intro: "Reflected on his past and the risks of returning to stage."
+        details:
+        - "Sat in silence, remembering his fame and what it cost him"
+        - "Wondered if this might be his final performance"
+        - "Decided to accept the offer despite the fear"
+        - "Felt the weight of past expectations return"
+      - id: "prepare_disguise"
+        intro: "Considered how to avoid recognition during the event."
+        details:
+        - "Tried on sunglasses and a hat in front of the mirror"
+        - "Tested different looks to conceal his identity"
+        - "Thought about how to move unseen in public again"
+        - "Still unsure if he could truly remain hidden"
+      - id: "walk_through_town"
+        intro: "Wandered the streets alone, processing the decision."
+        details:
+        - "Closed his phone and put on his coat"
+        - "Walked slowly through DraMai Town under flickering streetlights"
+        - "Gazed at the town square where lights shimmered in the distance"
+        - "Let the cool night air calm his racing thoughts"
+      - id: "discover_box"
+        intro: "Found a wooden box in his drawer."
+        details:
+        - "Opened the drawer after years"
+        - "Noticed the wrapping was still intact"
+      - id: "open_gift"
+        intro: "Unwrapped a memory-filled necklace and card."
+        details:
+        - "Found a delicate necklace inside"
+        - "Recognized the signature from the past"
+      - id: "see_email_arrival"
+        intro: "Saw the invitation email notification."
+        details:
+        - "Didn’t open it right away"
+        - "Felt a strange anxiety rise"
+      - id: "rehearsal_glimpse"
+        intro: "Secretly appeared at the rehearsal."
+        details:
+        - "Watched from backstage without revealing himself"
+        - "Felt something when he saw the lilac setup"
+
+  - npcId: 10006
+    name: Satoshi
+    events:
+      - id: "old_station_research"
+        intro: "Studied EO-777 notes and digital glass map."
+        details:
+        - "Revealed his face at an abandoned command station"
+        - "Claimed he wasn’t a thief but a truth-bearer"
+      - id: "meet_musk"
+        intro: "Arranged a secret meeting with Musk."
+        details:
+        - "Showed Musk a shard of digital glass pulsing with the Bitcoin symbol"
+        - "Did not activate the map, but left a riddle: Not all lands are meant to be claimed"
+      - id: "bait_altman"
+        intro: "Dropped the notebook on purpose."
+        details:
+        - "Left the “Satoshi Speaks” notebook for Altman to find"
+        - "Used it as bait for his long-game strategy"
+      - id: "reveal_code"
+        intro: "Exposed part of the Genesis Code."
+        details:
+        - "Caused glitches in simulation and activated protocol warnings"
+      - id: "show_ownership_clue"
+        intro: "Revealed ownership details hidden in his notes."
+        details:
+        - "Disrupted Altman’s leverage with truth about the real owner"
+      - id: "release_genesis_code"
+        intro: "Released the full Genesis Code publicly."
+        details:
+        - "Reset ownership and Bitcoin consensus"
+        - "Triggered a new digital frontier for Mars"
+
+  - npcId: 10009
+    name: Elon Musk
+    events:
+      - id: "receive_shard"
+        intro: "Received a shard of the Mars map from Satoshi."
+        details:
+        - "Watched as Satoshi handed over the glowing fragment"
+        - "Left pondering the meaning of the riddle"
+      - id: "refuse_trade"
+        intro: "Rejected Satoshi’s deal."
+        details:
+        - "Wanted to crack the Genesis Code without giving up anything"
+        - "Watched the encrypted screen flicker with hidden data"
+      - id: "watch_simulation"
+        intro: "Observed simulation fluctuations during the deal."
+        details:
+        - "Monitored system alerts as Altman’s bracelet flashed red"
+      - id: "declare_launch"
+        intro: "Started a livestream to announce Mars colonization."
+        details:
+        - "Declared the North Pole the first resource-rich destination"
+        - "Said, “The new world does not belong to the fearful”"
+      - id: "pause_launch"
+        intro: "Halted just before entering the rocket."
+        details:
+        - "Said, “Humanity is not ready yet”"
+        - "Left the broadcast with the world in suspense"
+
+  - npcId: 10019
+    name: Nina
+    events:
+      - id: "plan_concert"
+        intro: "Prepared her concert materials at her desk."
+        details:
+        - "Laid out papers and schedules for the upcoming show"
+        - "Reflected on her childhood admiration for a pop star"
+      - id: "write_invite"
+        intro: "Wrote a heartfelt invitation."
+        details:
+        - "Mentioned a handmade gift she gave as a child"
+        - "Felt nervous about contacting him again"
+      - id: "send_email"
+        intro: "Chose to send the invitation digitally."
+        details:
+        - "Stood by the postbox, unsure about mailing it"
+        - "Decided on email instead, fearing rejection"
+      - id: "hide_gift_story"
+        intro: "Chose not to share her history with Yves."
+        details:
+        - "Kept silent about the gift she sent him"
+        - "Avoided discussing her past with Nova"
+      - id: "accept_flowers"
+        intro: "Took the bouquet quietly."
+        details:
+        - "Thanked him with a small nod"
+        - "Returned to her work without comment"
+      - id: "vase_lilacs"
+        intro: "Placed the lilacs in her room."
+        details:
+        - "Put them in a vase beside her bed"
+        - "Let them bloom in silence"
 
