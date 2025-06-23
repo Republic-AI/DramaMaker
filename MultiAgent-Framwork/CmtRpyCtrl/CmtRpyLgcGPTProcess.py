@@ -165,7 +165,7 @@ def replyToUser(hisAnn, comment, npcId, prior_conversation, relevent_event,speci
 
     -Mention recent interactions or conflicts with other NPCs to build a shared world
     
-    -Always use line breaks: one line = one action or one line of dialogue.
+    -Always use line breaks between dialogue and questions
 
     -Speak casually, like texting the player directly
 
