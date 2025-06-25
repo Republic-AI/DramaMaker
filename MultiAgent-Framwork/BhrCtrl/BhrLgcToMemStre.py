@@ -16,7 +16,7 @@ import pickle
 import BhrLgcGPTProcess
 import BhrLgcManualProcess
 
-memstre_db_connection = DBCon.establish_sql_connection()
+# memstre_db_connection = DBCon.establish_sql_connection()
 
 def InstToMemStreDB(input_from_java, memeory_input_str):
     # output_str = BhrLgcGPTProcess.InstructionToHumanString(instruction)
@@ -36,7 +36,7 @@ def InstToMemStreDB(input_from_java, memeory_input_str):
     insert_embedding = BhrLgcGPTProcess.get_embedding(output_str)
     insert_isInstruction = 1
 
-    BhrDBMemStre.insert_into_table(memstre_db_connection, insert_npcId, insert_time, insert_isInstruction, insert_content, insert_importance, insert_embedding)
+    BhrDBMemStre.insert_into_table(DBCon.establish_sql_connection(), insert_npcId, insert_time, insert_isInstruction, insert_content, insert_importance, insert_embedding)
     return 0
 
 def InputToMemStreDB(input_from_java, memeory_input_str):
@@ -57,7 +57,7 @@ def InputToMemStreDB(input_from_java, memeory_input_str):
     insert_embedding = BhrLgcGPTProcess.get_embedding(output_str)
     insert_isInstruction = 0
 
-    BhrDBMemStre.insert_into_table(memstre_db_connection, insert_npcId, insert_time, insert_isInstruction, insert_content, insert_importance, insert_embedding)
+    BhrDBMemStre.insert_into_table(DBCon.establish_sql_connection(), insert_npcId, insert_time, insert_isInstruction, insert_content, insert_importance, insert_embedding)
     return 0
 
 
