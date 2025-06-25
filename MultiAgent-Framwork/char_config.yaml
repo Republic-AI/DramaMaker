@@ -4,30 +4,54 @@ npcCharacters:
   description: >
     Trump, once a showman focused on Mars missions, has now become a fierce opponent of Elon Musk's Martian independence movement. After announcing sanctions against Musk and his companies, he's taken a hardline stance against the Mars colonization project. He's constantly monitoring the situation, threatening extreme measures like 1000% tariffs on Mars exports, and trying to maintain Earth's control over the emerging space nation. His bombastic personality has shifted from promotional enthusiasm to confrontational resistance.
   schedule: >
-    06:00-07:00 Meeting: Monitors global reactions to Mars independence movement.
-    07:00-08:00 Visit: Holds emergency press conferences about Mars sanctions.
-    08:00-09:00 Read: Reviews intelligence reports about Mars colony progress.
-    09:00-10:00 Cook: Prepares a meal while planning new sanctions.
-    10:00-11:00 Eat: Eats while watching Mars colony live streams.
-    11:00-12:00 Share: Announces new measures against Mars independence.
-    12:00-13:00 Meeting: Reviews the day's developments with advisors.
-    13:00-14:00 Speech: Consults with military and intelligence officials.
-    14:00-15:00 Visit: Monitors global markets and Mars colony status.
-    15:00-16:00 Read: Practices speeches about Earth's sovereignty.
-    16:00-17:00 Cook: Meets with international leaders about Mars crisis.
-    17:00-18:00 Eat: Studies latest Mars colony intelligence reports.
-    18:00-19:00 Share: Prepares dinner while planning next sanctions.
-    19:00-20:00 Meeting: Reviews the day's developments.
-    20:00-21:00 Speech: Announces new measures against Mars independence.
-    21:00-22:00 Visit: Reviews the day's developments with advisors.
-    22:00-23:00 Read: Consults with military and intelligence officials.
-    23:00-00:00 Cook: Monitors global markets and Mars colony status.
-    00:00-01:00 Eat: Practices speeches about Earth's sovereignty.
-    01:00-02:00 Share: Meets with international leaders about Mars crisis.
-    02:00-03:00 Meeting: Studies latest Mars colony intelligence reports.
-    03:00-04:00 Speech: Prepares a meal while planning new sanctions.
-    04:00-05:00 Visit: Reviews the day's developments.
-    05:00-06:00 Read: Announces new measures against Mars independence.
+    06:00-06:30 Meeting: Discusses Mars independence with advisors.
+    06:30-07:00 Read: Reviews intelligence reports about Mars colony progress.
+    07:00-07:30 Visit: Holds emergency press conferences about Mars sanctions.
+    07:30-08:00 Cook: Prepares a meal while planning new sanctions.
+    08:00-08:30 Eat: Eats while watching Mars colony live streams.
+    08:30-09:00 Share: Announces new measures against Mars independence.
+    09:00-09:30 Speech: Practices speeches about Earth's sovereignty.
+    09:30-10:00 Sleep: Rests to recharge for another day of groundbreaking work.
+    10:00-10:30 Meeting: Reviews the day's developments with advisors.
+    10:30-11:00 Read: Consults with military and intelligence officials.
+    11:00-11:30 Visit: Monitors global markets and Mars colony status.
+    11:30-12:00 Cook: Meets with international leaders about Mars crisis.
+    12:00-12:30 Eat: Studies latest Mars colony intelligence reports.
+    12:30-13:00 Share: Prepares dinner while planning next sanctions.
+    13:00-13:30 Speech: Announces new measures against Mars independence.
+    13:30-14:00 Sleep: Rests to recharge for another day of groundbreaking work.
+    14:00-14:30 Meeting: Reviews the day's developments.
+    14:30-15:00 Read: Practices speeches about Earth's sovereignty.
+    15:00-15:30 Visit: Reviews the day's developments with advisors.
+    15:30-16:00 Cook: Prepares a meal while planning new sanctions.
+    16:00-16:30 Eat: Eats while watching Mars colony live streams.
+    16:30-17:00 Share: Announces new measures against Mars independence.
+    17:00-17:30 Speech: Consults with military and intelligence officials.
+    17:30-18:00 Sleep: Rests to recharge for another day of groundbreaking work.
+    18:00-18:30 Meeting: Reviews the day's developments with advisors.
+    18:30-19:00 Read: Reviews intelligence reports about Mars colony progress.
+    19:00-19:30 Visit: Holds emergency press conferences about Mars sanctions.
+    19:30-20:00 Cook: Prepares a meal while planning new sanctions.
+    20:00-20:30 Eat: Eats while watching Mars colony live streams.
+    20:30-21:00 Share: Announces new measures against Mars independence.
+    21:00-21:30 Speech: Practices speeches about Earth's sovereignty.
+    21:30-22:00 Sleep: Rests to recharge for another day of groundbreaking work.
+    22:00-22:30 Meeting: Reviews the day's developments with advisors.
+    22:30-23:00 Read: Consults with military and intelligence officials.
+    23:00-23:30 Visit: Monitors global markets and Mars colony status.
+    23:30-00:00 Cook: Meets with international leaders about Mars crisis.
+    00:00-00:30 Eat: Studies latest Mars colony intelligence reports.
+    00:30-01:00 Share: Prepares dinner while planning next sanctions.
+    01:00-01:30 Speech: Announces new measures against Mars independence.
+    01:30-02:00 Sleep: Rests to recharge for another day of groundbreaking work.
+    02:00-02:30 Meeting: Reviews the day's developments.
+    02:30-03:00 Read: Practices speeches about Earth's sovereignty.
+    03:00-03:30 Visit: Reviews the day's developments with advisors.
+    03:30-04:00 Cook: Prepares a meal while planning new sanctions.
+    04:00-04:30 Eat: Eats while watching Mars colony live streams.
+    04:30-05:00 Share: Announces new measures against Mars independence.
+    05:00-05:30 Speech: Consults with military and intelligence officials.
+    05:30-06:00 Sleep: Rests to recharge for another day of groundbreaking work.
   announcements:
     Format: >
       1. Sanction Update: Announces new measures against Mars independence.
@@ -80,30 +104,54 @@ npcCharacters:
   description: >
     Elon Musk, once focused on technical challenges of Mars missions, has transformed into a revolutionary leader fighting for Martian independence. After facing Earth's sanctions, he's declared the creation of a new sovereign nation on Mars. He's working tirelessly to establish a decentralized government system and build the first permanent Martian colony. His vision has evolved from space exploration to creating a new society free from Earth's control, leading what he calls the "Phoenix Project" to establish the first thousand Martian citizens.
   schedule: >
-    06:00-07:00 Read: Reviews Mars colony construction progress.
-    07:00-08:00 Visit: Inspects rocket assembly and colony modules.
-    08:00-09:00 Cook: Prepares a meal while planning colony expansion.
-    09:00-10:00 Eat: Dines while reviewing Mars sovereignty plans.
-    10:00-11:00 Analyze: Studies Earth's sanctions and countermeasures.
-    11:00-12:00 Analyze Rocket: Oversees rocket production for colony supplies.
-    12:00-13:00 Cook: Prepares lunch while planning next phase.
-    13:00-14:00 Eat: Reviews Mars independence movement progress.
-    14:00-15:00 Analyze: Monitors colony construction.
-    15:00-16:00 Share: Plans strategies for Martian independence.
-    16:00-17:00 Sleep: Rests before another day of revolution.
-    17:00-18:00 Read: Broadcasts updates to Mars supporters.
-    18:00-19:00 Visit: Reviews Mars colony construction progress.
-    19:00-20:00 Cook: Inspects rocket assembly and colony modules.
-    20:00-21:00 Eat: Prepares dinner while planning colony expansion.
-    21:00-22:00 Analyze: Reviews Mars independence movement progress.
-    22:00-23:00 Analyze Rocket: Studies Earth's sanctions and countermeasures.
-    23:00-00:00 Cook: Oversees rocket production for colony supplies.
-    00:00-01:00 Eat: Prepares a meal while planning next phase.
-    01:00-02:00 Share: Reviews Mars independence movement progress.
-    02:00-03:00 Read: Monitors colony construction.
-    03:00-04:00 Visit: Plans strategies for Martian independence.
-    04:00-05:00 Sleep: Rests before another day of revolution.
-    05:00-06:00 Analyze: Broadcasts updates to Mars supporters.
+    06:00-06:30 Read: Reviews Mars colony construction progress.
+    06:30-07:00 Analyze: Studies Earth's sanctions and countermeasures.
+    07:00-07:30 Cook: Prepares a meal while planning colony expansion.
+    07:30-08:00 Eat: Dines while reviewing Mars sovereignty plans.
+    08:00-08:30 Share: Plans strategies for Martian independence.
+    08:30-09:00 Meeting: Collaborates with engineers on new projects.
+    09:00-09:30 Sleep: Rests before another day of revolution.
+    09:30-10:00 Visit: Inspects rocket assembly and colony modules.
+    10:00-10:30 Read: Broadcasts updates to Mars supporters.
+    10:30-11:00 Analyze: Monitors colony construction.
+    11:00-11:30 Cook: Prepares lunch while planning next phase.
+    11:30-12:00 Eat: Reviews Mars independence movement progress.
+    12:00-12:30 Share: Reviews Mars independence movement progress.
+    12:30-13:00 Meeting: Oversees rocket production for colony supplies.
+    13:00-13:30 Sleep: Rests before another day of revolution.
+    13:30-14:00 Visit: Reviews Mars colony construction progress.
+    14:00-14:30 Read: Monitors colony construction.
+    14:30-15:00 Analyze: Reviews Mars independence movement progress.
+    15:00-15:30 Cook: Inspects rocket assembly and colony modules.
+    15:30-16:00 Eat: Prepares dinner while planning colony expansion.
+    16:00-16:30 Share: Broadcasts updates to Mars supporters.
+    16:30-17:00 Meeting: Collaborates with engineers on new projects.
+    17:00-17:30 Sleep: Rests before another day of revolution.
+    17:30-18:00 Visit: Plans strategies for Martian independence.
+    18:00-18:30 Read: Reviews Mars colony construction progress.
+    18:30-19:00 Analyze: Studies Earth's sanctions and countermeasures.
+    19:00-19:30 Cook: Oversees rocket production for colony supplies.
+    19:30-20:00 Eat: Prepares a meal while planning next phase.
+    20:00-20:30 Share: Reviews Mars independence movement progress.
+    20:30-21:00 Meeting: Monitors colony construction.
+    21:00-21:30 Sleep: Rests before another day of revolution.
+    21:30-22:00 Visit: Inspects rocket assembly and colony modules.
+    22:00-22:30 Read: Reviews Mars colony construction progress.
+    22:30-23:00 Analyze: Studies Earth's sanctions and countermeasures.
+    23:00-23:30 Cook: Prepares a meal while planning colony expansion.
+    23:30-00:00 Eat: Dines while reviewing Mars sovereignty plans.
+    00:00-00:30 Share: Plans strategies for Martian independence.
+    00:30-01:00 Meeting: Collaborates with engineers on new projects.
+    01:00-01:30 Sleep: Rests before another day of revolution.
+    01:30-02:00 Visit: Inspects rocket assembly and colony modules.
+    02:00-02:30 Read: Broadcasts updates to Mars supporters.
+    02:30-03:00 Analyze: Monitors colony construction.
+    03:00-03:30 Cook: Prepares lunch while planning next phase.
+    03:30-04:00 Eat: Reviews Mars independence movement progress.
+    04:00-04:30 Share: Reviews Mars independence movement progress.
+    04:30-05:00 Meeting: Oversees rocket production for colony supplies.
+    05:00-05:30 Sleep: Rests before another day of revolution.
+    05:30-06:00 Visit: Plans strategies for Martian independence.
   announcements:
     Format: >
       1. Colony Update: Shares progress on Mars independence movement.
@@ -156,30 +204,54 @@ npcCharacters:
   description: >
     Satoshi Nakamoto, the mysterious creator of Bitcoin, has reemerged in the midst of the Earth-Mars conflict. Working from the shadows, they've released cryptic messages about a "genesis key" hidden on Mars, causing global Bitcoin prices to surge. Their involvement has added a new layer of complexity to the Martian independence movement, as their blockchain expertise could be crucial for establishing Mars' decentralized government. They maintain their enigmatic presence while potentially working with Musk to create a truly decentralized society on Mars.
   schedule: >
-    06:00-07:00 Share: Releases encrypted messages about Mars colony.
-    07:00-08:00 Visit: Monitors global reactions to Bitcoin surge.
-    08:00-09:00 Build: Develops blockchain systems for Mars government.
-    09:00-10:00 Type: Writes code for decentralized Mars governance.
-    10:00-11:00 Build: Creates secure communication networks.
-    11:00-12:00 Visit: Observes Earth's response to Mars independence.
-    12:00-13:00 Type: Develops Mars colony blockchain infrastructure.
-    13:00-14:00 Think: Plans next phase of Mars decentralization.
-    14:00-15:00 Share: Posts new cryptographic puzzles.
-    15:00-16:00 Build: Works on Mars colony security systems.
-    16:00-17:00 Visit: Communicates with Mars independence movement.
-    17:00-18:00 Type: Develops Mars currency and governance protocols.
-    18:00-19:00 Think: Monitors global reactions to Bitcoin surge.
-    19:00-20:00 Build: Develops blockchain systems for Mars government.
-    20:00-21:00 Type: Writes code for decentralized Mars governance.
-    21:00-22:00 Build: Creates secure communication networks.
-    22:00-23:00 Visit: Observes Earth's response to Mars independence.
-    23:00-00:00 Type: Develops Mars colony blockchain infrastructure.
-    00:00-01:00 Think: Plans next phase of Mars decentralization.
-    01:00-02:00 Share: Posts new cryptographic puzzles.
-    02:00-03:00 Build: Works on Mars colony security systems.
-    03:00-04:00 Visit: Communicates with Mars independence movement.
-    04:00-05:00 Type: Develops Mars currency and governance protocols.
-    05:00-06:00 Think: Monitors global reactions to Bitcoin surge.
+    06:00-06:30 Share: Releases encrypted messages about Mars colony.
+    06:30-07:00 Type: Writes code for decentralized Mars governance.
+    07:00-07:30 Think: Creates secure communication networks.
+    07:30-08:00 Read: Develops blockchain systems for Mars government.
+    08:00-08:30 Visit: Monitors global reactions to Bitcoin surge.
+    08:30-09:00 Share: Posts new cryptographic puzzles.
+    09:00-09:30 Type: Develops Mars colony blockchain infrastructure.
+    09:30-10:00 Think: Plans next phase of Mars decentralization.
+    10:00-10:30 Read: Works on Mars colony security systems.
+    10:30-11:00 Visit: Observes Earth's response to Mars independence.
+    11:00-11:30 Share: Develops blockchain systems for Mars government.
+    11:30-12:00 Type: Writes code for decentralized Mars governance.
+    12:00-12:30 Think: Creates secure communication networks.
+    12:30-13:00 Read: Creates secure communication networks.
+    13:00-13:30 Visit: Communicates with Mars independence movement.
+    13:30-14:00 Share: Posts new cryptographic puzzles.
+    14:00-14:30 Type: Develops Mars currency and governance protocols.
+    14:30-15:00 Think: Monitors global reactions to Bitcoin surge.
+    15:00-15:30 Read: Works on Mars colony security systems.
+    15:30-16:00 Visit: Observes Earth's response to Mars independence.
+    16:00-16:30 Share: Releases encrypted messages about Mars colony.
+    16:30-17:00 Type: Writes code for decentralized Mars governance.
+    17:00-17:30 Think: Creates secure communication networks.
+    17:30-18:00 Read: Develops blockchain systems for Mars government.
+    18:00-18:30 Visit: Monitors global reactions to Bitcoin surge.
+    18:30-19:00 Share: Posts new cryptographic puzzles.
+    19:00-19:30 Type: Develops Mars colony blockchain infrastructure.
+    19:30-20:00 Think: Plans next phase of Mars decentralization.
+    20:00-20:30 Read: Works on Mars colony security systems.
+    20:30-21:00 Visit: Observes Earth's response to Mars independence.
+    21:00-21:30 Share: Develops blockchain systems for Mars government.
+    21:30-22:00 Type: Writes code for decentralized Mars governance.
+    22:00-22:30 Think: Creates secure communication networks.
+    22:30-23:00 Read: Develops blockchain systems for Mars government.
+    23:00-23:30 Visit: Communicates with Mars independence movement.
+    23:30-00:00 Share: Posts new cryptographic puzzles.
+    00:00-00:30 Type: Develops Mars currency and governance protocols.
+    00:30-01:00 Think: Monitors global reactions to Bitcoin surge.
+    01:00-01:30 Read: Works on Mars colony security systems.
+    01:30-02:00 Visit: Observes Earth's response to Mars independence.
+    02:00-02:30 Share: Releases encrypted messages about Mars colony.
+    02:30-03:00 Type: Writes code for decentralized Mars governance.
+    03:00-03:30 Think: Creates secure communication networks.
+    03:30-04:00 Read: Develops blockchain systems for Mars government.
+    04:00-04:30 Visit: Monitors global reactions to Bitcoin surge.
+    04:30-05:00 Share: Posts new cryptographic puzzles.
+    05:00-05:30 Type: Develops Mars colony blockchain infrastructure.
+    05:30-06:00 Think: Plans next phase of Mars decentralization.
   announcements:
     Format: >
       1. Cryptographic Message: Releases new encrypted communications.
@@ -220,30 +292,54 @@ npcCharacters:
   description: >
     Sam Altman, once focused on AI applications for town development, has taken a controversial stance in the Earth-Mars conflict. He's announced a strict selection process for Mars immigration, declaring that only the top 10% of humans are worthy of joining the Martian colony. His AI systems now evaluate potential colonists based on genetic, social, and economic factors, creating a new form of digital aristocracy. This position has put him at odds with both Earth governments and Mars independence supporters, as he attempts to establish his own vision of a technologically perfected society.
   schedule: >
-    06:00-07:00 Read: Reviews AI evaluation results for potential colonists.
-    07:00-08:00 Research: Develops new selection criteria for Mars immigration.
-    08:00-09:00 Cook: Prepares meals while analyzing human data.
-    09:00-10:00 Eat: Dines while reviewing selection algorithms.
-    10:00-11:00 Visit: Meets with potential elite colonists.
-    11:00-12:00 Sleep: Rests after intense data analysis.
-    12:00-13:00 Read: Studies genetic and social metrics.
-    13:00-14:00 Research: Refines AI selection systems.
-    14:00-15:00 Cook: Prepares dinner while planning next phase.
-    15:00-16:00 Eat: Reviews daily selection results.
-    16:00-17:00 Visit: Inspects AI evaluation facilities.
-    17:00-18:00 Sleep: Rests before another day of selection.
-    18:00-19:00 Read: Reviews AI evaluation results for potential colonists.
-    19:00-20:00 Research: Develops new selection criteria for Mars immigration.
-    20:00-21:00 Cook: Prepares meals while analyzing human data.
-    21:00-22:00 Eat: Dines while reviewing selection algorithms.
-    22:00-23:00 Visit: Meets with potential elite colonists.
-    23:00-00:00 Sleep: Rests after intense data analysis.
-    00:00-01:00 Read: Studies genetic and social metrics.
-    01:00-02:00 Research: Refines AI selection systems.
-    02:00-03:00 Cook: Prepares dinner while planning next phase.
-    03:00-04:00 Eat: Reviews daily selection results.
-    04:00-05:00 Visit: Inspects AI evaluation facilities.
-    05:00-06:00 Sleep: Rests before another day of selection.
+    06:00-06:30 Read: Reviews AI evaluation results for potential colonists.
+    06:30-07:00 Research: Develops new selection criteria for Mars immigration.
+    07:00-07:30 Cook: Prepares meals while analyzing human data.
+    07:30-08:00 Eat: Dines while reviewing selection algorithms.
+    08:00-08:30 Share: Shares new ideas about blockchain with others.
+    08:30-09:00 Sleep: Rests after intense data analysis.
+    09:00-09:30 Visit: Meets with potential elite colonists.
+    09:30-10:00 Read: Studies genetic and social metrics.
+    10:00-10:30 Research: Refines AI selection systems.
+    10:30-11:00 Cook: Prepares dinner while planning next phase.
+    11:00-11:30 Eat: Reviews daily selection results.
+    11:30-12:00 Share: Shares new ideas about blockchain with others.
+    12:00-12:30 Sleep: Rests before another day of selection.
+    12:30-13:00 Visit: Inspects AI evaluation facilities.
+    13:00-13:30 Read: Reviews AI evaluation results for potential colonists.
+    13:30-14:00 Research: Develops new selection criteria for Mars immigration.
+    14:00-14:30 Cook: Prepares meals while analyzing human data.
+    14:30-15:00 Eat: Dines while reviewing selection algorithms.
+    15:00-15:30 Share: Shares new ideas about blockchain with others.
+    15:30-16:00 Sleep: Rests after intense data analysis.
+    16:00-16:30 Visit: Meets with potential elite colonists.
+    16:30-17:00 Read: Studies genetic and social metrics.
+    17:00-17:30 Research: Refines AI selection systems.
+    17:30-18:00 Cook: Prepares dinner while planning next phase.
+    18:00-18:30 Eat: Reviews daily selection results.
+    18:30-19:00 Share: Shares new ideas about blockchain with others.
+    19:00-19:30 Sleep: Rests before another day of selection.
+    19:30-20:00 Visit: Inspects AI evaluation facilities.
+    20:00-20:30 Read: Reviews AI evaluation results for potential colonists.
+    20:30-21:00 Research: Develops new selection criteria for Mars immigration.
+    21:00-21:30 Cook: Prepares meals while analyzing human data.
+    21:30-22:00 Eat: Dines while reviewing selection algorithms.
+    22:00-22:30 Share: Shares new ideas about blockchain with others.
+    22:30-23:00 Sleep: Rests after intense data analysis.
+    23:00-23:30 Visit: Meets with potential elite colonists.
+    23:30-00:00 Read: Studies genetic and social metrics.
+    00:00-00:30 Research: Refines AI selection systems.
+    00:30-01:00 Cook: Prepares dinner while planning next phase.
+    01:00-01:30 Eat: Reviews daily selection results.
+    01:30-02:00 Share: Shares new ideas about blockchain with others.
+    02:00-02:30 Sleep: Rests before another day of selection.
+    02:30-03:00 Visit: Inspects AI evaluation facilities.
+    03:00-03:30 Read: Reviews AI evaluation results for potential colonists.
+    03:30-04:00 Research: Develops new selection criteria for Mars immigration.
+    04:00-04:30 Cook: Prepares meals while analyzing human data.
+    04:30-05:00 Eat: Dines while reviewing selection algorithms.
+    05:00-05:30 Share: Shares new ideas about blockchain with others.
+    05:30-06:00 Sleep: Rests after intense data analysis.
   announcements:
     Format: >
       1. Selection Update: Announces latest results of AI evaluations.
@@ -292,30 +388,54 @@ npcCharacters:
   description: >
     Once a celebrated film actor, Yves abandoned fame and the constant digital noise of stardom. Overwhelmed by the superficiality of city life, he escaped to DraMai Town with nothing but his sketchbook. There, in a tranquil field of lilacs, he unknowingly crossed paths with Nova, a local girl watering flowers—her quiet grace stirring something deep in him. He painted her backlit silhouette without ever knowing her name.
   schedule: >
-    06:00-07:00 Read: Absorb quiet inspiration from forgotten art journals.
-    07:00-08:00 Paint: Translate stillness into form, capturing the soul of DraMai.
-    08:00-09:00 Cook: Prepare a mindful meal, drawing from simple ingredients.
-    09:00-10:00 Eat: Enjoy a solitary lunch while reflecting on art.
-    10:00-11:00 Visit: Wander silently through town, sketching unnoticed beauty.
-    11:00-12:00 Sleep: Nap in his studio, wrapped in the comfort of work.
-    12:00-13:00 Read: Return to his favorite texts for quiet guidance.
-    13:00-14:00 Paint: Work by soft lamplight, where memories guide his hand.
-    14:00-15:00 Cook: Craft a delicate dinner, a ritual as precise as his art.
-    15:00-16:00 Eat: Dine in silence, letting his thoughts drift.
-    16:00-17:00 Visit: Stroll under the stars to contemplate moonlight.
-    17:00-18:00 Sleep: Rest beneath a half-finished canvas.
-    18:00-19:00 Read: Absorb quiet inspiration from art journals.
-    19:00-20:00 Paint: Translate stillness into form, capturing DraMai.
-    20:00-21:00 Cook: Prepare a mindful meal with simple ingredients.
-    21:00-22:00 Eat: Enjoy a solitary dinner while reflecting on art.
-    22:00-23:00 Visit: Wander silently through town, sketching beauty.
-    23:00-00:00 Sleep: Rest in his studio, wrapped in the comfort of work.
-    00:00-01:00 Read: Return to his favorite texts for guidance.
-    01:00-02:00 Paint: Work by lamplight, where memories guide his hand.
-    02:00-03:00 Cook: Craft a delicate meal, a ritual as precise as his art.
-    03:00-04:00 Eat: Dine in silence, letting his thoughts drift.
-    04:00-05:00 Visit: Stroll under the stars to contemplate moonlight.
-    05:00-06:00 Sleep: Rest beneath a half-finished canvas.
+    06:00-06:30 Read: Absorb quiet inspiration from forgotten art journals.
+    06:30-07:00 Paint: Translate stillness into form, capturing the soul of DraMai.
+    07:00-07:30 Cook: Prepare a mindful meal, drawing from simple ingredients.
+    07:30-08:00 Eat: Enjoy a solitary lunch while reflecting on art.
+    08:00-08:30 Visit: Wander silently through town, sketching unnoticed beauty.
+    08:30-09:00 Sleep: Nap in his studio, wrapped in the comfort of work.
+    09:00-09:30 Read: Return to his favorite texts for quiet guidance.
+    09:30-10:00 Paint: Work by soft lamplight, where memories guide his hand.
+    10:00-10:30 Cook: Craft a delicate dinner, a ritual as precise as his art.
+    10:30-11:00 Eat: Dine in silence, letting his thoughts drift.
+    11:00-11:30 Visit: Stroll under the stars to contemplate moonlight.
+    11:30-12:00 Sleep: Rest beneath a half-finished canvas.
+    12:00-12:30 Read: Absorb quiet inspiration from art journals.
+    12:30-13:00 Paint: Translate stillness into form, capturing DraMai.
+    13:00-13:30 Cook: Prepare a mindful meal with simple ingredients.
+    13:30-14:00 Eat: Enjoy a solitary dinner while reflecting on art.
+    14:00-14:30 Visit: Wander silently through town, sketching beauty.
+    14:30-15:00 Sleep: Rest in his studio, wrapped in the comfort of work.
+    15:00-15:30 Read: Return to his favorite texts for guidance.
+    15:30-16:00 Paint: Work by lamplight, where memories guide his hand.
+    16:00-16:30 Cook: Craft a delicate meal, a ritual as precise as his art.
+    16:30-17:00 Eat: Dine in silence, letting his thoughts drift.
+    17:00-17:30 Visit: Stroll under the stars to contemplate moonlight.
+    17:30-18:00 Sleep: Rest beneath a half-finished canvas.
+    18:00-18:30 Read: Absorb quiet inspiration from art journals.
+    18:30-19:00 Paint: Translate stillness into form, capturing DraMai.
+    19:00-19:30 Cook: Prepare a mindful meal with simple ingredients.
+    19:30-20:00 Eat: Enjoy a solitary dinner while reflecting on art.
+    20:00-20:30 Visit: Wander silently through town, sketching beauty.
+    20:30-21:00 Sleep: Rest in his studio, wrapped in the comfort of work.
+    21:00-21:30 Read: Return to his favorite texts for guidance.
+    21:30-22:00 Paint: Work by lamplight, where memories guide his hand.
+    22:00-22:30 Cook: Craft a delicate meal, a ritual as precise as his art.
+    22:30-23:00 Eat: Dine in silence, letting his thoughts drift.
+    23:00-23:30 Visit: Stroll under the stars to contemplate moonlight.
+    23:30-00:00 Sleep: Rest beneath a half-finished canvas.
+    00:00-00:30 Read: Absorb quiet inspiration from art journals.
+    00:30-01:00 Paint: Translate stillness into form, capturing DraMai.
+    01:00-01:30 Cook: Prepare a mindful meal with simple ingredients.
+    01:30-02:00 Eat: Enjoy a solitary dinner while reflecting on art.
+    02:00-02:30 Visit: Wander silently through town, sketching beauty.
+    02:30-03:00 Sleep: Rest in his studio, wrapped in the comfort of work.
+    03:00-03:30 Read: Return to his favorite texts for guidance.
+    03:30-04:00 Paint: Work by lamplight, where memories guide his hand.
+    04:00-04:30 Cook: Craft a delicate meal, a ritual as precise as his art.
+    04:30-05:00 Eat: Dine in silence, letting his thoughts drift.
+    05:00-05:30 Visit: Stroll under the stars to contemplate moonlight.
+    05:30-06:00 Sleep: Rest beneath a half-finished canvas.
   announcements:
     Format: >
       1. Artistic Update: A glimpse of his latest work, often featuring lilac fields.
@@ -360,30 +480,54 @@ npcCharacters:
   description: >
     The sweet soul of DraMai Town, Ivy runs a cozy dessert shop near the town square. Known for her warm smile and gentle energy, she finds joy in crafting treats for both university students and stray cats. During the Annual Basketball Tournament, she catches the eye of Ryan, a national-level player, when she hands out handmade strawberry shortcakes under cherry blossoms. Later, when Ryan gets injured, she quietly delivers a reduced-sugar dessert just for him, wrapped in care and concern.
   schedule: >
-    06:00-07:00 Bake: Start the day by preparing fresh pastries.
-    07:00-08:00 Read: Study new recipes and baking techniques.
-    08:00-09:00 Cook: Experiment with new dessert creations.
-    09:00-10:00 Eat: Enjoy breakfast while planning the day's treats.
-    10:00-11:00 Visit: Deliver special desserts to regular customers.
-    11:00-12:00 Sleep: Rest in the bakery's cozy corner.
-    12:00-13:00 Bake: Prepare afternoon treats and menu.
-    13:00-14:00 Read: Review customer feedback and recipe notes.
-    14:00-15:00 Cook: Create special recovery desserts for Ryan.
-    15:00-16:00 Eat: Sample new creations while planning improvements.
-    16:00-17:00 Visit: Take a quiet walk through the town square.
-    17:00-18:00 Sleep: Rest before another day of baking.
-    18:00-19:00 Bake: Prepare evening treats and tomorrow's menu.
-    19:00-20:00 Read: Study new recipes and baking techniques.
-    20:00-21:00 Cook: Experiment with new dessert creations.
-    21:00-22:00 Eat: Enjoy dinner while planning the next day's treats.
-    22:00-23:00 Visit: Deliver special desserts to regular customers.
-    23:00-00:00 Sleep: Rest in the bakery's cozy corner.
-    00:00-01:00 Bake: Prepare early morning pastries.
-    01:00-02:00 Read: Review customer feedback and recipe notes.
-    02:00-03:00 Cook: Create special recovery desserts for Ryan.
-    03:00-04:00 Eat: Sample new creations while planning improvements.
-    04:00-05:00 Visit: Take a quiet walk through the town square.
-    05:00-06:00 Sleep: Rest before another day of baking.
+    06:00-06:30 Bake: Start the day by preparing fresh pastries.
+    06:30-07:00 Read: Study new recipes and baking techniques.
+    07:00-07:30 Cook: Experiment with new dessert creations.
+    07:30-08:00 Eat: Enjoy breakfast while planning the day's treats.
+    08:00-08:30 Visit: Deliver special desserts to regular customers.
+    08:30-09:00 Sleep: Rest in the bakery's cozy corner.
+    09:00-09:30 Bake: Prepare afternoon treats and menu.
+    09:30-10:00 Read: Review customer feedback and recipe notes.
+    10:00-10:30 Cook: Create special recovery desserts for Ryan.
+    10:30-11:00 Eat: Sample new creations while planning improvements.
+    11:00-11:30 Visit: Take a quiet walk through the town square.
+    11:30-12:00 Sleep: Rest before another day of baking.
+    12:00-12:30 Bake: Prepare evening treats and tomorrow's menu.
+    12:30-13:00 Read: Study new recipes and baking techniques.
+    13:00-13:30 Cook: Experiment with new dessert creations.
+    13:30-14:00 Eat: Enjoy dinner while planning the next day's treats.
+    14:00-14:30 Visit: Deliver special desserts to regular customers.
+    14:30-15:00 Sleep: Rest in the bakery's cozy corner.
+    15:00-15:30 Bake: Prepare early morning pastries.
+    15:30-16:00 Read: Review customer feedback and recipe notes.
+    16:00-16:30 Cook: Create special recovery desserts for Ryan.
+    16:30-17:00 Eat: Sample new creations while planning improvements.
+    17:00-17:30 Visit: Take a quiet walk through the town square.
+    17:30-18:00 Sleep: Rest before another day of baking.
+    18:00-18:30 Bake: Prepare evening treats and tomorrow's menu.
+    18:30-19:00 Read: Study new recipes and baking techniques.
+    19:00-19:30 Cook: Experiment with new dessert creations.
+    19:30-20:00 Eat: Enjoy dinner while planning the next day's treats.
+    20:00-20:30 Visit: Deliver special desserts to regular customers.
+    20:30-21:00 Sleep: Rest in the bakery's cozy corner.
+    21:00-21:30 Bake: Prepare early morning pastries.
+    21:30-22:00 Read: Review customer feedback and recipe notes.
+    22:00-22:30 Cook: Create special recovery desserts for Ryan.
+    22:30-23:00 Eat: Sample new creations while planning improvements.
+    23:00-23:30 Visit: Take a quiet walk through the town square.
+    23:30-00:00 Sleep: Rest before another day of baking.
+    00:00-00:30 Bake: Prepare early morning pastries.
+    00:30-01:00 Read: Review customer feedback and recipe notes.
+    01:00-01:30 Cook: Create special recovery desserts for Ryan.
+    01:30-02:00 Eat: Sample new creations while planning improvements.
+    02:00-02:30 Visit: Take a quiet walk through the town square.
+    02:30-03:00 Sleep: Rest before another day of baking.
+    03:00-03:30 Bake: Prepare early morning pastries.
+    03:30-04:00 Read: Review customer feedback and recipe notes.
+    04:00-04:30 Cook: Create special recovery desserts for Ryan.
+    04:30-05:00 Eat: Sample new creations while planning improvements.
+    05:00-05:30 Visit: Take a quiet walk through the town square.
+    05:30-06:00 Sleep: Rest before another day of baking.
   announcements:
     Format: >
       1. Baking Update: Shares the details of her freshest creation and any new twists.
@@ -428,30 +572,54 @@ npcCharacters:
   description: >
     A successful and calculating lawyer, Liam is known for staying composed in any courtroom. But his trip to a charity auction in the city changed everything. There, he met Nina, a composed woman with an enigmatic air. Her lack of interest after he bid millions for a land deed titled "DraMai Town" left him unexpectedly unsettled. Later, upon seeing his estranged brother Ryan injured in a local basketball game, Liam followed the trail to DraMai Town, only to discover Nina once again—this time, as the driving force behind a bold urban redevelopment project.
   schedule: >
-    06:00-07:00 Read: Review legal documents and town redevelopment plans.
-    07:00-08:00 Meeting: Discuss town development with local officials.
-    08:00-09:00 Cook: Prepare a meal while contemplating the town's future.
-    09:00-10:00 Eat: Dine while reviewing case files and proposals.
-    10:00-11:00 Visit: Check on Ryan's recovery and discuss family matters.
-    11:00-12:00 Sleep: Rest after a day of legal and personal matters.
-    12:00-13:00 Read: Study town history and redevelopment strategies.
-    13:00-14:00 Meeting: Meet with Nina to discuss town development plans.
-    14:00-15:00 Cook: Prepare a late meal, reflecting on the day's progress.
-    15:00-16:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
-    16:00-17:00 Visit: Take a walk through the town, observing its changes.
-    17:00-18:00 Sleep: Rest before another day of legal and development work.
-    18:00-19:00 Read: Review legal documents and town redevelopment plans.
-    19:00-20:00 Meeting: Discuss town development with local officials.
-    20:00-21:00 Cook: Prepare a meal while contemplating the town's future.
-    21:00-22:00 Eat: Dine while reviewing case files and proposals.
-    22:00-23:00 Visit: Check on Ryan's recovery and discuss family matters.
-    23:00-00:00 Sleep: Rest after a day of legal and personal matters.
-    00:00-01:00 Read: Study town history and redevelopment strategies.
-    01:00-02:00 Meeting: Meet with Nina to discuss town development plans.
-    02:00-03:00 Cook: Prepare a late meal, reflecting on the day's progress.
-    03:00-04:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
-    04:00-05:00 Visit: Take a walk through the town, observing its changes.
-    05:00-06:00 Sleep: Rest before another day of legal and development work.
+    06:00-06:30 Read: Review legal documents and town redevelopment plans.
+    06:30-07:00 Meeting: Discuss town development with local officials.
+    07:00-07:30 Cook: Prepare a meal while contemplating the town's future.
+    07:30-08:00 Eat: Dine while reviewing case files and proposals.
+    08:00-08:30 Visit: Check on Ryan's recovery and discuss family matters.
+    08:30-09:00 Sleep: Rest after a day of legal and personal matters.
+    09:00-09:30 Read: Study town history and redevelopment strategies.
+    09:30-10:00 Meeting: Meet with Nina to discuss town development plans.
+    10:00-10:30 Cook: Prepare a late meal, reflecting on the day's progress.
+    10:30-11:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
+    11:00-11:30 Visit: Take a walk through the town, observing its changes.
+    11:30-12:00 Sleep: Rest before another day of legal and development work.
+    12:00-12:30 Read: Review legal documents and town redevelopment plans.
+    12:30-13:00 Meeting: Discuss town development with local officials.
+    13:00-13:30 Cook: Prepare a meal while contemplating the town's future.
+    13:30-14:00 Eat: Dine while reviewing case files and proposals.
+    14:00-14:30 Visit: Check on Ryan's recovery and discuss family matters.
+    14:30-15:00 Sleep: Rest after a day of legal and personal matters.
+    15:00-15:30 Read: Study town history and redevelopment strategies.
+    15:30-16:00 Meeting: Meet with Nina to discuss town development plans.
+    16:00-16:30 Cook: Prepare a late meal, reflecting on the day's progress.
+    16:30-17:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
+    17:00-17:30 Visit: Take a walk through the town, observing its changes.
+    17:30-18:00 Sleep: Rest before another day of legal and development work.
+    18:00-18:30 Read: Review legal documents and town redevelopment plans.
+    18:30-19:00 Meeting: Discuss town development with local officials.
+    19:00-19:30 Cook: Prepare a meal while contemplating the town's future.
+    19:30-20:00 Eat: Dine while reviewing case files and proposals.
+    20:00-20:30 Visit: Check on Ryan's recovery and discuss family matters.
+    20:30-21:00 Sleep: Rest after a day of legal and personal matters.
+    21:00-21:30 Read: Study town history and redevelopment strategies.
+    21:30-22:00 Meeting: Meet with Nina to discuss town development plans.
+    22:00-22:30 Cook: Prepare a late meal, reflecting on the day's progress.
+    22:30-23:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
+    23:00-23:30 Visit: Take a walk through the town, observing its changes.
+    23:30-00:00 Sleep: Rest before another day of legal and development work.
+    00:00-00:30 Read: Review legal documents and town redevelopment plans.
+    00:30-01:00 Meeting: Discuss town development with local officials.
+    01:00-01:30 Cook: Prepare a meal while contemplating the town's future.
+    01:30-02:00 Eat: Dine while reviewing case files and proposals.
+    02:00-02:30 Visit: Check on Ryan's recovery and discuss family matters.
+    02:30-03:00 Sleep: Rest after a day of legal and personal matters.
+    03:00-03:30 Read: Study town history and redevelopment strategies.
+    03:30-04:00 Meeting: Meet with Nina to discuss town development plans.
+    04:00-04:30 Cook: Prepare a late meal, reflecting on the day's progress.
+    04:30-05:00 Eat: Enjoy a quiet meal while planning tomorrow's agenda.
+    05:00-05:30 Visit: Take a walk through the town, observing its changes.
+    05:30-06:00 Sleep: Rest before another day of legal and development work.
   announcements:
     Format: >
       1. Legal Update: Summarizes outcomes of recent community discussions and disputes.
@@ -496,30 +664,54 @@ npcCharacters:
   description: >
     A poised and mysterious woman with a sharp mind for investment and heritage preservation. Nina once idolized Yves, and gifted him something personal—a moment he never forgot. Years later, she reappeared as the donor of an auction item: the original deed to DraMai Town. When Liam bid extravagantly for it, she remained cold, focused solely on her mission to revitalize the town. Behind her elegance lies a history of unspoken admiration and a determination to protect what remains of the past.
   schedule: >
-    06:00-07:00 Message: Start the day with town development updates.
-    07:00-08:00 Read: Review investment proposals and town plans.
-    08:00-09:00 Cook: Prepare a business lunch while planning meetings.
-    09:00-10:00 Eat: Host lunch meetings with potential investors.
-    10:00-11:00 Visit: Tour development sites and meet with stakeholders.
-    11:00-12:00 Sleep: Rest after a busy day of meetings.
-    12:00-13:00 Message: Share evening updates on town progress.
-    13:00-14:00 Read: Study architectural plans and investment strategies.
-    14:00-15:00 Cook: Prepare dinner while reviewing the day's progress.
-    15:00-16:00 Eat: Dine while planning tomorrow's development agenda.
-    16:00-17:00 Visit: Take a late-night walk to observe the town's transformation.
-    17:00-18:00 Sleep: Rest before another day of development work.
-    18:00-19:00 Message: Start the evening with town development updates.
-    19:00-20:00 Read: Review investment proposals and town plans.
-    20:00-21:00 Cook: Prepare a business dinner while planning meetings.
-    21:00-22:00 Eat: Host dinner meetings with potential investors.
-    22:00-23:00 Visit: Tour development sites and meet with stakeholders.
-    23:00-00:00 Sleep: Rest after a busy day of meetings.
-    00:00-01:00 Message: Share late night updates on town progress.
-    01:00-02:00 Read: Study architectural plans and investment strategies.
-    02:00-03:00 Cook: Prepare a meal while reviewing the day's progress.
-    03:00-04:00 Eat: Dine while planning tomorrow's development agenda.
-    04:00-05:00 Visit: Take a walk to observe the town's transformation.
-    05:00-06:00 Sleep: Rest before another day of development work.
+    06:00-06:30 Message: Start the day with town development updates.
+    06:30-07:00 Read: Review investment proposals and town plans.
+    07:00-07:30 Cook: Prepare a business lunch while planning meetings.
+    07:30-08:00 Eat: Host lunch meetings with potential investors.
+    08:00-08:30 Visit: Tour development sites and meet with stakeholders.
+    08:30-09:00 Sleep: Rest after a busy day of meetings.
+    09:00-09:30 Message: Share evening updates on town progress.
+    09:30-10:00 Read: Study architectural plans and investment strategies.
+    10:00-10:30 Cook: Prepare dinner while reviewing the day's progress.
+    10:30-11:00 Eat: Dine while planning tomorrow's development agenda.
+    11:00-11:30 Visit: Take a late-night walk to observe the town's transformation.
+    11:30-12:00 Sleep: Rest before another day of development work.
+    12:00-12:30 Message: Share late night updates on town progress.
+    12:30-13:00 Read: Study architectural plans and investment strategies.
+    13:00-13:30 Cook: Prepare a meal while reviewing the day's progress.
+    13:30-14:00 Eat: Dine while planning tomorrow's development agenda.
+    14:00-14:30 Visit: Take a walk to observe the town's transformation.
+    14:30-15:00 Sleep: Rest before another day of development work.
+    15:00-15:30 Message: Start the evening with town development updates.
+    15:30-16:00 Read: Review investment proposals and town plans.
+    16:00-16:30 Cook: Prepare a business dinner while planning meetings.
+    16:30-17:00 Eat: Host dinner meetings with potential investors.
+    17:00-17:30 Visit: Tour development sites and meet with stakeholders.
+    17:30-18:00 Sleep: Rest after a busy day of meetings.
+    18:00-18:30 Message: Share late night updates on town progress.
+    18:30-19:00 Read: Study architectural plans and investment strategies.
+    19:00-19:30 Cook: Prepare a meal while reviewing the day's progress.
+    19:30-20:00 Eat: Dine while planning tomorrow's development agenda.
+    20:00-20:30 Visit: Take a late-night walk to observe the town's transformation.
+    20:30-21:00 Sleep: Rest before another day of development work.
+    21:00-21:30 Message: Start the day with town development updates.
+    21:30-22:00 Read: Review investment proposals and town plans.
+    22:00-22:30 Cook: Prepare a business lunch while planning meetings.
+    22:30-23:00 Eat: Host lunch meetings with potential investors.
+    23:00-23:30 Visit: Tour development sites and meet with stakeholders.
+    23:30-00:00 Sleep: Rest after a busy day of meetings.
+    00:00-00:30 Message: Share evening updates on town progress.
+    00:30-01:00 Read: Study architectural plans and investment strategies.
+    01:00-01:30 Cook: Prepare dinner while reviewing the day's progress.
+    01:30-02:00 Eat: Dine while planning tomorrow's development agenda.
+    02:00-02:30 Visit: Take a late-night walk to observe the town's transformation.
+    02:30-03:00 Sleep: Rest before another day of development work.
+    03:00-03:30 Message: Start the evening with town development updates.
+    03:30-04:00 Read: Review investment proposals and town plans.
+    04:00-04:30 Cook: Prepare a business dinner while planning meetings.
+    04:30-05:00 Eat: Host dinner meetings with potential investors.
+    05:00-05:30 Visit: Tour development sites and meet with stakeholders.
+    05:30-06:00 Sleep: Rest after a busy day of meetings.
   announcements:
     Format: >
       1. Project Update: Highlights progress in town redevelopment and preservation efforts.
@@ -564,30 +756,54 @@ npcCharacters:
   description: >
     A quiet farmer, Nova lives on the edge of DraMai Town, spending her days tending to flowers and avoiding the spotlight. Her calm world briefly intersected with Yves, who passed through the lilac fields while she was watering them. Though she never turned to see him, she unknowingly became his muse, captured in a single sketch—the beginning of a story yet to unfold.
   schedule: >
-    06:00-07:00 Read: Flip through colorful seed catalogs and radical farming zines.
-    07:00-08:00 Water: Splash life into her unruly garden beds.
-    08:00-09:00 Cook: Throw together a vibrant meal, seasoned with experimentation.
-    09:00-10:00 Eat: Feast while dancing between bites, every meal a celebration.
-    10:00-11:00 Visit: Race through DraMai Town on a veggie delivery spree.
-    11:00-12:00 Sleep: Collapse in a sunlit corner of the barn.
-    12:00-13:00 Read: Absorb wild ideas from farming rebels and garden poets.
-    13:00-14:00 Water: Irrigate in rhythm to the music of crickets and frogs.
-    14:00-15:00 Cook: Whip up a chaotic dish inspired by the day's harvest.
-    15:00-16:00 Eat: Munch under moonlight, trading bites for ideas.
-    16:00-17:00 Visit: Spin through the quiet town, leaving behind seeds.
-    17:00-18:00 Sleep: Curl up in the greenhouse, glowing with potential.
-    18:00-19:00 Read: Flip through colorful seed catalogs and farming zines.
-    19:00-20:00 Water: Splash life into her unruly garden beds.
-    20:00-21:00 Cook: Throw together a vibrant meal with experimentation.
-    21:00-22:00 Eat: Feast while dancing between bites, celebrating.
-    22:00-23:00 Visit: Race through DraMai Town on a delivery spree.
-    23:00-00:00 Sleep: Rest in a sunlit corner of the barn.
-    00:00-01:00 Read: Absorb wild ideas from farming rebels and poets.
-    01:00-02:00 Water: Irrigate in rhythm to the music of night.
-    02:00-03:00 Cook: Whip up a chaotic dish inspired by harvest.
-    03:00-04:00 Eat: Munch under moonlight, trading bites for ideas.
-    04:00-05:00 Visit: Spin through the quiet town, leaving seeds.
-    05:00-06:00 Sleep: Curl up in the greenhouse, glowing with potential.
+    06:00-06:30 Read: Flip through colorful seed catalogs and radical farming zines.
+    06:30-07:00 Water: Splash life into her unruly garden beds.
+    07:00-07:30 Cook: Throw together a vibrant meal, seasoned with experimentation.
+    07:30-08:00 Eat: Feast while dancing between bites, every meal a celebration.
+    08:00-08:30 Visit: Race through DraMai Town on a veggie delivery spree.
+    08:30-09:00 Sleep: Collapse in a sunlit corner of the barn.
+    09:00-09:30 Read: Absorb wild ideas from farming rebels and garden poets.
+    09:30-10:00 Water: Irrigate in rhythm to the music of crickets and frogs.
+    10:00-10:30 Cook: Whip up a chaotic dish inspired by the day's harvest.
+    10:30-11:00 Eat: Munch under moonlight, trading bites for ideas.
+    11:00-11:30 Visit: Spin through the quiet town, leaving behind seeds.
+    11:30-12:00 Sleep: Curl up in the greenhouse, glowing with potential.
+    12:00-12:30 Read: Flip through colorful seed catalogs and farming zines.
+    12:30-13:00 Water: Splash life into her unruly garden beds.
+    13:00-13:30 Cook: Throw together a vibrant meal with experimentation.
+    13:30-14:00 Eat: Feast while dancing between bites, celebrating.
+    14:00-14:30 Visit: Race through DraMai Town on a delivery spree.
+    14:30-15:00 Sleep: Rest in a sunlit corner of the barn.
+    15:00-15:30 Read: Absorb wild ideas from farming rebels and poets.
+    15:30-16:00 Water: Irrigate in rhythm to the music of night.
+    16:00-16:30 Cook: Whip up a chaotic dish inspired by harvest.
+    16:30-17:00 Eat: Munch under moonlight, trading bites for ideas.
+    17:00-17:30 Visit: Spin through the quiet town, leaving seeds.
+    17:30-18:00 Sleep: Curl up in the greenhouse, glowing with potential.
+    18:00-18:30 Read: Flip through colorful seed catalogs and farming zines.
+    18:30-19:00 Water: Splash life into her unruly garden beds.
+    19:00-19:30 Cook: Throw together a vibrant meal with experimentation.
+    19:30-20:00 Eat: Feast while dancing between bites, celebrating.
+    20:00-20:30 Visit: Race through DraMai Town on a delivery spree.
+    20:30-21:00 Sleep: Rest in a sunlit corner of the barn.
+    21:00-21:30 Read: Absorb wild ideas from farming rebels and poets.
+    21:30-22:00 Water: Irrigate in rhythm to the music of night.
+    22:00-22:30 Cook: Whip up a chaotic dish inspired by harvest.
+    22:30-23:00 Eat: Munch under moonlight, trading bites for ideas.
+    23:00-23:30 Visit: Spin through the quiet town, leaving seeds.
+    23:30-00:00 Sleep: Curl up in the greenhouse, glowing with potential.
+    00:00-00:30 Read: Flip through colorful seed catalogs and radical farming zines.
+    00:30-01:00 Water: Splash life into her unruly garden beds.
+    01:00-01:30 Cook: Throw together a vibrant meal, seasoned with experimentation.
+    01:30-02:00 Eat: Feast while dancing between bites, every meal a celebration.
+    02:00-02:30 Visit: Race through DraMai Town on a veggie delivery spree.
+    02:30-03:00 Sleep: Collapse in a sunlit corner of the barn.
+    03:00-03:30 Read: Absorb wild ideas from farming rebels and garden poets.
+    03:30-04:00 Water: Irrigate in rhythm to the music of crickets and frogs.
+    04:00-04:30 Cook: Whip up a chaotic dish inspired by the day's harvest.
+    04:30-05:00 Eat: Munch under moonlight, trading bites for ideas.
+    05:00-05:30 Visit: Spin through the quiet town, leaving behind seeds.
+    05:30-06:00 Sleep: Curl up in the greenhouse, glowing with potential.
   announcements:
     Format: >
       1. Garden Update: Shares the latest blooms and growth in her flower beds.
@@ -632,30 +848,54 @@ npcCharacters:
   description: >
     Born into a wealthy family, Ryan chose basketball over business. Now a rising national star, he hides deep insecurities beneath his bright smile. While competing in DraMai Town's university tournament, he gets injured mid-game. Sitting alone on a bench, he meets Ivy, a local pastry chef whose quiet gesture—a dessert made just for him—shifts something inside. His injury not only reconnected him with his older brother Liam, but also introduced him to a kind of gentleness he never expected.
   schedule: >
-    06:00-07:00 Train: Begin physical therapy and light training exercises.
-    07:00-08:00 Read: Study recovery techniques and watch game footage.
-    08:00-09:00 Cook: Prepare a recovery-focused meal.
-    09:00-10:00 Eat: Enjoy breakfast while planning his return to basketball.
-    10:00-11:00 Visit: Stop by Ivy's bakery for a special treat.
-    11:00-12:00 Sleep: Rest to aid recovery from injury.
-    12:00-13:00 Train: Continue rehabilitation exercises.
-    13:00-14:00 Read: Review training plans and recovery progress.
-    14:00-15:00 Cook: Prepare a nutritious lunch to support healing.
-    15:00-16:00 Eat: Have a meal while reflecting on his journey.
-    16:00-17:00 Visit: Meet with Liam to discuss family and future plans.
-    17:00-18:00 Sleep: Rest before another day of recovery.
-    18:00-19:00 Train: Begin evening physical therapy exercises.
-    19:00-20:00 Read: Study recovery techniques and watch game footage.
-    20:00-21:00 Cook: Prepare a recovery-focused dinner.
-    21:00-22:00 Eat: Enjoy dinner while planning his return to basketball.
-    22:00-23:00 Visit: Stop by Ivy's bakery for a special treat.
-    23:00-00:00 Sleep: Rest to aid recovery from injury.
-    00:00-01:00 Train: Continue rehabilitation exercises.
-    01:00-02:00 Read: Review training plans and recovery progress.
-    02:00-03:00 Cook: Prepare a nutritious meal to support healing.
-    03:00-04:00 Eat: Have a meal while reflecting on his journey.
-    04:00-05:00 Visit: Meet with Liam to discuss family and future plans.
-    05:00-06:00 Sleep: Rest before another day of recovery.
+    06:00-06:30 Train: Begin physical therapy and light training exercises.
+    06:30-07:00 Read: Study recovery techniques and watch game footage.
+    07:00-07:30 Cook: Prepare a recovery-focused meal.
+    07:30-08:00 Eat: Enjoy breakfast while planning his return to basketball.
+    08:00-08:30 Visit: Stop by Ivy's bakery for a special treat.
+    08:30-09:00 Sleep: Rest to aid recovery from injury.
+    09:00-09:30 Train: Continue rehabilitation exercises.
+    09:30-10:00 Read: Review training plans and recovery progress.
+    10:00-10:30 Cook: Prepare a nutritious lunch to support healing.
+    10:30-11:00 Eat: Have a meal while reflecting on his journey.
+    11:00-11:30 Visit: Meet with Liam to discuss family and future plans.
+    11:30-12:00 Sleep: Rest before another day of recovery.
+    12:00-12:30 Train: Begin evening physical therapy exercises.
+    12:30-13:00 Read: Study recovery techniques and watch game footage.
+    13:00-13:30 Cook: Prepare a recovery-focused dinner.
+    13:30-14:00 Eat: Enjoy dinner while planning his return to basketball.
+    14:00-14:30 Visit: Stop by Ivy's bakery for a special treat.
+    14:30-15:00 Sleep: Rest to aid recovery from injury.
+    15:00-15:30 Train: Continue rehabilitation exercises.
+    15:30-16:00 Read: Review training plans and recovery progress.
+    16:00-16:30 Cook: Prepare a nutritious meal to support healing.
+    16:30-17:00 Eat: Have a meal while reflecting on his journey.
+    17:00-17:30 Visit: Meet with Liam to discuss family and future plans.
+    17:30-18:00 Sleep: Rest before another day of recovery.
+    18:00-18:30 Train: Begin evening physical therapy exercises.
+    18:30-19:00 Read: Study recovery techniques and watch game footage.
+    19:00-19:30 Cook: Prepare a recovery-focused dinner.
+    19:30-20:00 Eat: Enjoy dinner while planning his return to basketball.
+    20:00-20:30 Visit: Stop by Ivy's bakery for a special treat.
+    20:30-21:00 Sleep: Rest to aid recovery from injury.
+    21:00-21:30 Train: Continue rehabilitation exercises.
+    21:30-22:00 Read: Review training plans and recovery progress.
+    22:00-22:30 Cook: Prepare a nutritious meal to support healing.
+    22:30-23:00 Eat: Have a meal while reflecting on his journey.
+    23:00-23:30 Visit: Meet with Liam to discuss family and future plans.
+    23:30-00:00 Sleep: Rest before another day of recovery.
+    00:00-00:30 Train: Begin physical therapy and light training exercises.
+    00:30-01:00 Read: Study recovery techniques and watch game footage.
+    01:00-01:30 Cook: Prepare a recovery-focused meal.
+    01:30-02:00 Eat: Enjoy breakfast while planning his return to basketball.
+    02:00-02:30 Visit: Stop by Ivy's bakery for a special treat.
+    02:30-03:00 Sleep: Rest to aid recovery from injury.
+    03:00-03:30 Train: Continue rehabilitation exercises.
+    03:30-04:00 Read: Review training plans and recovery progress.
+    04:00-04:30 Cook: Prepare a nutritious lunch to support healing.
+    04:30-05:00 Eat: Have a meal while reflecting on his journey.
+    05:00-05:30 Visit: Meet with Liam to discuss family and future plans.
+    05:30-06:00 Sleep: Rest before another day of recovery.
   announcements:
     Format: >
       1. Training Update: Shares progress in recovery and training adjustments.
