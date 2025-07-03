@@ -29,13 +29,26 @@ openai_key = config['OpenAI']['chatgpt_key']
 # ])
 deepseek_key=config['OpenAI']['deepseek_key']
 
+google_key=config['OpenAI']['google_key']
+
 is_chatgpt = config['OpenAI'].getboolean('useChatGPT', fallback=True)
+is_google = config['OpenAI'].getboolean('useGoogle', fallback=False)
 if is_chatgpt:
     print("Using ChatGPT API")
     client = OpenAI(api_key=openai_key)
     client_embedding = OpenAI(api_key=openai_key)
     model_small = "gpt-4o-mini"
     model_large = "gpt-4o"
+elif is_google:
+    print("Using Google API")
+    # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
+    client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai/", api_key=google_key) 
+    client_embedding = OpenAI(api_key=openai_key)
+
+    # model_small = "deepseek/deepseek-r1-distill-llama-70b"
+    # model_large = "deepseek/deepseek-r1-distill-llama-70b"
+    model_small = "gemini-2.5-flash"
+    model_large = "gemini-2.5-flash"
 else:
     print("Using DeepSeek API")
     # client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=deepseek_key) 
