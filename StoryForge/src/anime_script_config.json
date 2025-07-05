@@ -1,0 +1,188 @@
+{
+  "setting_action_mapping": {
+    "trumpSpeech": {
+      "name": "Trump's Speech Location",
+      "available_actions": [129],
+      "description": "Location where Trump gives public speeches"
+    },
+    "trumpMeeting": {
+      "name": "Trump's Meeting Room",
+      "available_actions": [124],
+      "description": "Location where Trump holds meetings"
+    },
+    "trumpRead": {
+      "name": "Trump's Reading Area",
+      "available_actions": [116],
+      "description": "Location where Trump reads documents"
+    },
+    "trumpCook": {
+      "name": "Trump's Kitchen",
+      "available_actions": [104],
+      "description": "Location where Trump prepares meals"
+    },
+    "trumpEat": {
+      "name": "Trump's Dining Area",
+      "available_actions": [105],
+      "description": "Location where Trump eats meals"
+    },
+    "trumpSleep": {
+      "name": "Trump's Bedroom",
+      "available_actions": [106],
+      "description": "Location where Trump sleeps"
+    },
+    "muskData_right_1": {
+      "name": "Elon's Data Analysis Station",
+      "available_actions": [123],
+      "description": "Location where Elon analyzes data"
+    },
+    "muskMeeting": {
+      "name": "Elon's Meeting Room",
+      "available_actions": [124],
+      "description": "Location where Elon holds meetings"
+    },
+    "muskRead": {
+      "name": "Elon's Reading Area",
+      "available_actions": [116],
+      "description": "Location where Elon reads documents"
+    },
+    "muskCook": {
+      "name": "Elon's Kitchen",
+      "available_actions": [104],
+      "description": "Location where Elon prepares meals"
+    },
+    "muskEat": {
+      "name": "Elon's Dining Area",
+      "available_actions": [105],
+      "description": "Location where Elon eats meals"
+    },
+    "muskSleep": {
+      "name": "Elon's Bedroom",
+      "available_actions": [106],
+      "description": "Location where Elon sleeps"
+    },
+    "press_conference_room": {
+      "name": "Press Conference Room",
+      "available_actions": [129, 124],
+      "description": "Public space for announcements and meetings"
+    },
+    "space_center_elevator": {
+      "name": "Space Center Elevator",
+      "available_actions": [110, 127],
+      "description": "Confined space for forced interactions"
+    },
+    "private_meeting_room": {
+      "name": "Private Meeting Room",
+      "available_actions": [124, 110],
+      "description": "Private space for confidential discussions"
+    }
+  },
+  "action_definitions": {
+    "104": {
+      "name": "Cook",
+      "description": "Prepare meals or snacks",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "105": {
+      "name": "Eat",
+      "description": "Have meals or refreshments",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "106": {
+      "name": "Sleep",
+      "description": "Rest or take naps",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "110": {
+      "name": "Talk/Monologue",
+      "description": "Speak dialogue or monologue",
+      "requires_param": false,
+      "requires_content": true
+    },
+    "112": {
+      "name": "Scene Transition",
+      "description": "Transition between scenes",
+      "requires_param": true,
+      "param_type": "animationId"
+    },
+    "116": {
+      "name": "Read",
+      "description": "Read documents, books, or articles",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "123": {
+      "name": "Analyze",
+      "description": "Analyze data or information",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "124": {
+      "name": "Meeting",
+      "description": "Hold meetings or discussions",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "127": {
+      "name": "Visit",
+      "description": "Visit another NPC",
+      "requires_param": true,
+      "param_type": "target_npc"
+    },
+    "129": {
+      "name": "Speech",
+      "description": "Give public speeches or announcements",
+      "requires_param": true,
+      "param_type": "location"
+    },
+    "133": {
+      "name": "Share",
+      "description": "Share objects or information",
+      "requires_param": true,
+      "param_type": "objectId,npcId"
+    }
+  },
+  "character_ids": {
+    "Trump": 10012,
+    "Elon": 10009,
+    "Biden": 10006,
+    "Obama": 10007,
+    "Nina": 10019,
+    "Yves": 10016,
+    "Nova": 10020,
+    "Liam": 10018,
+    "Ivy": 10017,
+    "Ryan": 10021,
+    "Sam Altman": 10022,
+    "Satoshi": 10006
+  },
+  "animation_rules": {
+    "scene_transitions": {
+      "start": 40101,
+      "end": 40199
+    },
+    "character_actions": {
+      "trump": {
+        "start": 40201,
+        "end": 40299
+      },
+      "elon": {
+        "start": 40301,
+        "end": 40399
+      },
+      "general": {
+        "start": 40401,
+        "end": 40499
+      }
+    },
+    "directions": ["left", "right", "up", "down", "center"]
+  },
+  "script_structure": {
+    "required_fields": ["npcId", "action", "section", "animationId", "preAction", "id", "direction", "focus"],
+    "optional_fields": ["content", "param"],
+    "section_sequence": "incremental starting from 1",
+    "id_sequence": "incremental starting from 1 for each animationId"
+  }
+} 
