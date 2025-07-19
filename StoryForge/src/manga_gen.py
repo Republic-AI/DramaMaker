@@ -3,7 +3,7 @@ import json
 import openai
 
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "“
 
 # Paths to reference assets
 BASE_DIR = os.path.dirname(__file__)
