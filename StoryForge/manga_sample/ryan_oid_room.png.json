@@ -1,0 +1,82 @@
+{
+  "objects": [
+    {
+      "name": "single bed",
+      "position": "bottom-left",
+      "actions": [
+        {
+          "actionName": "Sleep",
+          "actionId": 106,
+          "description": "You rest to recharge for another day of rigorous training."
+        }
+      ]
+    },
+    {
+      "name": "trophy shelf",
+      "position": "top-wall",
+      "actions": []
+    },
+    {
+      "name": "wooden nightstand",
+      "position": "near bed",
+      "actions": []
+    },
+    {
+      "name": "window with curtains",
+      "position": "top-left wall",
+      "actions": [
+        {
+          "actionName": "Read",
+          "actionId": 116,
+          "description": "You read papers, articles, or books to gain new insights."
+        }
+      ]
+    },
+    {
+      "name": "desk with books",
+      "position": "top-right corner",
+      "actions": [
+        {
+          "actionName": "Read",
+          "actionId": 116,
+          "description": "You read papers, articles, or books to gain new insights."
+        }
+      ]
+    },
+    {
+      "name": "stove/counter",
+      "position": "top-right",
+      "actions": [
+        {
+          "actionName": "Cook",
+          "actionId": 104,
+          "description": "You prepare meals, often experimenting with new recipes."
+        }
+      ]
+    },
+    {
+      "name": "dining table",
+      "position": "center-left",
+      "actions": [
+        {
+          "actionName": "Eat",
+          "actionId": 105,
+          "description": "You enjoy meals while contemplating new ideas or relaxing."
+        }
+      ]
+    },
+    {
+        "name": "running machine",
+        "position": "middle-right",
+        "actions": [
+          {
+            "actionName": "Train",
+            "actionId": 137,
+            "description": "Engage in focused physical exercise to build strength and endurance."
+          }
+        ]
+      }
+  ],
+  "floor": "blue carpet",
+  "lighting": "window natural light"
+} 
