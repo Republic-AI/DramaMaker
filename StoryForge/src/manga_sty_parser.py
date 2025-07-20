@@ -11,7 +11,7 @@ except ImportError:
 import re
 
 # Set your OpenAI API key (for demo purposes, hardcoded here; in production, use env variable)
-openai.api_key = "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"
+openai.api_key = "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"
 
 def load_story(file_path):
     with open(file_path, 'r') as f:
@@ -43,11 +43,32 @@ def segment_story(story, character, npc_info=None, scene_objects=None):
     "object": "single bed",
     "short description": "Ryan is lying on the single bed in the bottom-left corner of the room.",
     "full_story": "Ryan tries to cook a meal but struggles with the recipe. He burns the food and gets frustrated, then decides to take a break and read a book to calm down.",
-    "scene_position": "beginning"
+    "scene_position": "beginning",
+    "dialogue": [
+      {
+        "character": "Ryan",
+        "text": "Every setback is a setup for a comeback... I just need to rest and gather my strength.",
+        "emotion": "determined but tired"
+      }
+    ],
+    "narration": "The room is quiet except for the soft sound of breathing, as Ryan finds solace in the simple act of resting.",
+    "scene_mood": "peaceful and reflective"
+  },
+  {
+    "sequence_id": 2,
+    "character(s) present": "Ryan",
+    "action": "cook",
+    "object": "stove/counter",
+    "short description": "Ryan is focused on cooking at the stove.",
+    "full_story": "Ryan tries to cook a meal but struggles with the recipe. He burns the food and gets frustrated, then decides to take a break and read a book to calm down.",
+    "scene_position": "middle",
+    "dialogue": [],
+    "narration": "",
+    "scene_mood": "focused and determined"
   }
 ]'''
     prompt = f"""
-You are a manga scene extractor.
+You are a manga scene extractor and dialogue generator.
 
 Break the following story into 1–3 key visual scenes.
 Each scene must:
@@ -65,9 +86,22 @@ Each subsequent scene should logically follow from the previous one. Do not skip
 SPLITTING:
 Break the story into 1–3 visual moments, each based on exactly one available action and one available object. Keep it simple and grounded in the room layout.
 
+DIALOGUE & NARRATION:
+For each scene, generate natural Korean romance manga style dialogue and narration that:
+- Reflects the character's personality and tone
+- Matches the emotional state of the scene
+- Uses the character's typical sayings when appropriate
+- Creates dreamy, romantic atmosphere
+- Fits the scene position (beginning/middle/end)
+
+Note: Some scenes may not need dialogue or narration. If the scene is purely visual or action-focused, dialogue can be empty array [] and narration can be empty string "".
+
 For each scene, include:
 - full_story: The complete user story for context
 - scene_position: Where this scene fits in the overall story ("beginning", "middle", "end")
+- dialogue: Array of dialogue lines with character name, text, and emotion (can be empty [])
+- narration: Atmospheric narration text for the scene (can be empty "")
+- scene_mood: Overall mood of the scene
 
 Available objects and actions:
 {objects_str}
