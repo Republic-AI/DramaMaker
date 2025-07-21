@@ -8,7 +8,8 @@ import mimetypes
 import openai
 
 # API Keys (direct configuration)
-OPENAI_API_KEY = "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"
+# OPENAI_API_KEY should be set via environment variable or config for security
+OPENAI_API_KEY = "your-openai-api-key-here"
 RUNWAY_API_KEY = "key_536cfd03902f0448624e34cddf7be4cfaf04ca75f5920ac5098fef3fd158cb1deb1cf1e4fef7e73c6f18faf74b3c0c1b218af61a607c1b0813c3039dda886330"
 
 # Paths
@@ -379,108 +380,67 @@ Style: Soft anime style, clean line art, dramatic composition, appealing to youn
         traceback.print_exc()
         return None
 
-def call_runway_with_openai_analysis(scene, openai_analysis, output_path):
-    """Use Runway Gen-4 with OpenAI 4o analysis as guidance"""
-    
-    # Extract key information from OpenAI analysis
+def call_gpt_image_1_with_references(scene, frame_template_path, output_path):
+    """Use OpenAI gpt-image-1 to generate manga page with illustration and frame template as input images"""
+    import base64
+    from openai import OpenAI
+    client = OpenAI(api_key=OPENAI_API_KEY)
+
+    # Prepare prompt
     scene_desc = scene.get('short description', '')
     scene_mood = scene.get('scene_mood', '')
     dialogue_lines = scene.get('dialogue', [])
     narration = scene.get('narration', '')
     full_story = scene.get('full_story', '')
     scene_position = scene.get('scene_position', '')
-    
-    # Extract dialogue text
     dialogue_text = ""
     if dialogue_lines:
         dialogue_text = " ".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
-    
-    # Create a simplified Runway prompt based on OpenAI analysis
-    runway_prompt = f"""
-Korean romance manga page, 3:4 vertical format, soft anime style, clean line art.
 
-Scene: {scene_desc}
-Mood: {scene_mood}
+    # Try to load OpenAI analysis if it exists
+    analysis_path = output_path.replace('.png', '_openai_analysis.txt')
+    openai_analysis = None
+    if os.path.exists(analysis_path):
+        with open(analysis_path, 'r', encoding='utf-8') as f:
+            openai_analysis = f.read()
 
-Character: Young male with gentle features, soft expression, emotional depth.
+    prompt = f"""
+Generate a Korean romance manga page in 3:4 vertical format, soft anime style, clean line art.\n\n"""
+    if openai_analysis:
+        prompt += f"Analysis for layout and content guidance:\n{openai_analysis}\n\n"
+    prompt += f"Story Context:\nFull Story: {full_story}\nScene Position: {scene_position}\nScene: {scene_desc}\nMood: {scene_mood}\nDialogue: {dialogue_text}\nNarration: {narration}\n\nThe first image is the main illustration and must be preserved with high fidelity. The second image is the panel layout template; use its panel structure for the manga page. Place all dialogue and narration in speech bubbles with serif font."
 
-Style: Korean romance webtoon aesthetic, appealing to young women, soft pastel colors, elegant line art.
-
-Dialogue: {dialogue_text}
-
-Layout: Dynamic comic panel layout with one large main panel and 2-3 smaller panels arranged diagonally or overlapping.
-"""
-    
-    if not RUNWAY_API_KEY:
-        print("Runway API key not configured")
+    illustration_path = scene.get('main_illustration_path', '')
+    if not (illustration_path and os.path.exists(illustration_path)):
+        print("No main illustration found, cannot use gpt-image-1 edit API.")
         return None
-    
+    if not (frame_template_path and os.path.exists(frame_template_path)):
+        print("No frame template found, cannot use gpt-image-1 edit API.")
+        return None
+
     try:
-        print("\n=== CALLING RUNWAY WITH OPENAI ANALYSIS ===")
-        
-        print(f"Runway prompt length: {len(runway_prompt)} characters")
-        print("Runway prompt preview (first 300 chars):", runway_prompt[:300] + "..." if len(runway_prompt) > 300 else runway_prompt)
-        
-        # Use Runway SDK
-        from runwayml import RunwayML, TaskFailedError
-        
-        # Set API key as environment variable
-        import os
-        os.environ['RUNWAYML_API_SECRET'] = RUNWAY_API_KEY
-        
-        client = RunwayML()
-        
-        # Get reference illustration
-        illustration_path = scene.get('main_illustration_path', '')
-        reference_images = []
-        
-        if illustration_path and os.path.exists(illustration_path):
-            # Convert illustration to data URI
-            with open(illustration_path, "rb") as f:
-                base64_image = base64.b64encode(f.read()).decode("utf-8")
-            content_type = mimetypes.guess_type(illustration_path)[0] or "image/png"
-            data_uri = f"data:{content_type};base64,{base64_image}"
-            
-            reference_images.append({
-                'uri': data_uri,
-                'tag': 'character'
-            })
-        
-        # Create Runway task
-        try:
-            task = client.text_to_image.create(
-                model='gen4_image',
-                ratio='1080:1440',  # 3:4 aspect ratio
-                prompt_text=runway_prompt,
-                reference_images=reference_images
-            ).wait_for_task_output()
-            
-            print('✓ Runway task completed successfully!')
-            print('Image URL:', task.output[0])
-            
-            # Download the generated image
-            import requests
-            img_response = requests.get(task.output[0], timeout=60)
-            if img_response.status_code == 200:
-                with open(output_path, 'wb') as f:
-                    f.write(img_response.content)
-                print(f"✓ Runway manga page created: {output_path}")
-                return output_path
-            else:
-                print(f"Failed to download image: {img_response.status_code}")
-                return None
-                
-        except TaskFailedError as e:
-            print('The image failed to generate.')
-            print(e.task_details)
-            return None
-            
+        print("\n=== CALLING OPENAI gpt-image-1 EDIT FOR MANGA GENERATION ===")
+        with open(illustration_path, "rb") as img1, open(frame_template_path, "rb") as img2:
+            result = client.images.edit(
+                model="gpt-image-1",
+                image=[img1, img2],
+                prompt=prompt,
+                input_fidelity="high",
+                n=1,
+                size="1024x1536",
+                quality="high"
+            )
+        image_base64 = result.data[0].b64_json
+        image_bytes = base64.b64decode(image_base64)
+        with open(output_path, "wb") as f:
+            f.write(image_bytes)
+        print(f"✓ gpt-image-1 manga page created: {output_path}")
+        return output_path
     except Exception as e:
-        print(f"Runway with OpenAI analysis error: {e}")
+        print(f"gpt-image-1 error: {e}")
         import traceback
         traceback.print_exc()
         return None
-
 
 
 def create_manga_page(scene, frame_template_path, output_path, use_openai=False, use_runway=False):
@@ -496,34 +456,21 @@ def create_manga_page(scene, frame_template_path, output_path, use_openai=False,
     # Get existing illustration path
     existing_illustration = scene.get('main_illustration_path', '')
     
-    if use_openai and existing_illustration and os.path.exists(existing_illustration):
-        print("Using OpenAI 4o Vision API for layout analysis...")
-        openai_response = call_openai_4o_vision_api(scene, existing_illustration, frame_template_path)
-        
-        if openai_response:
-            print("OpenAI 4o analysis completed.")
-            # Save OpenAI response for reference
-            response_file = output_path.replace('.png', '_openai_analysis.txt')
-            with open(response_file, 'w', encoding='utf-8') as f:
-                f.write(openai_response)
-            print(f"OpenAI analysis saved to: {response_file}")
-            
-            # Use Runway with OpenAI analysis if requested
-            if use_runway:
-                print("Using Runway with OpenAI analysis to generate manga page...")
-                runway_result = call_runway_with_openai_analysis(scene, openai_response, output_path)
-                if runway_result:
-                    print(f"✓ Runway manga page created: {output_path}")
-                    return output_path
-                else:
-                    print("Runway failed, falling back to simple composition...")
+    # Use gpt-image-1 if illustration exists
+    if existing_illustration and os.path.exists(existing_illustration):
+        result = call_gpt_image_1_with_references(scene, frame_template_path, output_path)
+        if result:
+            print(f"✓ Manga page created: {result}")
+            return result
+        else:
+            print("gpt-image-1 failed, falling back to simple composition...")
     
-    # Use simple composition method as fallback
+    # Fallback: simple composition
     result = create_simple_manga_page(scene, frame_template_path, output_path)
     
     if result:
-        print(f"✓ Manga page created: {output_path}")
-        return output_path
+        print(f"✓ Manga page created: {result}")
+        return result
     
     return None
 
@@ -648,10 +595,9 @@ def main():
     manga_pages_dir = os.path.join(OUTPUT_DIR, 'manga_pages')
     os.makedirs(manga_pages_dir, exist_ok=True)
     
-    # Automatically use OpenAI analysis and Runway generation
+    # Automatically use OpenAI analysis for manga generation
     use_openai = True
-    use_runway = True
-    print("Automatically using OpenAI 4o for layout analysis and Runway for manga generation")
+    print("Automatically using OpenAI 4o for layout analysis and gpt-image-1 for manga generation")
     
     # Process each scene
     for i, scene in enumerate(scenes):
@@ -666,7 +612,7 @@ def main():
         manga_page_path = os.path.join(manga_pages_dir, manga_page_filename)
         
         # Create manga page
-        result = create_manga_page(scene, frame_template, manga_page_path, use_openai=use_openai, use_runway=use_runway)
+        result = create_manga_page(scene, frame_template, manga_page_path, use_openai=use_openai)
         
         if result:
             print(f"✓ Successfully created manga page: {result}")
