@@ -9,9 +9,10 @@ try:
 except ImportError:
     raise ImportError("The 'pyyaml' package is not installed. Please install it with 'pip install pyyaml'.")
 import re
+from config import OPENAI_API_KEY
 
 # Set your OpenAI API key (for demo purposes, hardcoded here; in production, use env variable)
-openai.api_key = "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"
+openai.api_key = OPENAI_API_KEY
 
 def load_story(file_path):
     with open(file_path, 'r') as f:
@@ -155,6 +156,17 @@ Output only the JSON list, and nothing else.
                 dbg.write(content if content else '')
     return scenes
 
+def get_action_id_from_name(npc_info, action_name):
+    # Try to match actionName exactly
+    for action in npc_info.get("availableActions", []):
+        if action.get("actionName", "").lower() == str(action_name).lower():
+            return action.get("actionId")
+    # Fallback: try to match by description
+    for action in npc_info.get("availableActions", []):
+        if action_name and action_name.lower() in action.get("description", "").lower():
+            return action.get("actionId")
+    return None
+
 def ensure_output_dir():
     output_dir = os.path.join(os.path.dirname(__file__), '../output')
     os.makedirs(output_dir, exist_ok=True)
@@ -171,6 +183,12 @@ def main():
     npc_info = load_npc_info(npc_yaml_path)
     scene_objects = load_scene_objects(scene_json_path)
     scenes = segment_story(story, character, npc_info, scene_objects)
+
+    for scene in scenes:
+        action_name = scene.get("action")
+        if action_name:
+            action_id = get_action_id_from_name(npc_info, action_name)
+            scene["action_id"] = action_id
 
     output_dir = ensure_output_dir()
     # Save segmented scenes as JSON

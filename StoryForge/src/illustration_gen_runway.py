@@ -6,6 +6,7 @@ import tempfile
 from PIL import Image, ImageDraw, ImageFont
 import base64
 import mimetypes
+from config import RUNWAY_API_KEY
 
 # Try to import Runway API components
 try:
@@ -17,7 +18,7 @@ except ImportError:
     print("⚠️ RunwayML SDK not available, will use placeholder images")
 
 # Set your API credentials
-RUNWAY_API_KEY = "key_536cfd03902f0448624e34cddf7be4cfaf04ca75f5920ac5098fef3fd158cb1deb1cf1e4fef7e73c6f18faf74b3c0c1b218af61a607c1b0813c3039dda886330"
+RUNWAY_API_KEY = RUNWAY_API_KEY
 
 # Paths to reference assets - FIXED PATHS
 BASE_DIR = os.path.dirname(__file__)

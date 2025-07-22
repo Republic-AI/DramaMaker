@@ -6,12 +6,13 @@ import requests
 import base64
 import mimetypes
 import openai
+import logging
+import time
+from config import OPENAI_API_KEY
 
 # API Keys (direct configuration)
 # OPENAI_API_KEY should be set via environment variable or config for security
-OPENAI_API_KEY = "your-openai-api-key-here"
-RUNWAY_API_KEY = "key_536cfd03902f0448624e34cddf7be4cfaf04ca75f5920ac5098fef3fd158cb1deb1cf1e4fef7e73c6f18faf74b3c0c1b218af61a607c1b0813c3039dda886330"
-
+OPENAI_API_KEY = OPENAI_API_KEY
 # Paths
 BASE_DIR = os.path.dirname(__file__)
 MANGA_SAMPLE_DIR = os.path.join(BASE_DIR, '../manga_sample')
@@ -57,23 +58,6 @@ def load_segmented_scenes():
         print(f"Error loading scenes: {e}")
         return None
 
-def get_image_as_data_uri(image_path):
-    """Convert local image to data URI for API calls"""
-    try:
-        print(f"Converting image to data URI: {image_path}")
-        with open(image_path, "rb") as f:
-            base64_image = base64.b64encode(f.read()).decode("utf-8")
-        content_type = mimetypes.guess_type(image_path)[0]
-        if not content_type:
-            content_type = "image/png"  # Default
-        
-        data_uri = f"data:{content_type};base64,{base64_image}"
-        print(f"Successfully converted to data URI (length: {len(data_uri)} chars)")
-        return data_uri
-    except Exception as e:
-        print(f"Error converting image to data URI: {e}")
-        return None
-
 def create_placeholder_image(text="Placeholder"):
     """Create a placeholder image when API is not available"""
     print(f"Creating placeholder image with text: {text}")
@@ -105,288 +89,12 @@ def create_placeholder_image(text="Placeholder"):
     print(f"Placeholder image created: {temp_file.name}")
     return temp_file.name
 
-def check_character_consistency(scenes):
-    """Check character consistency across scenes"""
-    print("\n=== Character Consistency Check ===")
-    
-    character_refs = {}
-    for scene in scenes:
-        scene_id = scene.get('sequence_id', '?')
-        characters = scene.get('character(s) present', '')
-        illustration_path = scene.get('main_illustration_path', '')
-        
-        if characters and illustration_path:
-            if characters not in character_refs:
-                character_refs[characters] = {
-                    'first_scene': scene_id,
-                    'illustration_path': illustration_path,
-                    'appearances': []
-                }
-            
-            character_refs[characters]['appearances'].append({
-                'scene_id': scene_id,
-                'description': scene.get('short description', ''),
-                'mood': scene.get('scene_mood', ''),
-                'illustration_path': illustration_path
-            })
-    
-    # Print consistency report
-    for character, info in character_refs.items():
-        print(f"\nCharacter: {character}")
-        print(f"  First appearance: Scene {info['first_scene']}")
-        print(f"  Total appearances: {len(info['appearances'])}")
-        print(f"  Reference illustration: {info['illustration_path']}")
-        
-        for appearance in info['appearances']:
-            print(f"    Scene {appearance['scene_id']}: {appearance['description']} ({appearance['mood']})")
-    
-    return character_refs
-
-def call_openai_4o_vision_api(scene, illustration_path, frame_template_path):
-    """Use OpenAI 4o Vision API to create manga panel layout"""
-    
-    if not OPENAI_API_KEY or OPENAI_API_KEY == "your_openai_api_key_here":
-        print("OpenAI API key not configured")
-        return None
-    
-    try:
-        print("\n=== CALLING OPENAI 4O VISION API ===")
-        
-        # Set up OpenAI client
-        client = openai.OpenAI(api_key=OPENAI_API_KEY)
-        
-        # Prepare the prompt for OpenAI
-        scene_desc = scene.get('short description', '')
-        scene_mood = scene.get('scene_mood', '')
-        dialogue_lines = scene.get('dialogue', [])
-        narration = scene.get('narration', '')
-        full_story = scene.get('full_story', '')
-        scene_position = scene.get('scene_position', '')
-        
-        # Extract dialogue text
-        dialogue_text = ""
-        if dialogue_lines:
-            dialogue_text = " ".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
-        
-        prompt = f"""
-Generate the comics based on the first reference image and use this layout:
-
-CRITICAL CHARACTER CONSISTENCY: The first reference image contains the EXACT character design that must be used throughout the manga. Every visual detail of the character - face shape, eye style, hair color and style, clothing, body proportions, skin tone, and facial features - must be IDENTICAL to the reference image. Do not modify, stylize, or change any aspect of the character's appearance.
-
-Story Context:
-Full Story: {full_story}
-Scene Position: {scene_position}
-This scene is part of a larger narrative. Ensure the visual storytelling flows naturally and maintains narrative continuity.
-
-Layout Reference:
-Use a dynamic comic panel layout with one large main panel and 2-3 smaller panels arranged diagonally or overlapping.
-The large panel should use the first reference image as the main scene - this illustration IS the content that goes into the manga.
-The smaller panels must zoom in on distinct localized details from the main illustration — such as a character's expression, hand movement, or a specific environmental object.
-Each smaller panel must focus on a different part of the main illustration. Do not repeat the same content across multiple small panels.
-Use the panel layout style from the second and the third reference images. These two reference images are for layout reference only! Do not use the content of them.
-
-Canvas Ratio: 3:4 vertical format 
-Margins: 0.9 cm pure white margin around the whole 3:4 ratio canvas!
-Gutters: 0.5 cm pure white spacing between all panels
-Notice: Color of the margins and gutters must be pure white.
-
-Art style:
-Art style must remain consistent—soft anime style, clean line art, dramatic composition. 
-Refer to visual styles from Light and Night, Mr Love: Queen's Choice, and Korean romance webtoons, and should be conforms to the aesthetic standards of young women.
-The linework must be clear and visible. The design should be appealing to a young female audience.
-
-Character Consistency Rules:
-1. Copy the EXACT character design from the first reference image
-2. Maintain identical facial features, hair style, and clothing
-3. Keep the same skin tone and body proportions
-4. Preserve all visual details including accessories and clothing patterns
-5. Do not stylize or modify the character's appearance in any way
-
-Dialogue and Narration:
-The dialogue and narration must exactly match the text provided below. Make sure the correct character speaks the correct words.
-Do not make any errors or swap the lines between characters. 
-Please must place narration and dialogue inside speech bubbles. Use a serif font, size 23. 。
-
-Scene: {scene_desc}
-Mood: {scene_mood}
-Dialogue: {dialogue_text}
-Narration: {narration}
-"""
-        
-        # Prepare images for OpenAI Vision API
-        images = []
-        
-        # Add illustration (first reference - main content)
-        if os.path.exists(illustration_path):
-            with open(illustration_path, "rb") as f:
-                images.append({
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/png;base64,{base64.b64encode(f.read()).decode()}"
-                    }
-                })
-        
-        # Add frame template (second reference - layout)
-        if os.path.exists(frame_template_path):
-            with open(frame_template_path, "rb") as f:
-                images.append({
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/png;base64,{base64.b64encode(f.read()).decode()}"
-                    }
-                })
-        
-        # Add sample manga style (third reference - style)
-        if os.path.exists(SAMPLE_MANGA_STYLE):
-            with open(SAMPLE_MANGA_STYLE, "rb") as f:
-                images.append({
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/jpeg;base64,{base64.b64encode(f.read()).decode()}"
-                    }
-                })
-        
-        print(f"Prompt length: {len(prompt)} characters")
-        print(f"Images: {len(images)}")
-        
-        # Call OpenAI 4o Vision API
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": prompt
-                        }
-                    ] + images
-                }
-            ],
-            max_tokens=2000
-        )
-        
-        print("OpenAI 4o Vision API call successful!")
-        print(f"Response: {response.choices[0].message.content}")
-        
-        # For now, return the response text
-        # In a full implementation, you might want to parse this response
-        # and use it to guide the image generation or layout creation
-        return response.choices[0].message.content
-        
-    except Exception as e:
-        print(f"OpenAI 4o Vision API error: {e}")
-        import traceback
-        traceback.print_exc()
-        return None
-
-def call_dalle3_with_analysis(scene, openai_analysis, output_path):
-    """Use DALL-E 3 to generate manga page based on OpenAI analysis"""
-    
-    if not OPENAI_API_KEY or OPENAI_API_KEY == "your_openai_api_key_here":
-        print("OpenAI API key not configured")
-        return None
-    
-    try:
-        print("\n=== CALLING DALL-E 3 FOR MANGA GENERATION ===")
-        
-        # Set up OpenAI client
-        client = openai.OpenAI(api_key=OPENAI_API_KEY)
-        
-        # Create DALL-E 3 prompt based on OpenAI analysis
-        scene_desc = scene.get('short description', '')
-        scene_mood = scene.get('scene_mood', '')
-        dialogue_lines = scene.get('dialogue', [])
-        narration = scene.get('narration', '')
-        
-        # Extract dialogue text
-        dialogue_text = ""
-        if dialogue_lines:
-            dialogue_text = " ".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
-        
-        # Create a more focused DALL-E 3 prompt based on the analysis
-        scene_desc = scene.get('short description', '')
-        scene_mood = scene.get('scene_mood', '')
-        dialogue_lines = scene.get('dialogue', [])
-        narration = scene.get('narration', '')
-        full_story = scene.get('full_story', '')
-        scene_position = scene.get('scene_position', '')
-        
-        # Extract dialogue text
-        dialogue_text = ""
-        if dialogue_lines:
-            dialogue_text = " ".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
-        
-        dalle_prompt = f"""
-Create a Korean romance manga page based on this detailed analysis:
-
-{openai_analysis}
-
-IMPORTANT: The first reference image is the MAIN ILLUSTRATION that will be used in the manga. Character's appearance, clothing, pose, and all visual details must EXACTLY match the illustration.
-
-Story Context:
-Full Story: {full_story}
-Scene Position: {scene_position}
-This scene is part of a larger narrative. Ensure the visual storytelling flows naturally and maintains narrative continuity.
-
-Key Requirements:
-- Follow the exact panel layout described in the analysis
-- Use the specific details mentioned for each panel
-- The main panel should use the first reference image as the main scene - this illustration IS the content that goes into the manga
-- Character appearance, including clothing, pose, and all visual details must EXACTLY match the first reference image
-- Maintain the 3:4 vertical format with proper margins and gutters
-- Apply the Korean romance webtoon aesthetic
-- Include all dialogue and narration in speech bubbles with serif font
-- Ensure narrative continuity and visual storytelling flow
-
-Scene: {scene_desc}
-Mood: {scene_mood}
-Dialogue: {dialogue_text}
-Narration: {narration}
-
-Style: Soft anime style, clean line art, dramatic composition, appealing to young women.
-"""
-        
-        print(f"DALL-E 3 prompt length: {len(dalle_prompt)} characters")
-        print("DALL-E 3 prompt preview (first 300 chars):", dalle_prompt[:300] + "..." if len(dalle_prompt) > 300 else dalle_prompt)
-        
-        # Call DALL-E 3
-        response = client.images.generate(
-            model="dall-e-3",
-            prompt=dalle_prompt,
-            size="1024x1024",
-            quality="standard",
-            n=1,
-        )
-        
-        print("DALL-E 3 generation successful!")
-        
-        # Download the generated image
-        image_url = response.data[0].url
-        img_response = requests.get(image_url)
-        if img_response.status_code == 200:
-            # Save the image
-            with open(output_path, 'wb') as f:
-                f.write(img_response.content)
-            print(f"✓ DALL-E 3 manga page created: {output_path}")
-            return output_path
-        else:
-            print(f"Failed to download DALL-E 3 image: {img_response.status_code}")
-            return None
-            
-    except Exception as e:
-        print(f"DALL-E 3 error: {e}")
-        import traceback
-        traceback.print_exc()
-        return None
-
-def call_gpt_image_1_with_references(scene, frame_template_path, output_path):
-    """Use OpenAI gpt-image-1 to generate manga page with illustration and frame template as input images"""
+def generate_panel_analysis(scene, frame_template_path, output_path):
+    """Generate a professional, coherent manga panel analysis (分镜分析) as JSON and save as intermediate output, using both story and illustration content. Includes logging and timing."""
     import base64
     from openai import OpenAI
     client = OpenAI(api_key=OPENAI_API_KEY)
 
-    # Prepare prompt
     scene_desc = scene.get('short description', '')
     scene_mood = scene.get('scene_mood', '')
     dialogue_lines = scene.get('dialogue', [])
@@ -397,18 +105,177 @@ def call_gpt_image_1_with_references(scene, frame_template_path, output_path):
     if dialogue_lines:
         dialogue_text = " ".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
 
-    # Try to load OpenAI analysis if it exists
+    # Vision: get illustration description if available
+    illustration_path = scene.get('main_illustration_path', '')
+    illustration_desc = ""
+    if illustration_path and os.path.exists(illustration_path):
+        print("\n[分镜分析] Generating vision-based description of the main illustration...")
+        with open(illustration_path, "rb") as img_file:
+            vision_response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "user", "content": [
+                        {"type": "text", "text": "Please briefly describe the content, characters, actions, atmosphere, and setting of this illustration in English."},
+                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{base64.b64encode(img_file.read()).decode()}"}}
+                    ]}
+                ],
+                max_tokens=256
+            )
+            illustration_desc = vision_response.choices[0].message.content.strip()
+        print(f"[Illustration description]: {illustration_desc}")
+
+    analysis_prompt = f"""
+You are a professional manga storyboard artist. Carefully read the following story context and illustration details, and output a high‑quality storyboard analysis in JSON format.
+
+For each panel, provide the following information:
+- description: main content of the panel
+- composition: camera composition (wide shot / medium shot / close-up, top view / low angle, arrangement of foreground / midground / background)
+- is_key_panel: whether this panel is the key panel on the page
+- panel_function: setup / climax / transition
+- characters: characters appearing in this panel
+- actions: specific actions performed by each character
+- emotion: emotional atmosphere
+- dialogue: lines spoken in this panel (if any)
+- narration: narration text in this panel (if any)
+- visual_guidance: how the reader’s eye should flow through this panel
+
+In addition, add a field at the top level of the JSON:
+- `recommended_pages`: an integer indicating how many manga pages are recommended to represent this part of the story
+- `recommended_pages_reason`: a brief explanation for the recommended number of pages
+
+Output format example:
+{
+  "recommended_pages": 1,
+  "recommended_pages_reason": "The scene is short and can be expressed in three panels on a single page.",
+  "panels": [
+    {
+      "description": "...",
+      "composition": "...",
+      "is_key_panel": true,
+      "panel_function": "climax",
+      "characters": ["Ryan"],
+      "actions": "...",
+      "emotion": "...",
+      "dialogue": ["..."],
+      "narration": "...",
+      "visual_guidance": "..."
+    }
+  ]
+}
+
+Story background: {full_story}
+Scene position: {scene_position}
+Scene description: {scene_desc}
+Emotional atmosphere: {scene_mood}
+Dialogue: {dialogue_text}
+Narration: {narration}
+Illustration description: {illustration_desc}
+
+Output JSON only. Do not output any additional text.
+"""
+    print("\n[分镜分析 Prompt]:\n" + analysis_prompt)
+    print("[分镜分析] Starting panel analysis generation with OpenAI...")
+    start_time = time.time()
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[{"role": "user", "content": analysis_prompt}],
+            max_tokens=1200
+        )
+        elapsed = time.time() - start_time
+        print(f"[分镜分析] Panel analysis generated in {elapsed:.2f}s.")
+        analysis_json = response.choices[0].message.content.strip()
+        analysis_path = output_path.replace('.png', '_openai_analysis.txt')
+        with open(analysis_path, 'w', encoding='utf-8') as f:
+            f.write(analysis_json)
+        print(f"[分镜分析已保存]: {analysis_path}")
+        return analysis_json
+    except Exception as e:
+        print(f"[分镜分析] Error during panel analysis generation: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
+
+def call_gpt_image_1_with_references(scene, frame_template_path, output_path):
+    """Use OpenAI gpt-image-1 to generate manga page with illustration and frame template as input images, including analysis as JSON if available. Includes logging, timeout, and retries."""
+    import base64
+    from openai import OpenAI
+    client = OpenAI(api_key=OPENAI_API_KEY)
+
+    # Generate 分镜分析 if not already present
     analysis_path = output_path.replace('.png', '_openai_analysis.txt')
+    if not os.path.exists(analysis_path):
+        generate_panel_analysis(scene, frame_template_path, output_path)
+
+    # Prepare prompt
+    scene_desc = scene.get('short description', '')
+    scene_mood = scene.get('scene_mood', '')
+    dialogue_lines = scene.get('dialogue', [])
+    narration = scene.get('narration', '')
+    full_story = scene.get('full_story', '')
+    scene_position = scene.get('scene_position', '')
+    dialogue_text = ""
+    if dialogue_lines:
+        dialogue_text = "\n".join([f"{d.get('character', '')}: {d.get('text', '')}" for d in dialogue_lines])
+
     openai_analysis = None
     if os.path.exists(analysis_path):
         with open(analysis_path, 'r', encoding='utf-8') as f:
-            openai_analysis = f.read()
+            openai_analysis = f.read().strip()
 
     prompt = f"""
-Generate a Korean romance manga page in 3:4 vertical format, soft anime style, clean line art.\n\n"""
-    if openai_analysis:
-        prompt += f"Analysis for layout and content guidance:\n{openai_analysis}\n\n"
-    prompt += f"Story Context:\nFull Story: {full_story}\nScene Position: {scene_position}\nScene: {scene_desc}\nMood: {scene_mood}\nDialogue: {dialogue_text}\nNarration: {narration}\n\nThe first image is the main illustration and must be preserved with high fidelity. The second image is the panel layout template; use its panel structure for the manga page. Place all dialogue and narration in speech bubbles with serif font."
+You are a professional manga layout artist. 
+Generate a high-quality manga page following ALL the rules below. 
+**Strictly follow every requirement. Do not ignore any instruction.**
+
+===== INPUTS =====
+• First reference image: the main full-scene illustration. 
+• Second reference image: ONLY for panel layout reference (NOT for content).
+• Texts: Scene description, narration, and dialogue provided below.
+
+===== LAYOUT RULES =====
+Canvas ratio: 3:4 vertical format.  
+Margins: 0.9 cm pure white margin around the whole canvas.  
+Gutters: 0.5 cm pure white spacing between all panels.  
+Color of margins and gutters: pure white.
+
+Use a dynamic comic panel layout with:
+- ONE large main panel (must closely replicate the composition and content of the first reference image).
+- TWO or THREE smaller panels arranged diagonally or overlapping.
+- Each smaller panel must zoom in on a distinct detail of the large scene:
+    • e.g. a character’s face, a hand holding something, or a background item.
+    • Do NOT repeat the same focus twice.
+    • If there are multiple characters, different small panels can focus on different characters.
+
+Follow the layout style of the second reference image (for panel arrangement only).
+
+===== ART STYLE =====
+Soft anime style, clean line art, dramatic composition.  
+Visual style must match “Light and Night”, “Mr Love: Queen’s Choice”, and Korean romance webtoons.  
+Appealing to a young female audience:
+- 8-head-body proportions.
+- Delicate facial features, smooth glowing skin.
+- Soft refined highlights and reflections to show depth.
+- Character appearance and clothing MUST match the first reference image.
+
+===== TEXT REQUIREMENTS =====
+All dialogue and narration must match the given text below exactly.  
+Each line appears once, no duplication, no missing lines.  
+Ensure each line is assigned to the correct character.  
+Place dialogue and narration in speech bubbles:
+- Font: serif
+- Size: 23
+
+===== OUTPUT =====
+Output a final manga page image with the above layout and style, integrating the dialogue and narration exactly.
+
+===== TEXTS =====
+Scene description: {scene_desc}
+Narration: {narration}
+Dialogue:
+{dialogue_text}
+"""
+    print("\n[漫画生成 Prompt]:\n" + prompt)
 
     illustration_path = scene.get('main_illustration_path', '')
     if not (illustration_path and os.path.exists(illustration_path)):
@@ -418,29 +285,40 @@ Generate a Korean romance manga page in 3:4 vertical format, soft anime style, c
         print("No frame template found, cannot use gpt-image-1 edit API.")
         return None
 
-    try:
-        print("\n=== CALLING OPENAI gpt-image-1 EDIT FOR MANGA GENERATION ===")
-        with open(illustration_path, "rb") as img1, open(frame_template_path, "rb") as img2:
-            result = client.images.edit(
-                model="gpt-image-1",
-                image=[img1, img2],
-                prompt=prompt,
-                input_fidelity="high",
-                n=1,
-                size="1024x1536",
-                quality="high"
-            )
-        image_base64 = result.data[0].b64_json
-        image_bytes = base64.b64decode(image_base64)
-        with open(output_path, "wb") as f:
-            f.write(image_bytes)
-        print(f"✓ gpt-image-1 manga page created: {output_path}")
-        return output_path
-    except Exception as e:
-        print(f"gpt-image-1 error: {e}")
-        import traceback
-        traceback.print_exc()
-        return None
+    max_retries = 3
+    timeout = 120  # seconds
+    for attempt in range(1, max_retries + 1):
+        try:
+            print(f"\n=== CALLING OPENAI gpt-image-1 EDIT FOR MANGA GENERATION (Attempt {attempt}) ===")
+            start_time = time.time()
+            with open(illustration_path, "rb") as img1, open(frame_template_path, "rb") as img2:
+                result = client.images.edit(
+                    model="gpt-image-1",
+                    image=[img1, img2],
+                    prompt=prompt,
+                    input_fidelity="high",
+                    n=1,
+                    size="1024x1536",
+                    quality="high",
+                    timeout=timeout
+                )
+            elapsed = time.time() - start_time
+            print(f"✓ gpt-image-1 manga page created in {elapsed:.2f}s: {output_path}")
+            image_base64 = result.data[0].b64_json
+            image_bytes = base64.b64decode(image_base64)
+            with open(output_path, "wb") as f:
+                f.write(image_bytes)
+            return output_path
+        except Exception as e:
+            print(f"gpt-image-1 error (attempt {attempt}): {e}")
+            if attempt < max_retries:
+                print(f"Retrying in {2 ** attempt} seconds...")
+                time.sleep(2 ** attempt)
+            else:
+                print("All retries failed. Giving up on this manga page.")
+                import traceback
+                traceback.print_exc()
+                return None
 
 
 def create_manga_page(scene, frame_template_path, output_path, use_openai=False, use_runway=False):
@@ -587,9 +465,6 @@ def main():
     scenes = load_segmented_scenes()
     if not scenes:
         return
-    
-    # Check character consistency
-    character_refs = check_character_consistency(scenes)
     
     # Create output directory for manga pages
     manga_pages_dir = os.path.join(OUTPUT_DIR, 'manga_pages')
