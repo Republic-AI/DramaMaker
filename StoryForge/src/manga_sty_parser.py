@@ -172,6 +172,104 @@ def ensure_output_dir():
     os.makedirs(output_dir, exist_ok=True)
     return output_dir
 
+def load_npcs(yaml_path):
+    with open(yaml_path, 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
+    if isinstance(data, list):
+        return {npc['name']: npc for npc in data}
+    elif isinstance(data, dict) and 'npcCharacters' in data:
+        return {npc['name']: npc for npc in data['npcCharacters']}
+    else:
+        raise ValueError("NPC YAML must be a list or contain a 'npcCharacters' key.")
+
+def generate_daily_yaml(npcs):
+    daily_data = {"npcCharacters": []}
+    for npc in npcs.values():
+        char_data = {
+            "npcId": npc.get("npcId"),
+            "name": npc.get("name"),
+            "description": npc.get("description", ""),
+            "schedule": npc.get("schedule", ""),
+            "availableActions": npc.get("availableActions", [])
+        }
+        daily_data["npcCharacters"].append(char_data)
+    return yaml.dump(daily_data, default_flow_style=False, allow_unicode=True)
+
+def find_action_id(npc, action_name):
+    for action in npc.get("availableActions", []):
+        if action.get("actionName") == action_name:
+            return action.get("actionId")
+    for action in npc.get("availableActions", []):
+        if action_name in action.get("description", ""):
+            return action.get("actionId")
+    return None
+
+def build_drama_cfg(npcs, scenes):
+    drama_cfg = []
+    section_counter = 1
+    for scene in scenes:
+        if not isinstance(scene, dict):
+            continue
+        npc_name = (
+            scene.get('npc')
+            or (scene.get('character(s) present') if scene.get('character(s) present') else None)
+        )
+        if npc_name and ',' in npc_name:
+            npc_name = npc_name.split(',')[0].strip()
+        npc = npcs.get(npc_name) if npc_name else None
+        action_id = scene.get('action_id') or (find_action_id(npc, scene.get('action')) if npc else None)
+        content = scene.get('short description', '')
+        if scene.get('dialogue') and len(scene['dialogue']) > 0:
+            first_dialogue = scene['dialogue'][0]
+            content += f"\n{first_dialogue.get('character', '')}: {first_dialogue.get('text', '')}"
+        if npc and action_id:
+            action_step = {
+                "npcId": npc["npcId"],
+                "action": action_id,
+                "section": section_counter,
+                "animationId": scene.get("animationId", section_counter),
+                "preAction": 0,
+                "content": content,
+                "id": 1,
+                "direction": "left",
+                "focus": "1"
+            }
+            drama_cfg.append(action_step)
+            section_counter += 1
+    return drama_cfg
+
+def generate_combined_txt(daily_yaml, drama_cfg, npcs, output_dir):
+    # Map actionId to oid for each NPC
+    def get_oid(npc, action_id):
+        for action in npc.get("availableActions", []):
+            if action.get("actionId") == action_id:
+                return action.get("oid") if "oid" in action else None
+        return None
+
+    npc_actions_to_execute = []
+    for action in drama_cfg:
+        npc = None
+        for n in npcs.values():
+            if n.get("npcId") == action["npcId"]:
+                npc = n
+                break
+        action_copy = dict(action)
+        oid = get_oid(npc, action["action"]) if npc else None
+        if oid:
+            action_copy["oid"] = oid
+        npc_actions_to_execute.append(action_copy)
+
+    combined = {
+        "npc_actions_to_execute": npc_actions_to_execute,
+        "char_config": {
+            "character_settings": daily_yaml
+        }
+    }
+    combined_path = os.path.join(output_dir, 'combined_actions_and_config.txt')
+    with open(combined_path, 'w', encoding='utf-8') as f:
+        f.write(json.dumps(combined, ensure_ascii=False, indent=2))
+    print(f"✅ 生成 combined_actions_and_config.txt")
+
 def main():
     # Example usage
     base_dir = os.path.dirname(__file__)
@@ -201,6 +299,22 @@ def main():
     print("\n--- Segmented Scenes ---")
     for i, scene in enumerate(scenes):
         print(f"Scene {i+1}: {scene}")
+
+    # --- Integrated action list generation ---
+    npcs = load_npcs(npc_yaml_path)
+    # Write daily.yaml
+    daily_yaml = generate_daily_yaml(npcs)
+    daily_path = os.path.join(output_dir, 'daily.yaml')
+    with open(daily_path, 'w', encoding='utf-8') as f:
+        f.write(daily_yaml)
+    print(f"✅ 生成 daily.yaml")
+    # Write dramaCfg.json
+    drama_cfg = build_drama_cfg(npcs, scenes)
+    drama_path = os.path.join(output_dir, 'dramaCfg.json')
+    with open(drama_path, 'w', encoding='utf-8') as f:
+        json.dump(drama_cfg, f, indent=2, ensure_ascii=False)
+    print(f"✅ 生成 dramaCfg.json ({len(drama_cfg)} 个动作)")
+    generate_combined_txt(daily_yaml, drama_cfg, npcs, output_dir)
 
 if __name__ == "__main__":
     main()
